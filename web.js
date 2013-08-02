@@ -34,6 +34,7 @@ app.get('/', function(request, response, next) {
 	response.sendfile(__dirname + '/public/index.html');
 });
 
+
 // your homework -- create a route that serves up a different page. So, I want to be able to go to "www.wheeltalk.com/about" to learn more about the team. 
 
 
