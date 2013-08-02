@@ -1,0 +1,189 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* General Rules */
+
+body {
+	background-color:#09F;
+}
+
+#main {
+	width:910px;
+	padding:5px;
+	margin-left:auto;
+	margin-right:auto;
+	font-family: "HelveticaNeueUltraLightExtended", "HelveticaNeue-Ultra-Light-Extended", "Helvetica Neue Ultra Light Extended", "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:100; font-stretch:expanded;
+	background-color:white;
+	border-radius:15px;
+}
+
+hr {
+	width:auto;
+	background-color:#999;
+	border:thin;
+	height:1px;
+	clear:both;
+}
+
+.wheel {
+	font-weight:bold;
+	color:#F93;
+}
+
+.talks {
+	font-weight:bold;
+	color:#09f;
+}
+
+.left_box {
+	float:left;
+	background-color:#09F;
+	width:350px;
+	padding:5px;
+	margin-left:15px;
+	clear:left;
+	margin-top:5px;
+	border-radius:10px;
+	font-family: "HelveticaNeueUltraLightExtended", "HelveticaNeue-Ultra-Light-Extended", "Helvetica Neue Ultra Light Extended", "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:100; font-stretch:expanded;
+	
+}
+
+.right_box {
+	float: right;
+	background-color:#F93;
+	width:350px;
+	padding:5px;
+	margin-right:15px;
+	clear:right;
+	margin-top:5px;
+	border-radius:10px;
+	font-family: "HelveticaNeueUltraLightExtended", "HelveticaNeue-Ultra-Light-Extended", "Helvetica Neue Ultra Light Extended", "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:100; font-stretch:expanded;
+}
+
+/* Header Rules */
+
+#header {
+	display:inline;
+}
+
+#logo {
+	float:left;
+	width:50px;
+	margin-right:20px;
+	margin-top:15px;
+}
+
+#title {
+	display:inline;
+	clear:none;
+}
+
+#title a {
+	text-decoration:none;
+}
+
+#number {
+	float:right;
+	display:inline;
+	clear:none;
+	margin-top:-85px;
+	width:500px;
+	font-size:20px;
+	font-style:italic;
+}
+
+
+/* Section 1 Rules */
+
+#section1 {
+	background-image:url(images/WheelTalkBackground.jpg);
+	height:475px;
+	width:auto;
+	margin-top:-15px;
+}
+
+#navbar {
+	margin-left:-25px;
+	margin-top:-15px;
+}
+
+#navbar ul {
+	padding-top:10px;
+}
+
+#navbar ul li {
+	display:inline;
+	margin:15px;
+}
+
+#navbar ul li a {
+	text-decoration:none;
+	color:#F93;
+}
+
+#form {
+	clear:both;
+	background:silver;
+	width:300px;
+	height:325px;
+	padding-top:1px;
+	margin-left:305px;
+	margin-top:65px;
+	border-radius:20px;
+opacity:.95;
+	
+}
+
+#form input {
+	width:200px;
+	height:25px;
+	margin-top:10px;
+	border:none;
+	border-radius:5px;
+}
+
+#licenseplate {
+	display:inline;
+}
+
+#states {
+	margin-left:-1px;
+	height:25px;
+	width:50px;
+}
+
+#licensenumber {
+}
+
+#signup {
+	margin-top:15px;
+
+}
+
+
+/* SECTION 2 RULES*/
+
+#faqs {
+	padding-left:5px;
+}
+
+#uses {
+	height:200px;
+	clear:both;
+}
+
+
+/* section 3 tags */
+
+#faqs {
+	margin-left:15px;
+	margin-right:15px;
+	clear:both;
+}
+
+.question {
+	font-weight:bold;
+}
+
+.answer {	
+}
