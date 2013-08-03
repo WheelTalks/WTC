@@ -1,5 +1,6 @@
 // Load the twilio module
-var twilio = require('twilio');
+var twilio = require('twilio')
+  	, cradle = require('cradle');
  
 // Create a new REST API client to make authenticated requests against the
 // twilio back end
@@ -8,15 +9,42 @@ var client = new twilio.RestClient('AC24575d92aa61d1e316f4fd7461a00ba0', '39e361
 // Pass in parameters to the REST API using an object literal notation. The
 // REST client will handle authentication and response serialzation for you.
 
+
+
 exports.index = function(req, res){
   res.render('index', { title: 'Express' });
 };
 
+
 exports.sendSMS = function(request, response) {
+
+var name = request.body.name
+	, email = request.body.email
+	, state = request.body.licenseplate
+	, license = request.body.licensenumber
+	, phone = request.body.phonenumber;
+
+	 var connection = new(cradle.Connection)('https://liamflahive.cloudant.com', 443, {
+      auth: { username: 'liamflahive', password: 'swatter5' }
+  });
+
+
+var db = connection.database('wheel');
+
+db.save(name, {
+      email: email,
+      plate: license,
+      state: state,
+      phone: phone
+      
+  });
+
+console.log(request.body.name);
+
 client.sms.messages.create({
-to:'+17818012486',
+to: phone,
 from:'+17815594602',
-body:'ahoy hoy! Testing Twilio and node.js'
+body:'Welcome to WheelTalks! Save this number in your contacts.'
 }, function(error, message) {
 // The HTTP request to Twilio will run asynchronously. This callback
 // function will be called when a response is received from Twilio
