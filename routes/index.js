@@ -7,6 +7,12 @@ var client = new twilio.RestClient('AC24575d92aa61d1e316f4fd7461a00ba0', '39e361
  
 // Pass in parameters to the REST API using an object literal notation. The
 // REST client will handle authentication and response serialzation for you.
+
+exports.index = function(req, res){
+  res.render('index', { title: 'Express' });
+};
+
+exports.sendSMS = function(request, response) {
 client.sms.messages.create({
 to:'+17818012486',
 from:'+17815594602',
@@ -29,4 +35,5 @@ console.log(message.dateCreated);
 else {
 console.log('Oops! There was an error.');
 }
-});
+})
+};

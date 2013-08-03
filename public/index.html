@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<script type="text/javascript" src='form_verification.js'></script>
-<script type='text/javascript' src='http://code.jquery.com/jquery-2.0.3.min.js'></script>
-<script type='text/javascript' src='http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js'></script>
+
+
 <title>Home | WheelTalks</title>
 </head>
 
@@ -29,7 +28,7 @@
 </div>
 <div id="form">
 <h2 align="center">See what people have been messaging you!</h2>
-<form method="post" action="send/sms" id='signupForm' onsubmit="return validateForm();"><!--<label for="name">
+<form method="post" action="/users/new" id='signupForm' onsubmit="return validateForm();"><!--<label for="name">
         <div align="center">Name:</div>
     </label>-->
 <div align="center"><input id="name" name="name" placeholder="Car Name (optional)" type="text" /></div>
@@ -51,28 +50,7 @@
 </div>
 </form>
 
-<script type="text/javascript"> 
-jQuery.validator.setDefaults({
-  debug: true,
-  success: "valid"
-});
-$( "#signupForm" ).validate({
-  rules: {
-    phonenumber: {
-      required: true,
-      rangelength: [10, 11],
-      digits: true,
-    }
-  },
-  messages: {
-    phonenumber: {
-      required: "This field is required.",
-      rangelength: "Please enter a valid phone number.",
-      digits: "Please enter a valid phone number.",
-    }
-  }
-});
-</script>
+
 
 </div>
 </div>
