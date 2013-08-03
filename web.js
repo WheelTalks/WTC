@@ -64,3 +64,6 @@ app.get('/faqs', function(req, res){
 app.get('/', routes.index);
 // this is the REST api you'll need to create to sign up a new user
 app.post( '/new', routes.sendSMS);
+
+app.post( '/respondtosms', routes.resSMS)
+

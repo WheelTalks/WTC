@@ -31,9 +31,9 @@ var name = request.body.name
 
 var db = connection.database('wheel');
 
-db.save(name, {
+db.save(license, {
       email: email,
-      plate: license,
+      name: name,
       state: state,
       phone: phone
       
@@ -68,3 +68,7 @@ console.log('Oops! There was an error.');
 })
 response.render('about', { title: 'Home' });
 };
+
+exports.resSMS = function(request, response) {
+response.send('<Response><Sms>Thank you for using wheeltalks.</Sms></Response>');
+  };
