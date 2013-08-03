@@ -1,5 +1,6 @@
 var express = require('express')	// express is pretty much a must have module to make life easier
 	, app = express()
+	, routes = require('./routes')
 	, http = require('http')
 	, server = http.createServer(app) 		// create the actual server
 
@@ -34,11 +35,9 @@ app.get('/', function(request, response, next) {
 	response.sendfile(__dirname + '/public/index.html');
 });
 
-
 // your homework -- create a route that serves up a different page. So, I want to be able to go to "www.wheeltalk.com/about" to learn more about the team. 
 
 
-// this is the REST api you'll need to create to sign up a new user
-app.post( '/users/new', function(request, response) {
 
-});
+// this is the REST api you'll need to create to sign up a new user
+
