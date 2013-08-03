@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+
+<title>Home | WheelTalks</title>
+</head>
+
+<body>
+<div id="main"><!--HEADER-->
+<div id="logo"><a href="index.html"><img alt="WheelTalks" src="images/logo_example.jpg" /></a></div>
+<div id="title">
+<h1><span class="wheel">Wheel</span><span class="talks">Talks</span></h1>
+<div id="number">
+<p>Send an anonymous message to any car on the road. Just text <strong>(781) 559-4602</strong> with a license plate number and message.</p>
+</div>
+</div>
+<hr /><!--SECTION 1-->
+<div id="section1">
+<div id="navbar">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/about">About Us</a></li>
+<li><a href="/faqs">FAQs</a></li>
+</ul>
+</div>
+<div id="form">
+<h2 align="center">See what people have been messaging you!</h2>
+<form method="post" action="/new" id='signupForm' onsubmit="return validateForm();"><!--<label for="name">
+        <div align="center">Name:</div>
+    </label>-->
+<div align="center"><input id="name" name="name" placeholder="Car Name (optional)" type="text" /></div>
+<!--<label for="email">
+    <div align="center">Email Address:</div>
+  </label>-->
+<div align="center"><input placeholder="Email" name="email" id="email" type='email' required/></div>
+<!--<label for="licensenumber">
+    <div align="center">License Plate Number:</div>
+  </label>-->
+<div align="center">
+<div id="licenseplate"><select name="licenseplate" id="state" required> <option value="--">--</option> <option value="al">AL</option> <option value="ak">AK</option> <option value="az">AZ</option> <option value="ar">AR</option> <option value="ca">CA</option> <option value="co">CO</option> <option value="ct">CT</option> <option value="de">DE</option> <option value="fl">FL</option> <option value="ga">GA</option> <option value="hi">HI</option> <option value="id">ID</option> <option value="il">IL</option> <option value="in">IN</option> <option value="ia">IA</option> <option value="ks">KS</option> <option value="ky">KY</option> <option value="la">LA</option> <option value="me">ME</option> <option value="md">MD</option> <option value="ma">MA</option> <option value="mi">MI</option> <option value="mn">MN</option> <option value="ms">MS</option> <option value="mo">MO</option> <option value="mt">MT</option> <option value="ne">NE</option> <option value="nv">NV</option> <option value="nh">NH</option> <option value="nj">NJ</option> <option value="nm">NM</option> <option value="ny">NY</option> <option value="nc">NC</option> <option value="nd">ND</option> <option value="oh">OH</option> <option value="ok">OK</option> <option value="or">OR</option> <option value="pa">PA</option> <option value="ri">RI</option> <option value="sc">SC</option> <option value="sd">SD</option> <option value="tn">TN</option> <option value="tx">TX</option> <option value="ut">UT</option> <option value="vt">VT</option> <option value="va">VA</option> <option value="wa">WA</option> <option value="wv">WV</option> <option value="wi">WI</option> <option value="wy">WY</option> </select></div>
+<input id="licensenumber"  name="licensenumber" placeholder="License Plate" style="width: 150px;" type="text" required/></div>
+<!--<label for="phonenumber">
+    <div align="center">Phone Number:</div>
+  </label>-->
+<div align="center"><input placeholder="Phone number" name="phonenumber" id="phonenumber" type='text' />
+<div id="signup"><input value="submit" name="submit" src="images/button (6).png" style="width: 170px; height: 50px;" type="image" onClick="JavaScript:validateForm()" /></div>
+</div>
+</form>
+
+
+
+</div>
+</div>
+</div>
+</body>
+</html>

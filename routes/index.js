@@ -12,7 +12,7 @@ var client = new twilio.RestClient('AC24575d92aa61d1e316f4fd7461a00ba0', '39e361
 
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Home' });
 };
 
 
@@ -41,6 +41,8 @@ db.save(name, {
 
 console.log(request.body.name);
 
+
+
 client.sms.messages.create({
 to: phone,
 from:'+17815594602',
@@ -64,4 +66,5 @@ else {
 console.log('Oops! There was an error.');
 }
 })
+response.render('about', { title: 'Home' });
 };

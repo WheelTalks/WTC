@@ -15,12 +15,14 @@ server.listen(port);
 // this tells node to use the public folder for your webpage -- everything there is, well, public. 
 // realize that this means the folder in which this web.js file sits is private -- that is, it's *server-side*
 app.configure( function() {
-	app.use( express.static(__dirname + '/public') );
+	app.set('views', __dirname + '/views');
+    app.set('view engine', 'hjs');
 	app.use(express.favicon());
     app.use(express.logger('dev'));
 	app.use( express.bodyParser() );
 	app.use(express.methodOverride());
 	app.use(app.router);
+	app.use( express.static(path.join(__dirname + '/public') ));
 });
 
 app.configure('development', function(){
@@ -37,14 +39,14 @@ app.all('/', function(request, response, next) {
 
 /* --------- routes -------------- */
 
-// 'routes' are instructions for urls
+/*'routes' are instructions for urls*/
 
-// this is what serves up your home page. So, if someone types "www.wheeltalk.com", this is the page they see
-app.get('/', function(req, res){
-  res.render('index', {
-    title: 'Home'
-  });
-});
+//this is what serves up your home page. So, if someone types "www.wheeltalk.com", this is the page they see
+// app.get('/', function(req, res){
+//   res.render('index', {
+//     title: 'Home'
+//   });
+// });
 
 app.get('/about', function(req, res){
   res.render('about', {
@@ -52,8 +54,13 @@ app.get('/about', function(req, res){
   });
 });
 
+app.get('/faqs', function(req, res){
+  res.render('faqs', {
+    title: 'FAQs'
+  });
+});
 // your homework -- create a route that serves up a different page. So, I want to be able to go to "www.wheeltalk.com/about" to learn more about the team. 
 
-
+app.get('/', routes.index);
 // this is the REST api you'll need to create to sign up a new user
-app.post( '/users/new', routes.sendSMS);
+app.post( '/new', routes.sendSMS);
