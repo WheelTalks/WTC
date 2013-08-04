@@ -98,7 +98,7 @@ db.view('wheel/byPlate', {key: command}, function (err, res) {
       body: body
       });
 
-    response.send('<Response><Sms>' + doc.name + '</Sms></Response>');
+    response.send('<Response><Sms>Thank you for using wheel talks!</Sms></Response>');
     }
 });
 
