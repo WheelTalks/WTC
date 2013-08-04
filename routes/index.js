@@ -88,11 +88,11 @@ db.view('wheel/byPlate', {key: '112JL7'}, function (err, res) {
       console.log('Connection failed to be established')
     }
     else{
-    doc = res[0].value;
+    var doc = res[0].value;
+    response.send('<Response><Sms>' + doc.name + '</Sms></Response>');
     }
 });
 
-response.send('<Response><Sms>' + body + '</Sms></Response>');
   };
 
 
