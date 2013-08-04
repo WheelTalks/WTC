@@ -92,7 +92,7 @@ db.view('wheel/byPlate', {key: body}, function (err, res) {
     var num = doc.phone;
 
     client.sms.messages.create({ //forward message to intended recipient
-      to: phone,
+      to: num,
       from:'+17815594602',
       body: body
       });
