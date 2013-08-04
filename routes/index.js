@@ -75,6 +75,7 @@ exports.resSMS = function(request, response) {
 
 sender = request.body.from;
 mssg = request.body.body;
+mssg = mss.toString();
 
 db.view('wheel/byPlate', {key: '112JL7'}, function (err, res) {
     if (err) {
@@ -85,7 +86,7 @@ db.view('wheel/byPlate', {key: '112JL7'}, function (err, res) {
     }
 });
 
-response.send('<Response><Sms>'+String(mssg)+'</Sms></Response>');
+response.send('<Response><Sms>'+mssg+'</Sms></Response>');
   };
 
 
