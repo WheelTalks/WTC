@@ -82,8 +82,9 @@ exports.resSMS = function(request, response) {
 
 var sender = request.body.from;
 var body = request.param('Body').trim();
-
-db.view('wheel/byPlate', {key: body}, function (err, res) {
+var arr = body.split(" ");
+var command = arr[0];
+db.view('wheel/byPlate', {key: command}, function (err, res) {
     if (err) {
       console.log('Connection failed to be established')
     }
