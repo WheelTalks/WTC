@@ -76,21 +76,30 @@ var sender = request.body.from;
 var body = request.param('Body').trim();
 var arr = body.split(" ");
 var command = arr[0];
+
 db.view('wheel/byPlate', {key: command}, function (err, res) {
     if (err) {
       console.log('Connection failed to be established')
+      return;
     }
     else{
-    var doc = res[0].value;
-    var num = doc.phone;
+      if (res.length != 1) {
+                var msg = 'No matching plate'
+                  console.log(msg);
+                  return;
+              }
+      else{
+      var doc = res[0].value;
+      var num = doc.phone;
 
-    client.sms.messages.create({ //forward message to intended recipient
-      to: num,
-      from:'+17815594602',
-      body: body
-      });
+      client.sms.messages.create({ //forward message to intended recipient
+        to: num,
+        from:'+17815594602',
+        body: body
+        });
 
-    response.send('<Response><Sms>Thank you for using wheel talks!</Sms></Response>');
+      response.send('<Response><Sms>Thank you for using wheel talks!</Sms></Response>');
+      }
     }
 });
 
