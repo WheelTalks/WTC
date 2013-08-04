@@ -97,7 +97,7 @@ db.view('wheel/byPlate', {key: command}, function (err, res) {
     else{
       if (res.length != 1) { //license plate does not exist
         response.send('<Response><Sms>This plate was not recognized :(</Sms></Response>');
-        talks.save(name, {
+        talks.save("", {
           plate: command,
           message: body,
         });
