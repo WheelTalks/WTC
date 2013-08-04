@@ -75,7 +75,7 @@ exports.resSMS = function(request, response) {
 
 sender = request.body.from;
 mssg = request.body.body;
-mssg = mss.toString();
+JSON.stringify(mssg);
 
 db.view('wheel/byPlate', {key: '112JL7'}, function (err, res) {
     if (err) {
