@@ -1,6 +1,7 @@
 // Load the twilio module
 var twilio = require('twilio')
-  	, cradle = require('cradle');
+  	, cradle = require('cradle')
+    , postmark = require("postmark")(process.env.POSTMARK_API_KEY);
  
 // Create a new REST API client to make authenticated requests against the
 // twilio back end
@@ -31,7 +32,19 @@ var name = request.body.name
 	, phone = request.body.phonenumber;
 var phone = '+1'+phone;  
 
-	 
+postmark.send({
+    "From": "customersupport@wheeltalks.com",
+    "To": email,
+    "Subject": "Welcome to Wheeltalks",
+    "TextBody": "Congratulations "+name,
+    "Tag": "WheelTalks"
+}, function(error, success) {
+    if(error) {
+        console.error("Unable to send via postmark: " + error.message);
+       return;
+    }
+    console.info("Sent to postmark for delivery")
+});	 
 
 db.save(name, {
       email: email,
@@ -77,6 +90,7 @@ var sender = request.body.from;
 var body = request.param('Body').trim();
 var arr = body.split(" ");
 var command = arr[0];
+var command = command.toUpperCase();
 
 db.view('wheel/byPlate', {key: command}, function (err, res) {
     if (err) {
@@ -84,7 +98,7 @@ db.view('wheel/byPlate', {key: command}, function (err, res) {
       return;
     }
     else{
-      if (res.length != 1) {
+      if (res.length != 1) { //license plate does not exist
                 response.send('<Response><Sms>This plate was not recognized :(</Sms></Response>');
                 return;
               }
