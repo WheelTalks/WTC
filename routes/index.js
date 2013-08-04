@@ -73,9 +73,8 @@ response.render('about', { title: 'Home' });
 
 exports.resSMS = function(request, response) {
 
-sender = request.body.from;
-mssg = request.body.body;
-JSON.stringify(mssg);
+var sender = request.body.from;
+var mssg = request.body.body;
 
 db.view('wheel/byPlate', {key: '112JL7'}, function (err, res) {
     if (err) {
