@@ -29,6 +29,7 @@ var name = request.body.name
 	, state = request.body.licenseplate
 	, license = request.body.licensenumber
 	, phone = request.body.phonenumber;
+var phone = '+1'+phone;  
 
 	 
 
@@ -84,9 +85,8 @@ db.view('wheel/byPlate', {key: command}, function (err, res) {
     }
     else{
       if (res.length != 1) {
-                var msg = 'No matching plate'
-                  console.log(msg);
-                  return;
+                response.send('<Response><Sms>This plate was not recognized :(</Sms></Response>');
+                return;
               }
       else{
       var doc = res[0].value;
