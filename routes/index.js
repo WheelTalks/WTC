@@ -89,6 +89,14 @@ db.view('wheel/byPlate', {key: body}, function (err, res) {
     }
     else{
     var doc = res[0].value;
+    var num = doc.phone;
+
+    client.sms.messages.create({ //forward message to intended recipient
+      to: phone,
+      from:'+17815594602',
+      body: body
+      });
+
     response.send('<Response><Sms>' + doc.name + '</Sms></Response>');
     }
 });
