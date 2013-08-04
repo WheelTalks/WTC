@@ -93,7 +93,7 @@ db.view('wheel/byPlate', {key: '112JL7'}, function (err, res) {
     }
 });
 
-response.send('<Response><Sms>'+body+'</Sms></Response>');
+response.send('<Response><Sms> hi </Sms></Response>');
   };
 
 
