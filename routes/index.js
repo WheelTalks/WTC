@@ -10,6 +10,13 @@ var client = new twilio.RestClient('AC24575d92aa61d1e316f4fd7461a00ba0', '39e361
 // REST client will handle authentication and response serialzation for you.
 
 
+var connection = new(cradle.Connection)('https://liamflahive.cloudant.com', 443, {
+      auth: { username: 'liamflahive', password: 'swatter5' }
+  });
+
+
+var db = connection.database('wheel');
+
 
 exports.index = function(req, res){
   res.render('index', { title: 'Home' });
@@ -24,16 +31,11 @@ var name = request.body.name
 	, license = request.body.licensenumber
 	, phone = request.body.phonenumber;
 
-	 var connection = new(cradle.Connection)('https://liamflahive.cloudant.com', 443, {
-      auth: { username: 'liamflahive', password: 'swatter5' }
-  });
+	 
 
-
-var db = connection.database('wheel');
-
-db.save(license, {
+db.save(name, {
       email: email,
-      name: name,
+      plate: license,
       state: state,
       phone: phone
       
@@ -70,5 +72,21 @@ response.render('about', { title: 'Home' });
 };
 
 exports.resSMS = function(request, response) {
-response.send('<Response><Sms>Thank you for using wheeltalks.</Sms></Response>');
+
+sender = request.body.from;
+mssg = request.body.body;
+arr = mssg.split(" ");
+lisc = arr[0];
+db.view('wheel/byPlate', {key: lisc}, function (err, res) {
+    if (err) {
+      console.log('Connection failed to be established')
+    }
+    else{
+    var doc = res[0].value;
+    }
+});
+
+response.send('<Response><Sms>'+doc.name+'</Sms></Response>');
   };
+
+
