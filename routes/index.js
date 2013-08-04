@@ -19,14 +19,6 @@ var db = connection.database('wheel');
 
 exports.index = function(req, res){
   res.render('index', { title: 'Home' });
-  db.view('wheel/byPlate', {key: '112JL7'}, function (err, res) {
-    if (err) {
-      console.log('Connection failed to be established')
-    }
-    else{
-    doc = res[0].value;
-    }
-});
 };
 
 
