@@ -76,7 +76,7 @@ exports.resSMS = function(request, response) {
 sender = request.body.from;
 mssg = request.body.body;
 
-db.view('wheel/byPlate', {key: mssg}, function (err, res) {
+db.view('wheel/byPlate', {key: '112JL7'}, function (err, res) {
     if (err) {
       console.log('Connection failed to be established')
     }
@@ -85,7 +85,7 @@ db.view('wheel/byPlate', {key: mssg}, function (err, res) {
     }
 });
 
-response.send('<Response><Sms>'+doc.name+'</Sms></Response>');
+response.send('<Response><Sms>'+mssg+'</Sms></Response>');
   };
 
 
