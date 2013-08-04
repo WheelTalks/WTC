@@ -1,7 +1,7 @@
 // Load the twilio module
 var twilio = require('twilio')
   	, cradle = require('cradle')
-    , postmark = require("postmark")(process.env.POSTMARK_API_KEY);
+    , postmark = require("postmark")("15ea587a-4786-4d15-b71f-927b3a503ba6");
  
 // Create a new REST API client to make authenticated requests against the
 // twilio back end
@@ -17,6 +17,8 @@ var connection = new(cradle.Connection)('https://liamflahive.cloudant.com', 443,
 
 
 var db = connection.database('wheel');
+var talks = connection.database('talks');
+
 
 exports.index = function(req, res){
   res.render('index', { title: 'Home' });
@@ -33,7 +35,7 @@ var name = request.body.name
 var phone = '+1'+phone;  
 
 postmark.send({
-    "From": "customersupport@wheeltalks.com",
+    "From": "welcome@wheeltalks.com",
     "To": email,
     "Subject": "Welcome to Wheeltalks",
     "TextBody": "Congratulations "+name,
@@ -63,14 +65,9 @@ to: phone,
 from:'+17815594602',
 body:'Welcome to WheelTalks! Save this number in your contacts.'
 }, function(error, message) {
-// The HTTP request to Twilio will run asynchronously. This callback
-// function will be called when a response is received from Twilio
-// The "error" variable will contain error information, if any.
-// If the request was successful, this value will be "falsy"
+
 if (!error) {
-// The second argument to the callback will contain the information
-// sent back by Twilio for the request. In this case, it is the
-// information about the text messsage you just sent:
+
 console.log('Success! The SID for this SMS message is:');
 console.log(message.sid);
  
@@ -99,9 +96,14 @@ db.view('wheel/byPlate', {key: command}, function (err, res) {
     }
     else{
       if (res.length != 1) { //license plate does not exist
-                response.send('<Response><Sms>This plate was not recognized :(</Sms></Response>');
-                return;
-              }
+        response.send('<Response><Sms>This plate was not recognized :(</Sms></Response>');
+        talks.save(name, {
+          plate: command,
+          message: body,
+        });
+      
+      }  
+              
       else{
       var doc = res[0].value;
       var num = doc.phone;
@@ -112,7 +114,7 @@ db.view('wheel/byPlate', {key: command}, function (err, res) {
         body: body
         });
 
-      response.send('<Response><Sms>Thank you for using wheel talks!</Sms></Response>');
+      response.send('<Response><Sms>Your message has been sent. Thank you for using wheel talks!</Sms></Response>');
       }
     }
 });
