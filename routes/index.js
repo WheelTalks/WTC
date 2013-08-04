@@ -17,15 +17,14 @@ var connection = new(cradle.Connection)('https://liamflahive.cloudant.com', 443,
 
 var db = connection.database('wheel');
 
-exports.index = function(req, res, callback){
+exports.index = function(req, res){
   res.render('index', { title: 'Home' });
-  db.view('wheel/byPlate', {key: '112JL7'}, function (err, res, callback) {
+  db.view('wheel/byPlate', {key: '112JL7'}, function (err, res) {
     if (err) {
       console.log('Connection failed to be established')
     }
     else{
     doc = res[0].value;
-    callback(doc, null);
     }
 });
 };
@@ -93,7 +92,7 @@ db.view('wheel/byPlate', {key: '112JL7'}, function (err, res) {
     }
 });
 
-response.send('<Response><Sms> hi </Sms></Response>');
+response.send('<Response><Sms>' + body + '</Sms></Response>');
   };
 
 
