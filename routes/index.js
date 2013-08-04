@@ -75,9 +75,8 @@ exports.resSMS = function(request, response) {
 
 sender = request.body.from;
 mssg = request.body.body;
-arr = mssg.split(" ");
-lisc = arr[0];
-db.view('wheel/byPlate', {key: lisc}, function (err, res) {
+
+db.view('wheel/byPlate', {key: mssg}, function (err, res) {
     if (err) {
       console.log('Connection failed to be established')
     }
