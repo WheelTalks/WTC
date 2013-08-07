@@ -160,19 +160,20 @@ switch(command){
 							return;
 						}
 						else{
+							response.send('<Response><Sms>Found winner!</Sms></Response>');
 							var winner = res[0].value;
-						    var email = winner.email;
-						    var plate = winner.plate;
-						    var num = winner.phone;
-						    var score = winner.score;
-						    var last = winner.last;
+						    var email_w = winner.email;
+						    var plate_w = winner.plate;
+						    var num_w = winner.phone;
+						    var score_w = winner.score;
+						    var last_w = winner.last;
 
 						    db.save(winner._id, { //add the new sender
-					        email: email,
-					        plate: plate,
-					        phone: num,
-					        score: score + 10,
-					        last: sender });
+					        email: email_w,
+					        plate: plate_w,
+					        phone: num_w,
+					        score: score_w + 10,
+					        last:  last_w });
 
 						}
 					}
