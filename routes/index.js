@@ -162,12 +162,12 @@ db.view('wheel/byPlate', {key: command}, function (err, res) {
 	        body: body
 	        });
 
-	      // db.save(doc, { //add the user
-	      // email: email,
-	      // plate: plate,
-	      // phone: num,
-	      // score: score,
-	      // last: sender });
+	       db.save(doc.id, { //add the user
+	       email: email,
+	       plate: plate,
+	       phone: num,
+	       score: score,
+	       last: sender });
 	      response.send('<Response><Sms>Your message has been sent. Thank you for using wheel talks!</Sms></Response>');
   			}
   		}
