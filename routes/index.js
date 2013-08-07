@@ -148,34 +148,31 @@ db.view('wheel/byPlate', {key: command}, function (err, res) {
       }  
               
       else{
-      var doc = res[0].value;
-      var email = doc.email;
-      var plate = doc.plate;
-      var num = doc.phone;
-      var score = doc.score;
-      var last = doc.last;
+	      var doc = res[0].value;
+	      var email = doc.email;
+	      var plate = doc.plate;
+	      var num = doc.phone;
+	      var score = doc.score;
+	      var last = doc.last;
 
 
-      client.sms.messages.create({ //forward message to intended recipient
-        to: num,
-        from:'+17815594602',
-        body: body
-        });
+	      client.sms.messages.create({ //forward message to intended recipient
+	        to: num,
+	        from:'+17815594602',
+	        body: body
+	        });
 
-      db.save(doc, { //add the user
-      email: email,
-      plate: plate,
-      phone: num,
-      score: score,
-      last: sender });
+	      db.save(doc, { //add the user
+	      email: email,
+	      plate: plate,
+	      phone: num,
+	      score: score,
+	      last: sender });
+	      response.send('<Response><Sms>Your message has been sent. Thank you for using wheel talks!</Sms></Response>');
+  			}
   		}
-      
-  	}
 	});
-
-
-
-      response.send('<Response><Sms>Your message has been sent. Thank you for using wheel talks!</Sms></Response>');
+      
 };
 
 
