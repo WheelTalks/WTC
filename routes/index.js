@@ -150,7 +150,7 @@ switch(command){
 	      	  response.send('<Response><Sms>Found sender!</Sms></Response>');
 		      var doc = res[0].value;
 		      var last = doc.last;
-				events.view('wheel/byPhone', {key: last}, function (err, res) {//view winner 
+				db.view('wheel/byPhone', {key: last}, function (err, res) {//view winner 
 					if (err) {
 						console.log('Connection failed to be established')
 					return;
