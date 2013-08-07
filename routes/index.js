@@ -149,11 +149,11 @@ db.view('wheel/byPlate', {key: command}, function (err, res) {
               
       else{
 	      var doc = res[0].value;
-	      //var email = doc.email;
-	      //var plate = doc.plate;
+	      var email = doc.email;
+	      var plate = doc.plate;
 	      var num = doc.phone;
-	      //var score = doc.score;
-	      //var last = doc.last;
+	      var score = doc.score;
+	      var last = doc.last;
 
 
 	      client.sms.messages.create({ //forward message to intended recipient
