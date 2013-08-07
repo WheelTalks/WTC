@@ -27,12 +27,17 @@ exports.sendSMS = function(request, response) {
 
 var name = request.body.name
 	, email = request.body.email
-	, state = request.body.licenseplate
-	, license = request.body.licensenumber
+	, state = request.body.licenseplate.trim()
+	, license = request.body.licensenumber.trim()
 	, phone = request.body.phonenumber;
 var phone = '+1'+phone;  
 
 var emailBody;
+
+
+license = license.toUpperCase();
+state = state.toUpperCase();
+license = state+license;
 
 talks.view('talks/byPlate', {key: license}, function (err, res) {
     if (err) {
@@ -87,7 +92,6 @@ talks.view('talks/byPlate', {key: license}, function (err, res) {
 db.save(name, { //add the user
       email: email,
       plate: license,
-      state: state,
       phone: phone
       
   });
