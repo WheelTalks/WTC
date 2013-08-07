@@ -162,7 +162,7 @@ db.view('wheel/byPlate', {key: command}, function (err, res) {
 	        body: body
 	        });
 
-	       db.save(doc.id, { //add the user
+	       db.save(doc._id, { //add the user
 	       email: email,
 	       plate: plate,
 	       phone: num,
