@@ -132,48 +132,116 @@ var arr = body.split(" ");
 var command = arr[0];
 var command = command.toUpperCase();
 
-db.view('wheel/byPlate', {key: command}, function (err, res) {
-    if (err) {
-      console.log('Connection failed to be established')
-      return;
-    }
-    else{
-      if (res.length != 1) { //license plate does not exist
-        response.send('<Response><Sms>This plate was not recognized :(</Sms></Response>');
-        talks.save("", {
-          plate: command,
-          message: body,
-        });
-      
-      }  
-              
-      else{
-	      var doc = res[0].value;
-	      var email = doc.email;
-	      var plate = doc.plate;
-	      var num = doc.phone;
-	      var score = doc.score;
-	      var last = doc.last;
+switch(command){
+	case ":)": 
+		db.view('wheel/byPhone', {key: sender}, function (err, res) {//view sender
+	    if (err) {
+	      console.log('Connection failed to be established')
+	      return;
+	    }
+	    else{
+	      if (res.length != 1) { //license plate does not exist
+	        response.send('<Response><Sms>Sign up for WheelTalks!</Sms></Response>');
+	        }
+	      
+	        
+	              
+	      else{
+		      var doc = res[0].value;
+		      var last = doc.last;
+				events.view('wheel/byPhone', {key: last}, function (err, res) {//view winner 
+					if (err) {
+						console.log('Connection failed to be established')
+					return;
+					}
+					else{
+						if (res.length != 1) { 
+							return;
+						}
+						else{
+							var winner = res[0].value;
+						    var email = winner.email;
+						    var plate = winner.plate;
+						    var num = winner.phone;
+						    var score = winner.score;
+						    var last = winner.last;
 
+						    db.save(winner._id, { //add the new sender
+					        email: email,
+					        plate: plate,
+					        phone: num,
+					        score: score + 10,
+					        last: sender });
 
-	      client.sms.messages.create({ //forward message to intended recipient
-	        to: num,
-	        from:'+17815594602',
-	        body: body
+						}
+					}
+				});//close winner view
+	  			}
+	  		}
+	  		});//close sender view
+	break;
+
+	default:
+	db.view('wheel/byPlate', {key: command}, function (err, res) {
+	    if (err) {
+	      console.log('Connection failed to be established')
+	      return;
+	    }
+	    else{
+	      if (res.length != 1) { //license plate does not exist
+	        response.send('<Response><Sms>This plate was not recognized :(</Sms></Response>');
+	        talks.save("", {
+	          plate: command,
+	          message: body,
 	        });
+	      
+	      }  
+	              
+	      else{
+		      var doc = res[0].value;
+		      var email = doc.email;
+		      var plate = doc.plate;
+		      var num = doc.phone;
+		      var score = doc.score;
+		      var last = doc.last;
 
-	       db.save(doc._id, { //add the user
-	       email: email,
-	       plate: plate,
-	       phone: num,
-	       score: score,
-	       last: sender });
-	      response.send('<Response><Sms>Your message has been sent. Thank you for using wheel talks!</Sms></Response>');
-  			}
-  		}
-	});
-      
-};
+
+		      client.sms.messages.create({ //forward message to intended recipient
+		        to: num,
+		        from:'+17815594602',
+		        body: body
+		        });
+
+		       db.save(doc._id, { //add the new sender
+		       email: email,
+		       plate: plate,
+		       phone: num,
+		       score: score + 1,
+		       last: sender });
+		      response.send('<Response><Sms>Your message has been sent. Thank you for using wheel talks!</Sms></Response>');
+	  			}
+	  		}
+		});//close view
+    }//close switch  
+};//close resSMS
+
+// findBy = exports.findBy = function(method, val, callback) {
+// events.view(method, {key: val}, function (err, res) { 
+//   	      if (err) {
+//   	      	console.log('Connection failed to be established')
+// 	      return;
+//   	      }
+//   	      else{
+//   	      	if (res.length != 1) { 
+//   	      		callback(null);
+//   	      	}
+//   	      	else{
+//   	      		callback(res[0]);
+//   	      	}
+//   	      }
+//   	  });//close view
+
+// };
 
 
 
