@@ -147,6 +147,7 @@ switch(command){
 	        
 	              
 	      else{
+	      	  response.send('<Response><Sms>Found sender!</Sms></Response>');
 		      var doc = res[0].value;
 		      var last = doc.last;
 				events.view('wheel/byPhone', {key: last}, function (err, res) {//view winner 
