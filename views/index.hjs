@@ -10,7 +10,7 @@
 
 <body>
 <div id="main"><!--HEADER-->
-<div id="logo"><a href="index.html"><img alt="WheelTalks" src="images/logo_example.jpg" /></a></div>
+<div id="logo"><a href="/"><img alt="WheelTalks" src="images/logo_example.jpg" /></a></div>
 <div id="title">
 <h1><span class="wheel">Wheel</span><span class="talks">Talks</span></h1>
 <div id="number">
@@ -24,6 +24,7 @@
 <li><a href="/">Home</a></li>
 <li><a href="/about">About Us</a></li>
 <li><a href="/faqs">FAQs</a></li>
+<li><a href="/team">team</a></li>
 </ul>
 </div>
 <div id="form">

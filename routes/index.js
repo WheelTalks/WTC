@@ -92,14 +92,11 @@ talks.view('talks/byPlate', {key: license}, function (err, res) {
 db.save(name, { //add the user
       email: email,
       plate: license,
-      phone: phone
+      phone: phone,
+      score: 1,
+      last: null
       
   });
-
-
-
-
-
 
 
 client.sms.messages.create({ //welcome text
@@ -129,7 +126,7 @@ response.render('about', { title: 'Home' }); //serve up post-signup page
 
 exports.resSMS = function(request, response) {
 
-var sender = request.body.from;
+var sender = request.param('From').trim();;
 var body = request.param('Body').trim();
 var arr = body.split(" ");
 var command = arr[0];
@@ -152,7 +149,12 @@ db.view('wheel/byPlate', {key: command}, function (err, res) {
               
       else{
       var doc = res[0].value;
+      var email = doc.email;
+      var plate = doc.plate;
       var num = doc.phone;
+      var score = doc.score;
+      var last = doc.last;
+
 
       client.sms.messages.create({ //forward message to intended recipient
         to: num,
@@ -160,11 +162,21 @@ db.view('wheel/byPlate', {key: command}, function (err, res) {
         body: body
         });
 
-      response.send('<Response><Sms>Your message has been sent. Thank you for using wheel talks!</Sms></Response>');
-      }
-    }
-});
+      db.save(doc, { //add the user
+      email: email,
+      plate: plate,
+      phone: num,
+      score: score,
+      last: sender });
+  		}
+      
+  	}
+	});
 
-  };
+
+
+      response.send('<Response><Sms>Your message has been sent. Thank you for using wheel talks!</Sms></Response>');
+};
+
 
 

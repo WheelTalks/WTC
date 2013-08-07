@@ -96,7 +96,7 @@ hr {
 /* Section 1 Rules */
 
 #section1 {
-	background-image:url(images/WheelTalkBackground.jpg);
+	background-image:'images/WheelTalkBackground.jpg';
 	height:475px;
 	width:auto;
 	margin-top:-15px;

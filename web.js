@@ -59,6 +59,11 @@ app.get('/faqs', function(req, res){
     title: 'FAQs'
   });
 });
+app.get('/team', function(req, res){
+  res.render('team', {
+    title: 'Team'
+  });
+});
 // your homework -- create a route that serves up a different page. So, I want to be able to go to "www.wheeltalk.com/about" to learn more about the team. 
 
 app.get('/', routes.index);
