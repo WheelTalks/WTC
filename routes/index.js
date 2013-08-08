@@ -176,7 +176,7 @@ switch(command){
 					        client.sms.messages.create({ //forward message to intended recipient
 					        to: num_w,
 					        from:'+17815594602',
-					        body: "It seems like your gaining some serious Influence in your... Keep it up :D"
+					        body: "It seems like your gaining some serious Influence in your community. Keep it up :D"
 					        });
 
 						}
