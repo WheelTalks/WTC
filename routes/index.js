@@ -134,10 +134,15 @@ var command = command.toUpperCase();
 
 switch(command){
 	case ":)", ":(":
-		if(command == ':)') 
-			var infChange = 10;
-		else
-			var infChange = -2;
+		if(command == ':)') {
+			var infChange = 10,
+				infMssg = "It seems like your gaining some serious Influence in your community. Keep it up :D";
+
+		}
+		else{}
+			var infChange = -2,
+			infMssg = "You've lost some Influence. It probably wasn't your fault. We still think your awesome.";
+		}	
 		db.view('wheel/byPhone', {key: sender}, function (err, res) {//view sender
 	    if (err) {
 	      console.log('Connection failed to be established')
@@ -173,7 +178,7 @@ switch(command){
 						    client.sms.messages.create({ //forward message to intended recipient
 					        to: num_w,
 					        from:'+17815594602',
-					        body: "It seems like your gaining some serious Influence in your community. Keep it up :D"
+					        body: infMssg
 					        });
 
 						    db.save(winner._id, { //add the new sender
