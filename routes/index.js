@@ -133,7 +133,11 @@ var command = arr[0];
 var command = command.toUpperCase();
 
 switch(command){
-	case ":)": 
+	case ":)", ":(":
+		if(command == ':)') 
+			var infChange = 10;
+		else
+			var infChange = -2;
 		db.view('wheel/byPhone', {key: sender}, function (err, res) {//view sender
 	    if (err) {
 	      console.log('Connection failed to be established')
@@ -176,7 +180,7 @@ switch(command){
 					        email: email_w,
 					        plate: plate_w,
 					        phone: num_w,
-					        score: score_w + 10,
+					        score: score_w + infChange,
 					        last:  last_w });
 
 					        
