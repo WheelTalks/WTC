@@ -117,7 +117,7 @@ else {
 console.log('Oops! There was an error.');
 }
 })
-response.render('about', { title: 'Home' }); //serve up post-signup page
+response.render('index2', { title: 'Home' }); //serve up post-signup page
 };
 
 /* ------------------------------------------------ */
@@ -232,7 +232,7 @@ switch(command){
 		       email: email,
 		       plate: plate,
 		       phone: num,
-		       score: score + 1,
+		       score: score,
 		       last: sender });
 		      response.send('<Response><Sms>Your message has been sent. Thank you for using wheel talks!</Sms></Response>');
 	  			}
@@ -241,6 +241,71 @@ switch(command){
     }//close switch  
 };//close resSMS
 
+
+exports.webSend = function(request, response) {
+	var plate = request.body.licensenumber.trim().toUpperCase(),
+		state = request.body.state.trim().toUpperCase(),
+		mssg = request.body.textbody;
+
+	var command =state + plate;
+	console.log(command);
+	console.log(mssg);
+		db.view('wheel/byPlate', {key: command}, function (err, res) {
+	    if (err) {
+	      console.log('Connection failed to be established')
+	      return;
+	    }
+	    else{
+	      if (res.length != 1) { //license plate does not exist
+	        talks.save("", {
+	          plate: command,
+	          message: mssg,
+	        });
+	      
+	      }  
+	              
+	      else{
+		      var doc = res[0].value;
+		      var email = doc.email;
+		      var plate = doc.plate;
+		      var num = doc.phone;
+		      var score = doc.score;
+		      var last = doc.last;
+
+		      console.log(num);
+
+		      client.sms.messages.create({ //forward message to intended recipient
+		        to: num,
+		        from:'+17815594602',
+		        body: mssg
+		        }, function(error, message) {
+
+					if (!error) {
+
+					console.log('Success! The SID for this SMS message is:');
+					console.log(message.sid);
+					 
+					console.log('Message sent on:');
+					console.log(message.dateCreated);
+					}
+					else {
+					console.log(error);
+					}
+					});
+
+		       db.save(doc._id, { //add the new sender
+		       email: email,
+		       plate: plate,
+		       phone: num,
+		       score: score,
+		       last: last });
+		       response.render('index2', { title: 'Home' });
+	  			}
+	  		}
+		});
+
+
+};
 // findBy = exports.findBy = function(method, val, callback) {
 // events.view(method, {key: val}, function (err, res) { 
 //   	      if (err) {
