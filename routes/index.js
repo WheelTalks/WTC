@@ -1,7 +1,7 @@
 // Load the twilio module
 var twilio = require('twilio')
   	, cradle = require('cradle')
-    , postmark = require("postmark")("15ea587a-4786-4d15-b71f-927b3a503ba6");
+    , postmark = require("postmark")("15ea587a-4786-4d15-b71f-927b3a503ba6")
  
 var client = new twilio.RestClient('AC24575d92aa61d1e316f4fd7461a00ba0', '39e3617174572e50095c0c34401f58f3');
 
@@ -16,7 +16,7 @@ var talks = connection.database('talks');//saved messages db
 /*           Serves up the index page               */
 /* ------------------------------------------------ */
 exports.index = function(req, res){
-  res.render('index', { title: 'Home' });
+  res.render('index2', { title: 'Home' });
 };
 
 /* ------------------------------------------------ */
@@ -139,7 +139,7 @@ switch(command){
 				infMssg = "It seems like your gaining some serious Influence in your community. Keep it up :D";
 
 		}
-		else{}
+		else{
 			var infChange = -2,
 			infMssg = "You've lost some Influence. It probably wasn't your fault. We still think your awesome.";
 		}	

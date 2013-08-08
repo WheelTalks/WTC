@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Wheeltalks</title>
+<link rel="stylesheet" type="text/css" href="css/candy.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script type='text/javascript' src='scripts/raspberry.js'></script>
+</head>
+
+<body>
+<div class='wrapper' id='head'>
+    <div id='header'>
+        <h1 id="wheeltalks_header"><a href="#">WheelTalks</a></h1>
+        <h4 id = "number">(781) 559-4602 </h4>
+        <div id="navBar">
+            <div id='connect' class='button'><a id='connect_button' href="/signup">Connect</a></div>
+        </div>
+    </div>
+</div>
+    
+<div class='wrapperFixed' id='wrapperOne'>
+    <div class='main' id='one'>
+        <h2 class='sectionTitle'>Anonymously message any car.</h2>
+        <div id="photo">
+            <div id="picture"></div>
+        </div>
+        <div id='tagline'>
+            <h3 class='sub_header_right' id='slogan'>Simple, Fun, and Free. See what people have been sending to your car!</h3>
+            <div id='signup' class='button'>
+                <a href='/signup'><div id='signup_button'>Sign up</div></a>
+            </div>
+        </div>
+        <div id='menuButtons'>
+            <div id='about' class='button'><p>ABOUT</p></div>
+            <div id='features' class='button'><p>FEATURES</p></div>
+            <div id='learnMore' class='button'><p>LEARN MORE</p></div>
+            <div id='faqs' class='button'><p>FAQs</p></div>
+            <div id='contact' class='button'><p>CONTACT</p></div>
+        </div>
+    </div>
+</div>
+
+<div id='scrollTop'></div>
+<div class='cover' id='wrapperTwo'>
+    <div class='main' id="two">
+        <div id='menuBar'>
+        <div id='homeBar' class='button'><p>HOME</p></div>
+        <div id='aboutBar' class='button'><p>ABOUT</p></div>
+        <div id='featuresBar' class='button'><p>FEATURES</p></div>
+        <div id='faqsBar' class='button'><p>FAQs</p></div>
+        <div id='contactBar' class='button'><p>CONTACT</p></div>
+    </div>
+        <h3>Send a message on any phone</h3>
+        <p>All you do is send a message to the wheeltalks phone number. Include a license plate and a message and that message will be there waiting for that driver. <p> 
+    </div>
+</div>
+        
+<div class='wrapper' id='wrapperThree'>    
+    <div id="three" class='main'>
+        <h3>Protect your car</h3>
+        <p>Wheeltalks helps you stay connected with you car by allowing people to notify you when your car is in any sort of danger. Know when you're blocked in, when your car alarm is going off, or when you're at risk of getting towed. <p>
+    </div>
+</div>
+    
+<div class='wrapper' id='wrapperFour'>
+    <div id="four" class='main'>
+        <h3>Help other people</h3>
+        <p>Notify someone when their car is in danger. Wheeltalks is perfect for telling someone when they are at risk of getting towed, their car alarm is going off, they have a flat tire or are parked illegally. <p>
+    </div>
+</div>
+     
+<div class='wrapper' id='wrapperFive'>    
+    <div id = "five" class='main'>
+        <h3>See what people have been saying</h3>
+        <p>Click &quot;get connected&quot; and receive an email of all the messages that have been sent to your license plate. Make sure you're driving well, your car is safe and everyone on the road is wishing you well!<p>
+    </div>
+</div>
+    
+<div class='wrapper' id='wrapperSix'>    
+    <div id = "six" class='main'>
+        <h3>Stay connected</h3>
+        <p>Stay connected to members of the driving community. Know how you're driving and what people think about you on the road. </p>
+    </div>
+</div>
+
+<div class='wrapper' id='wrapperSeven'>
+    <div id = "seven" class='main'>
+        <ul>
+            <li id = "compatible">
+                <h4>Universal</h4>
+                <p>Wheeltalks works on any phone. There are no downloads necessary. </p>
+            </li>
+            <li id="community">
+                <h4>Community</h4>
+                <p>The Wheeltalks community is devoted to making the driving community a friendlier and safer place. By using wheeltalks you are making a commitment to thinking about the person behind the wheel. </p>
+            </li>
+            <li id="simple">
+                <h4>Simple</h4>
+                <p>All it takes a license plate and a message and anyone in the world can have a message sent to them. </p>
+            </li>
+            <li id="fun">
+                <h4>Fun</h4>
+                <p>Wheeltalks is fun.  Messages </p>
+            </li>
+            <li id="anonymous">
+                <h4>Anonymous</h4>
+                <p>Wheeltalks keeps all messages anonymous.</p>
+            </li>
+            <li id="Outlet">
+                <h4>Outlet</h4>
+                <p>Wheeltalks provides an outlet for user in a trapped environment</p>
+            </li>
+        </ul>
+    </div>
+</div>
+      
+<div class='wrapper' id='wrapperEight'>
+    <div id = "eight" class='main'>
+        <h2> Send gems to cars</h2>
+        <h5> A gem is a quick note that is randomly generated inisde of our pool of gems associated with particular emotions. You can send an emotion to a license plate and wheeltalks will randomly send gems to that persons account. </h5>
+        <ul id = "gems">
+            <li>Love</li>
+            <li>Fun</li>
+            <li>Funny</li>
+            <li>Cute</li>
+            <li>Sad</li>
+            <li>Angry</li>
+        </ul>
+        <h5>submit more gems at gems@wheeltalks.com</h5>
+    </div>
+</div>
+    
+<div class='wrapper' id='wrapperNine'>    
+    <div id = "nine" class='main'>
+        <h2> Common Wheeltalks</h2>
+        <h3> Here are some of the most recent Wheeltalks</h3>
+        <ul id = "common_list">
+            <li>Nice car!</li>
+            <li>Drive safer!</li>
+            <li>You're about to get towed.</li>
+            <li>I love your car stickers</li>
+            <li>You're cute</li>
+            <li>Park better!</li>
+            <li>You have the coolest car ever!!</li>
+        </ul>
+    </div>
+</div>    
+    
+<div class='wrapper' id='wrapperTen'>    
+    <div id="ten" class='main'>
+        <h4>Frequently Asked Questions</h4>
+        <ul>
+            <li>
+                <h3>What happens if someone misuses wheeltalks?</h3>
+                <p>We reserve the right to block people from the wheeltalks service</p>
+            </li>
+            <li>
+                <h3>Is there a wheeltalks app?</h3>
+                <p>No. Wheeltalks is a service based around text messaging. Apps are in production to help serve particular members of the community.</p>
+            </li>
+            <li>
+                <h3>Will my contact information be shared with anyone?</h3>
+                <p>Absolutely not. Anonyminity is an important part of Wheeltalks.</p>
+            </li>
+            <li>
+                <h3>How secure is Wheeltalks</h3>
+                <p>User information is kept in a secure couchDB database.</p>
+            </li>
+            <li>
+                <h3>How will I know if my message has reached the car owner?</h3>
+                <p> You will receive a message saying your message has been sent to the car owner. </p>
+            </li>
+        </ul>
+    </div>
+</div>
+    
+<div class='wrapper' id='wrapperFooter'>    
+    <div id = "footer" class='main'>
+        <ul>
+            <li>
+                <a href='#'>Help & FAQs</a>
+            </li>
+            <li>
+                <a href="#">Press & Media</a>
+            </li>
+            <li>
+                <a href="#">Blog</a>
+            </li>
+            <li>
+                <a href="#">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="#">connect</a></li>
+        </ul>
+        
+        <p>© 2013 Wheeltalks LLC. All rights reserved. Patents pending.</p>
+    </div>
+</div>
+
+<div id='extraBottom'></div>
+</body>
+</html>
