@@ -197,6 +197,28 @@ switch(command){
 	  		});//close sender view
 	break;
 
+	case '$':
+		db.view('wheel/byPhone', {key: sender}, function (err, res) {//view sender
+	    if (err) {
+	      console.log('Connection failed to be established')
+	      return;
+	    }
+	    else{
+	      if (res.length != 1) { //license plate does not exist
+	        response.send('<Response><Sms>Sign up for WheelTalks to start getting influence!</Sms></Response>');
+	        }
+	      
+	        
+	              
+	      else{
+		      var doc = res[0].value;
+		      var influence = doc.score;
+		      response.send('<Response><Sms>You currently have '+influence+' influence</Sms></Response>');
+		  }
+		}
+	});
+	break;
+
 	default:
 	db.view('wheel/byPlate', {key: command}, function (err, res) {
 	    if (err) {
