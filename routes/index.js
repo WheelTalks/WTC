@@ -147,7 +147,6 @@ switch(command){
 	        
 	              
 	      else{
-	      	  response.send('<Response><Sms>Found sender!</Sms></Response>');
 		      var doc = res[0].value;
 		      var last = doc.last;
 				db.view('wheel/byPhone', {key: last}, function (err, res) {//view winner 
@@ -160,7 +159,6 @@ switch(command){
 							return;
 						}
 						else{
-							response.send('<Response><Sms>Found winner!</Sms></Response>');
 							var winner = res[0].value;
 						    var email_w = winner.email;
 						    var plate_w = winner.plate;
@@ -174,6 +172,12 @@ switch(command){
 					        phone: num_w,
 					        score: score_w + 10,
 					        last:  last_w });
+
+					        client.sms.messages.create({ //forward message to intended recipient
+					        to: num_w,
+					        from:'+17815594602',
+					        body: "It seems like your gaining some serious Influence in your... Keep it up :D"
+					        });
 
 						}
 					}
