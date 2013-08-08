@@ -166,6 +166,12 @@ switch(command){
 						    var score_w = winner.score;
 						    var last_w = winner.last;
 
+						    client.sms.messages.create({ //forward message to intended recipient
+					        to: num_w,
+					        from:'+17815594602',
+					        body: "It seems like your gaining some serious Influence in your community. Keep it up :D"
+					        });
+
 						    db.save(winner._id, { //add the new sender
 					        email: email_w,
 					        plate: plate_w,
@@ -173,12 +179,7 @@ switch(command){
 					        score: score_w + 10,
 					        last:  last_w });
 
-					        client.sms.messages.create({ //forward message to intended recipient
-					        to: num_w,
-					        from:'+17815594602',
-					        body: "It seems like your gaining some serious Influence in your community. Keep it up :D"
-					        });
-
+					        
 						}
 					}
 				});//close winner view
