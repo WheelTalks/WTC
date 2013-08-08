@@ -1,0 +1,123 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* General Rules */
+#header{
+	text-align: center;
+	height: 50px;
+	width: 960px;
+	color: purple;
+	
+	
+	
+}
+#title {
+    width:200px;
+    margin-right:auto;
+    margin-left:380px;
+    text-align:center;
+color: purple;
+}
+
+#title a {
+    text-decoration:none;
+    color:purple;
+    display:inline;
+}
+body{width: auto;
+height: 500px;
+}
+#form {
+	clear:both;
+	
+	width:300px;
+	height:325px;
+	padding-top:1px;
+	margin-left:340px;
+	margin-top:65px;
+	border-radius:20px;
+opacity:.95;
+	
+}
+
+#form input {
+	width:200px;
+	
+	margin-top:10px;
+	border: 2px dotted black
+	border:none;
+	border-radius:5px;
+}
+input[type= submit]{  
+	width:220px;
+    height: 50px;
+	margin-top: 30px;
+    background-color:purple;
+    box-shadow:0 0 10px #888888;
+    border-radius:3px;
+    text-align:center;
+    padding-top:5px;
+    border:1px solid #888888;
+	color:white;
+   font-size:25px;}
+	
+#licenseplate {
+	display:inline;
+}
+
+#states {
+	margin-left:-1px;
+	height:25px;
+	width:50px;
+}
+
+#licensenumber {
+}
+
+
+
+/* SECTION 2 RULES*/
+
+#faqs {
+	padding-left:5px;
+}
+
+#uses {
+	height:200px;
+	clear:both;
+}
+
+
+/* section 3 tags */
+
+#faqs {
+	margin-left:15px;
+	margin-right:15px;
+	clear:both;
+}
+
+.question {
+	font-weight:bold;
+}
+
+.answer {	
+}
+#signup_button {
+    
+   
+    width:220px;
+    height:50px;
+	margin-left: 40px;
+    background-color:purple;
+    box-shadow:0 0 20px #888888;
+    border-radius:3px;
+    text-align:center;
+    padding-top:20px;
+    border:1px solid #888888;
+}
+
+#signup a {
+    text-decoration:none;
+    color:white;
+    font-size:25px;
+}
