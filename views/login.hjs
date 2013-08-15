@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Sign Up</title>
+
+  
+  <link rel="stylesheet" href='css/foundation.css'>
+  <link rel="icon" type="img/png" href="img/logo.png">
+  <link rel='stylesheet' href='css/candy.css'>
+  <link rel='stylesheet' href='css/cameleon.css'>
+
+  <script src="js/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+
+  <!--HEADER, POSITION:FIXED, LARGE ONLY-->
+  <div class='fixed hide-for-small' id='head'>
+    <div class='row'>
+      <div class='large-3 columns' id='number'>
+        <h4>(781) 559-4602 </h4>
+      </div>
+      <div class='large-6 columns' id='signupTitle'>
+        <a href="index.html"><h1>WheelTalks</h1></a>
+      </div>
+      <div class='large-3 columns' id='fixedNav'>  
+        <div id='connect' class='button right success'><a href="signup.html">Connect</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!--HEADER, POSITION:RELATIVE, SMALL ONLY-->
+  <div class='show-for-small' id='headSmall'>
+    <div class='row'>
+      <div class='small-3 columns small-centered' id='numberSmall'>
+        <h4>(781) 559-4602 </h4>
+      </div>
+      <div class='small-6 columns small-centered WTtitle' id='headerSmall'>
+        <h1><a href="#">WheelTalks</a></h1>
+      </div>
+      <div class='small-3 columns small-centered' id='fixedNavSmall'>  
+        <div id='connectSmall' class='button small-centered success'><a href="signup.html">Connect</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='fixed'>
+   <div class='row'>
+    <div class='large-6 columns small-centered' id='signUpForm'>
+      
+        <div class='large-7 columns small-centered'>
+<form method="post" action="/login">
+  <fieldset>
+    <legend>Sign in</legend>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>ID</label>
+        <input type="text" name = "user" id = "user" placeholder="state + plate">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Password</label>
+        <input type="password" id = "pass" name = "pass" placeholder="password">
+      </div>
+     </div>
+
+    <div class="large-12 columns">
+      <label for="checkbox1"><input type="checkbox" name = "remember-me" id="remember-me" ><span class="custom checkbox"></span> remember me</label>
+
+    </div>
+
+      <div id="button">
+                <input class='button' id='submitButton' type="submit" value="Submit" />
+            </div>
+            
+  </fieldset>
+</form>
+
+      </div>
+    </div>
+   </div>
+  </div>
+
+  <!--FOOTER-->
+  <div class='wrapper' id='signupFooter'>
+    <div class='subWrapper'>
+      <div class='row'>
+        <div class='large-10 columns right' id='footer'>
+          <ul>
+              <li>
+                <a href='#'>Help & FAQs</a>
+              </li>
+              <li>
+               <a href="#">Press & Media</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#">Connect</a></li>
+          </ul>
+          <p>© 2013 Wheeltalks LLC. All rights reserved. Patents pending.</p>  
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  
+  <script src="/js/foundation.min.js"></script>
+  <script type="text/javascript" src='/js/raspberry.js'></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>

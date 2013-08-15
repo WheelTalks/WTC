@@ -17,7 +17,20 @@ var AM = require('./modules/account-manager');
 /*           Serves up the index page               */
 /* ------------------------------------------------ */
 exports.index = function(req, res){
-  res.render('index2', { title: 'Home' });
+	console.log(req.cookies.user);
+  if (req.cookies.user == undefined || req.cookies.pass == undefined){
+			res.render('index', { title: 'Home' });
+		}	else{
+	// attempt automatic login //
+			AM.autoLogin(req.cookies.user, req.cookies.pass, function(o){
+				if (o != null){
+				    req.session.user = o;
+					res.redirect('/webApp');
+				}	else{
+					res.render('index', { title: 'Home' });
+				}
+			});
+		}
 };
 
 /* ------------------------------------------------ */
@@ -340,8 +353,10 @@ exports.logIn = function(req, res){
 					res.cookie('user', o.plate, { maxAge: 900000 });
 					res.cookie('pass', o.pass, { maxAge: 900000 });
 					console.log('login sucessful');
+
 				}
 				res.send(o, 200);
+				res.redirect('/webApp');
 			}
 		});
 	};
