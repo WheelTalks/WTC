@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/signup.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-<script type='text/javascript' src='raspberry.js'></script>
+<script type='text/javascript' src='scripts/raspberry.js'></script>
 
 <title>Home | WheelTalks</title>
 </head>
@@ -15,7 +15,7 @@
 <hr id="line" /></div>
 <div id="form">
 <h2 id="title2" align="center">See what people are sending you</h2>
-<div align="center"><form method="post" action="report.php" id="signupForm" onsubmit="return validateForm();"><!--<label for="name">
+<div align="center"><form method="post" action="/new" id="signupForm" onsubmit="return validateForm();"><!--<label for="name">
         <div align="center">Name:</div>
     </label>-->
 <div><input id="licensenumber" name="licensenumber" placeholder="License Plate" style="width: 150px;" type="text" required="" /></div>

@@ -20,6 +20,8 @@ app.configure( function() {
 	app.use(express.favicon());
     app.use(express.logger('dev'));
 	app.use( express.bodyParser() );
+	app.use(express.cookieParser());
+	app.use(express.session({ secret: 'super-duper-secret-secret' }));
 	app.use(express.methodOverride());
 	app.use(app.router);
 	app.use( express.static(path.join(__dirname + '/public') ));
@@ -54,12 +56,20 @@ app.get('/signup', function(req, res){
   });
 });
 
-
+app.get('/webapp', function(req, res){
+  res.render('webapp', {
+    title: 'Web App'
+  });
+});
 // your homework -- create a route that serves up a different page. So, I want to be able to go to "www.wheeltalk.com/about" to learn more about the team. 
 
 app.get('/', routes.index);
 // this is the REST api you'll need to create to sign up a new user
 app.post( '/new', routes.sendSMS);
 
-app.post( '/respondtosms', routes.resSMS)
+app.post( '/respondtosms', routes.resSMS);
+
+app.post( '/webSend', routes.webSend);
+
+app.post('/login', routes.logIn);
 

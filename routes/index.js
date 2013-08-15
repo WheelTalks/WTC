@@ -2,6 +2,7 @@
 var twilio = require('twilio')
   	, cradle = require('cradle')
     , postmark = require("postmark")("15ea587a-4786-4d15-b71f-927b3a503ba6")
+
  
 var client = new twilio.RestClient('AC24575d92aa61d1e316f4fd7461a00ba0', '39e3617174572e50095c0c34401f58f3');
 
@@ -11,7 +12,7 @@ var connection = new(cradle.Connection)('https://liamflahive.cloudant.com', 443,
 
 var db = connection.database('wheel'); //user db
 var talks = connection.database('talks');//saved messages db
-
+var AM = require('./modules/account-manager');
 /* ------------------------------------------------ */
 /*           Serves up the index page               */
 /* ------------------------------------------------ */
@@ -117,7 +118,7 @@ else {
 console.log('Oops! There was an error.');
 }
 })
-response.render('about', { title: 'Home' }); //serve up post-signup page
+response.render('index2', { title: 'Home' }); //serve up post-signup page
 };
 
 /* ------------------------------------------------ */
@@ -197,6 +198,28 @@ switch(command){
 	  		});//close sender view
 	break;
 
+	case '$':
+		db.view('wheel/byPhone', {key: sender}, function (err, res) {//view sender
+	    if (err) {
+	      console.log('Connection failed to be established')
+	      return;
+	    }
+	    else{
+	      if (res.length != 1) { //license plate does not exist
+	        response.send('<Response><Sms>Sign up for WheelTalks to start getting influence!</Sms></Response>');
+	        }
+	      
+	        
+	              
+	      else{
+		      var doc = res[0].value;
+		      var influence = doc.score;
+		      response.send('<Response><Sms>You currently have '+influence+' influence</Sms></Response>');
+		  }
+		}
+	});
+	break;
+
 	default:
 	db.view('wheel/byPlate', {key: command}, function (err, res) {
 	    if (err) {
@@ -232,7 +255,7 @@ switch(command){
 		       email: email,
 		       plate: plate,
 		       phone: num,
-		       score: score + 1,
+		       score: score,
 		       last: sender });
 		      response.send('<Response><Sms>Your message has been sent. Thank you for using wheel talks!</Sms></Response>');
 	  			}
@@ -241,6 +264,87 @@ switch(command){
     }//close switch  
 };//close resSMS
 
+
+exports.webSend = function(request, response) {
+	var plate = request.body.licensenumber.trim().toUpperCase(),
+		state = request.body.state.trim().toUpperCase(),
+		mssg = request.body.textbody;
+
+	var command =state + plate;
+	console.log(command);
+	console.log(mssg);
+		db.view('wheel/byPlate', {key: command}, function (err, res) {
+	    if (err) {
+	      console.log('Connection failed to be established')
+	      return;
+	    }
+	    else{
+	      if (res.length != 1) { //license plate does not exist
+	        talks.save("", {
+	          plate: command,
+	          message: mssg,
+	        });
+	      
+	      }  
+	              
+	      else{
+		      var doc = res[0].value;
+		      var email = doc.email;
+		      var plate = doc.plate;
+		      var num = doc.phone;
+		      var score = doc.score;
+		      var last = doc.last;
+
+		      console.log(num);
+
+		      client.sms.messages.create({ //forward message to intended recipient
+		        to: num,
+		        from:'+17815594602',
+		        body: mssg
+		        }, function(error, message) {
+
+					if (!error) {
+
+					console.log('Success! The SID for this SMS message is:');
+					console.log(message.sid);
+					 
+					console.log('Message sent on:');
+					console.log(message.dateCreated);
+					}
+					else {
+					console.log(error);
+					}
+					});
+
+		       db.save(doc._id, { //add the new sender
+		       email: email,
+		       plate: plate,
+		       phone: num,
+		       score: score,
+		       last: last });
+		       response.render('index2', { title: 'Home' });
+	  			}
+	  		}
+		});
+
+
+};
+
+exports.logIn = function(req, res){
+		AM.manualLogin(req.param('user'), req.param('pass'), function(e, o){
+			if (!o){
+				res.send(e, 400);
+			}	else{
+			    req.session.user = o;
+				if (req.param('remember-me') == 'true'){
+					res.cookie('user', o.plate, { maxAge: 900000 });
+					res.cookie('pass', o.pass, { maxAge: 900000 });
+					console.log('login sucessful');
+				}
+				res.send(o, 200);
+			}
+		});
+	};
 // findBy = exports.findBy = function(method, val, callback) {
 // events.view(method, {key: val}, function (err, res) { 
 //   	      if (err) {
