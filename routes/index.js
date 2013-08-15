@@ -2,6 +2,7 @@
 var twilio = require('twilio')
   	, cradle = require('cradle')
     , postmark = require("postmark")("15ea587a-4786-4d15-b71f-927b3a503ba6")
+
  
 var client = new twilio.RestClient('AC24575d92aa61d1e316f4fd7461a00ba0', '39e3617174572e50095c0c34401f58f3');
 
@@ -11,7 +12,7 @@ var connection = new(cradle.Connection)('https://liamflahive.cloudant.com', 443,
 
 var db = connection.database('wheel'); //user db
 var talks = connection.database('talks');//saved messages db
-
+var AM = require('./modules/account-manager');
 /* ------------------------------------------------ */
 /*           Serves up the index page               */
 /* ------------------------------------------------ */
@@ -328,6 +329,22 @@ exports.webSend = function(request, response) {
 
 
 };
+
+exports.logIn = function(req, res){
+		AM.manualLogin(req.param('user'), req.param('pass'), function(e, o){
+			if (!o){
+				res.send(e, 400);
+			}	else{
+			    req.session.user = o;
+				if (req.param('remember-me') == 'true'){
+					res.cookie('user', o.plate, { maxAge: 900000 });
+					res.cookie('pass', o.pass, { maxAge: 900000 });
+					console.log('login sucessful');
+				}
+				res.send(o, 200);
+			}
+		});
+	};
 // findBy = exports.findBy = function(method, val, callback) {
 // events.view(method, {key: val}, function (err, res) { 
 //   	      if (err) {

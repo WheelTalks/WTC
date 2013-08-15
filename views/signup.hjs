@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/signup.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-<script type='text/javascript' src='raspberry.js'></script>
+<script type='text/javascript' src='scripts/raspberry.js'></script>
 
 <title>Home | WheelTalks</title>
 </head>
