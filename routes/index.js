@@ -1,4 +1,5 @@
 // Load the twilio module
+var AM = require('./modules/account-manager');
 var twilio = require('twilio')
   	, cradle = require('cradle')
     , postmark = require("postmark")("15ea587a-4786-4d15-b71f-927b3a503ba6")
@@ -12,7 +13,7 @@ var connection = new(cradle.Connection)('https://liamflahive.cloudant.com', 443,
 
 var db = connection.database('wheel'); //user db
 var talks = connection.database('talks');//saved messages db
-var AM = require('./modules/account-manager');
+
 /* ------------------------------------------------ */
 /*           Serves up the index page               */
 /* ------------------------------------------------ */
@@ -22,7 +23,8 @@ exports.index = function(req, res){
 			res.render('index', { title: 'Home' });
 		}	else{
 	// attempt automatic login //
-			AM.autoLogin(req.cookies.user, req.cookies.pass, function(o){
+			AM.autoLogin(req.cookies.user, req.cookies.pass, function(e, o){
+				console.log(o);
 				if (o != null){
 				    req.session.user = o;
 					res.redirect('/webApp');
@@ -349,34 +351,15 @@ exports.logIn = function(req, res){
 				res.send(e, 400);
 			}	else{
 			    req.session.user = o;
-				if (req.param('remember-me') == 'true'){
 					res.cookie('user', o.plate, { maxAge: 900000 });
 					res.cookie('pass', o.pass, { maxAge: 900000 });
 					console.log('login sucessful');
-
-				}
 				res.send(o, 200);
 				res.redirect('/webApp');
 			}
 		});
 	};
-// findBy = exports.findBy = function(method, val, callback) {
-// events.view(method, {key: val}, function (err, res) { 
-//   	      if (err) {
-//   	      	console.log('Connection failed to be established')
-// 	      return;
-//   	      }
-//   	      else{
-//   	      	if (res.length != 1) { 
-//   	      		callback(null);
-//   	      	}
-//   	      	else{
-//   	      		callback(res[0]);
-//   	      	}
-//   	      }
-//   	  });//close view
-
-// };
+// 
 
 
 

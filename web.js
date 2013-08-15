@@ -17,6 +17,7 @@ server.listen(port);
 app.configure( function() {
 	app.set('views', __dirname + '/views');
     app.set('view engine', 'hjs');
+    app.locals.pretty = true;
 	app.use(express.favicon());
     app.use(express.logger('dev'));
 	app.use( express.bodyParser() );
@@ -57,6 +58,7 @@ app.get('/signup', function(req, res){
 });
 
 app.get('/webapp', function(req, res){
+	console.log(req.cookies.user);
   res.render('webapp', {
     title: 'Web App'
   });
