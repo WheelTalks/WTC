@@ -358,7 +358,7 @@ exports.webSend = function(request, response) {
 		       phone: num,
 		       score: score,
 		       last: last });
-		       response.render('index', { title: 'Home' });
+		       response.redirect('/');
 	  			}
 	  		}
 		});

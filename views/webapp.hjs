@@ -34,19 +34,11 @@
   </div>
   
   <!--HEADER, POSITION:RELATIVE, SMALL ONLY-->
-<!--  <div class='show-for-small' id='headSmall'>
+  <div class='show-for-small' id='headSmall'>
     <div class='row'>
-      <div class='small-3 columns small-centered' id='numberSmall'>
-        <h4>(781) 559-4602 </h4>
-      </div>
-      <div class='small-6 columns small-centered' id='headerSmall'>
-        <h1><a href="#">WheelTalks</a></h1>
-      </div>
-      <div class='small-3 columns small-centered' id='fixedNavSmall'>  
-        <div id='connectSmall' class='button small-centered success'><a href="signup.html">Connect</a></div>
-      </div>
+      <nav class="top-bar">
     </div>
-  </div>-->
+  </div>
 
 <!-- form code-->
 <div align =  "center"><form class="custom" method="post" action="/webSend" >
