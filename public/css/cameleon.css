@@ -1,0 +1,106 @@
+@charset"UTF-8";
+
+/*Stylesheet for mobile rules only*/
+
+@media only screen {
+    .wrapperOne-small {
+    margin-top:0em; }
+    .main-small {
+    margin-left:30%; }
+}
+
+@media only screen and (min-width: 768px) {
+    .wrapperOne-large {
+      margin-top:40em; }
+    .main-large {
+      margin-left:0; }
+}
+
+/*HEADER*/
+#headerSmall {
+    text-align:center;
+}
+
+#headSmall {
+    background-image: linear-gradient(#f6f6f6 0%, #fafafa 50%, #fafafa 100%);
+    background-color:white;
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.29);
+    min-width:32em;
+}
+
+#connectSmall {
+}
+
+#connectSmall a {
+    color:white;
+    text-shadow:none;
+}
+
+#numberSmall {
+    margin-top:0;
+    min-width:10em;
+    text-align:center;
+}
+
+#fixedNavSmall {
+    margin-top:0;
+    text-align:center;
+}
+
+/*SECTION ONE*/
+#oneSmall {
+    z-index:-100;
+    margin-top:0;
+    text-align:center;
+    min-width:32em;
+}
+
+#pictureSmall {
+    background-image:url(use.jpg);
+    box-shadow: 0 0 20px #888888;
+    height:320px;
+    width:180px;
+    margin-left:10%;
+}
+
+#sloganSmall {
+    color: #636363;
+    font-weight:normal;
+    text-align:left;
+    font-size:1.6em;
+}
+
+#signup_buttonSmall {
+    padding-top:1.1em;
+    width:12em;
+    height:3.5em;
+    margin-top:2em;
+    margin-left:-1em;
+}
+
+#signup_buttonSmall a {
+    color:white;
+    text-shadow:none;
+}
+
+#menuButtonsSmall {
+    margin-top:5%;
+}
+
+#menuButtonsSmall div {
+    display:inline;
+}
+
+#menuButtonsSmall p {
+    margin-bottom:-50px;
+    display:inline;
+    margin:25px;
+    cursor:pointer;
+    opacity:.7;
+}
+
+#learnMoreSmall {
+    font-size:2em;
+}
+
+/*SECTION TWO*/

@@ -9,11 +9,12 @@
   <title>WheelTalks</title>
     
   <link rel="icon" type="image/png" href="img/logo.png">
-  <link rel="stylesheet" href="css/foundation.css">
-  <link rel='stylesheet' href="css/candy.css">
+  <link rel="stylesheet" href=
+  'css/foundation.css'>
+  <link rel='stylesheet' href='css/candy.css'>
   <link rel='stylesheet' href="css/cameleon.css">
   
-  <script src="js/vendor/custom.modernizr.js"></script>
+  <script src='js/vendor/custom.modernizr.js'></script>
 
 </head>
 
@@ -29,7 +30,7 @@
         <h1>WheelTalks</h1>
       </div>
       <div class='large-3 columns' id='fixedNav'>  
-        <div id='connect' class='button right success'><a href="signup.html">Connect</a></div>
+        <div id='connect' class='button right success'><a href="/loginPage">Connect</a></div>
       </div>
     </div>
   </div>
@@ -44,7 +45,7 @@
         <h1><a href="#">WheelTalks</a></h1>
       </div>
       <div class='small-3 columns small-centered' id='fixedNavSmall'>  
-        <div id='connectSmall' class='button small-centered success'><a href="signup.html">Connect</a></div>
+        <a <div id='connectSmall' class='button small-centered success'><a href="/loginPage">Connect</a></div>
       </div>
     </div>
   </div>
@@ -61,9 +62,15 @@
       </div>
       <div class='large-6 columns'>
         <h3 id='slogan'>Simple, Fun, and Free. See what people have been sending to your car!</h3>
-        <div class='button large' id='signup_button'>
+      
+      <div class='button large' id='signup_button'>
             <a href='signup.html'><div>Sign up</div></a>
         </div>
+</div>
+</div>
+            <div class="reveal-modal-bg" style="display: none"></div>
+            
+        
       </div>
       <div class='large-12 columns'>
         <div id='menuButtons'>
@@ -89,7 +96,7 @@
       </div>
       <div class='small-6 small-offset-2 columns'>
         <h3 id='sloganSmall'>Simple, Fun, and Free. See what people have been sending to your car!</h3>
-        <div class='button large' id='signup_buttonSmall'>
+         <div class='button large' id='signup_buttonSmall'>
             <a href='signup.html'><div>Sign up</div></a>
         </div>
       </div>
@@ -248,20 +255,33 @@
       </div>
     </div>
   </div>
+ <!-- Reveal Modals begin -->
 
+
+
+  <!-- Reveal Modals end -->
   <script>
   document.write('<script src=' +
   ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
   '.js><\/script>')
   </script>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js'></script>
+  <script type = "text/javascript" ='js/foundation.min.js'></script>
+  <script type="text/javascript" src='js/raspberry.js'></script>
+  <script type = "text/javascript" ='foundation.reveal.js'></script>
   
-  <script src="js/foundation.min.js"></script>
-  <script type="text/javascript" src="js/raspberry.j"'></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+  
 
   
   <script>
     $(document).foundation();
+    $(".showModal").click(function(e){
+  e.preventDefault();
+  $("#modalContents").dialog({bgiframe: true, height: 140, modal: true});
+});
   </script>
+  
+
 </body>
+
 </html>
