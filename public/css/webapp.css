@@ -11,68 +11,52 @@ body {
     text-shadow: 0 1px 0px #fff;
 }
 
-h1, h2, h3, h4, h5 {
-    color:#black;
+h2, h3, h4, h5 {
+    color:#4b4b4b;
 }
 
-p {
-    color: #black;
+.button {
+    opacity:.9;
 }
 
-.big_box {
-    margin-top:0px;
-    margin-bottom:0px;
-    width:auto;
+.wrapper {
+    box-shadow:0 -1px 2px rgba(0, 0, 0, 0.29);
+    background-color:#ffffff;
+    min-width:32em;
+}
+
+.subWrapper {
     border-bottom:1px solid #d2d2d2;
-    background-color:#fff;
+    min-width:32em;
 }
 
-.main_box {
-    width:960px;
-    margin-left:auto;
-    margin-right:auto;
-    padding:5px;
-    box-shadow:0 -15px 3px -3px rgba(0,0,0,0.01) inset;
+.large-10 {
+    min-width:32em;
 }
-
 
 
 /*HEADER RULES*/
-#head {
-    height:100px;
-    background-color:white;
-    width:100%;
-    
-    
-    padding:0px;
-    box-shadow:0 1px 2px rgba(0,0,0,0.29);
-    background-image: linear-gradient( #f6f6f6 0%,#fafafa 50%,#fafafa 100%);
-}
-
 #header {
-    width:960px;
-    padding-left:auto;
-    padding-right:auto;
-    box-shadow:none;
-}
-
-#wheeltalks_header {
-    width:200px;
-    margin-right:auto;
-    margin-left:380px;
     text-align:center;
 }
 
-#wheeltalks_header a {
-    text-decoration:none;
-    color:purple;
-    display:inline;
+#head {
+    background-image: linear-gradient(#f6f6f6 0%, #fafafa 50%, #fafafa 100%);
+    background-color:white;
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.29);
+}
+
+#connect a {
+    color:white;
+    text-shadow:none;
 }
 
 #number {
-    margin-top:-51px;
-    font-size:20px;
-    float:left;
+    margin-top:1.5em;
+}
+
+#fixedNav {
+    margin-top:1.5em;
 }
 
 #navBar {
@@ -82,28 +66,12 @@ p {
     margin-top:-50px;   
 }
 
-#navBar div {
-    width:80px;
-    height:27px;
-    background-color: green;
-    box-shadow: 0 0 20px #888888;
-    padding-top:5px;
-    border-radius:5px;
-    border:1px solid #888888;
-}
-
-#navBar a {
-    text-decoration:none;
-    color:white;
-}
-#licensenumber{display: inline;
-color: white;}
 form {align: center;
 width:300px;
 margin-top: 100px;
 	height:325px;
-	border: 1px solid black;
-	background-color: #00CCFF;}
+	background-color: none;
+	border: none;}
 input[type= submit]{  
 	width:220px;
     height: 50px;
@@ -112,27 +80,19 @@ input[type= submit]{
     box-shadow:0 0 10px #888888;
     border-radius:3px;
     text-align:center;
-    padding-top:5px;
+    padding-top:10px;
     border:1px solid #888888;
 	color:black;
    font-size:25px;}
 	
+fieldset legend {
+	margin-top: 30px;
+	padding-top:10px;
+	font-size: 30px;
+	color: #222222;
+	
+}
 
-#form input {
-	width:200px;
-	height:25px;
-	margin-top:0px;
-	background-color: white;
-	border:none;
-	color: black;
-	border-radius:5px;
-}
-#state {
-	margin-left:-10px;
-	height:25px;
-	width:50px;
-	display: inline;
-}
 
 
 #message{height: 100px;

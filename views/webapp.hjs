@@ -1,23 +1,84 @@
 <!doctype html>
-<html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>WheelTalks</title>
+
+<link rel="stylesheet" href="css/foundation.css">
 <link rel="stylesheet" type="text/css" href="css/webapp.css">
-<title>webapp</title>
+
+<script src="js/vendor/custom.modernizr.js"></script>
+<script src="js/vendor/zepto.js"></script>
+<script src="js/foundation/foundation.js"></script>
+<script src="js/foundation/foundation.forms.js"></script>
+
 </head>
 
 <body>
 <body>
-<div class='big_box' id='head'>
-    <div class='main_box' id='header'>
-        <h1 id="wheeltalks_header"><a href="#">WheelTalks</a></h1>
-        <h4 id = "number">(781) 559-4602 </h4>
-        <div id="navBar">
-            <div id='connect'><a id='connect_button' href="/signup">Connect</a></div>
-        </div>
+<!--HEADER, POSITION:FIXED, LARGE ONLY-->
+  <div class='fixed hide-for-small' id='head'>
+    <div class='row'>
+      <div class='large-3 columns' id='number'>
+        <h4>(781) 559-4602 </h4>
+      </div>
+      <div class='large-6 columns' id='header'>
+        <h1><a href="#">WheelTalks</a></h1>
+      </div>
+      <div class='large-3 columns' id='fixedNav'>  
+        <div id='connect' class='button right success'><a href="signup.html">Connect</a></div>
+      </div>
     </div>
-</div>
-<div id = "form">
+  </div>
+  
+  <!--HEADER, POSITION:RELATIVE, SMALL ONLY-->
+<!--  <div class='show-for-small' id='headSmall'>
+    <div class='row'>
+      <div class='small-3 columns small-centered' id='numberSmall'>
+        <h4>(781) 559-4602 </h4>
+      </div>
+      <div class='small-6 columns small-centered' id='headerSmall'>
+        <h1><a href="#">WheelTalks</a></h1>
+      </div>
+      <div class='small-3 columns small-centered' id='fixedNavSmall'>  
+        <div id='connectSmall' class='button small-centered success'><a href="signup.html">Connect</a></div>
+      </div>
+    </div>
+  </div>-->
+
+<!-- form code-->
+<div align =  "center"><form class="custom" method="post" action="/webSend" >
+  <fieldset>
+		<legend align =  "center">Messenger</legend>
+    
+    <div class="row collapse">
+    <div class="large-3 small-3 columns">
+    <label>State</label>
+      <select id="state" name="state">
+        <option value="--">--</option><option value="al">AL</option> <option value="ak">AK</option> <option value="az">AZ</option> <option value="ar">AR</option> <option value="ca">CA</option> <option value="co">CO</option> <option value="ct">CT</option> <option value="de">DE</option> <option value="fl">FL</option> <option value="ga">GA</option> <option value="hi">HI</option> <option value="id">ID</option> <option value="il">IL</option> <option value="in">IN</option> <option value="ia">IA</option> <option value="ks">KS</option> <option value="ky">KY</option> <option value="la">LA</option> <option value="me">ME</option> <option value="md">MD</option> <option value="ma">MA</option> <option value="mi">MI</option> <option value="mn">MN</option> <option value="ms">MS</option> <option value="mo">MO</option> <option value="mt">MT</option> <option value="ne">NE</option> <option value="nv">NV</option> <option value="nh">NH</option> <option value="nj">NJ</option> <option value="nm">NM</option> <option value="ny">NY</option> <option value="nc">NC</option> <option value="nd">ND</option> <option value="oh">OH</option> <option value="ok">OK</option> <option value="or">OR</option> <option value="pa">PA</option> <option value="ri">RI</option> <option value="sc">SC</option> <option value="sd">SD</option> <option value="tn">TN</option> <option value="tx">TX</option> <option value="ut">UT</option> <option value="vt">VT</option> <option value="va">VA</option> <option value="wa">WA</option> <option value="wv">WV</option> <option value="wi">WI</option> <option value="wy">WY</option>
+      </select>
+    </div>
+    <div class="large-9 small-9 columns">
+    <label>Plate Number</label>
+    <input type="text" id="licensenumber" name="licensenumber" placeholder="Plate Number" />
+  </div>
+  </div>
+    <div class="row">
+      <div class="large-12 small-12 columns">
+        <textarea id="textbody" name="textbody" placeholder="Type your message here" ></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 small-12 columns">
+        <input type="Submit" class="button success" value="Send">
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+<!-- <div id = "form">
 
 <div align =  "center"><form method="post" action="/webSend" id="web_message" onsubmit="return validateForm();">
 <h1> To: </h1>
@@ -25,8 +86,22 @@
 <div align = "center">  <input id="licensenumber" style="width: 150px;"  name="licensenumber" placeholder ="License Plate" type="text" required/></div>
 
 <div align = "center">  <input id="textbody" style="width: 150px; height: 100px"  name="textbody" placeholder ="Your Message" type="text" required/></div>
-<div align = "center"> <input type="submit" id="button" style = "height: 50px; background-color: green; margin-top: 10px;" value="Send" /></div>
+<div align = "center"> <input type="submit" class='button center success' value="Send" /></div>
 
-</form></div>
+</form></div> -->
+
+<script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  
+  <script src="js/foundation.min.js"></script>
+  <script src="js/vendor/zepto.js"></script>
+  <script src="js/foundation/foundation.js"></script>
+  <script src="js/foundation/foundation.forms.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
 </body>
 </html>

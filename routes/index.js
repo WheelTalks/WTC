@@ -281,9 +281,9 @@ switch(command){
 
 
 exports.webSend = function(request, response) {
-	var plate = request.body.licensenumber.trim().toUpperCase(),
-		state = request.body.state.trim().toUpperCase(),
-		mssg = request.body.textbody;
+	var plate = request.param('licensenumber').trim().toUpperCase(),
+		state = request.param('state').trim().toUpperCase(),
+		mssg = request.param('textbody');
 
 	var command =state + plate;
 	console.log(command);
@@ -337,7 +337,7 @@ exports.webSend = function(request, response) {
 		       phone: num,
 		       score: score,
 		       last: last });
-		       response.render('index2', { title: 'Home' });
+		       response.render('index', { title: 'Home' });
 	  			}
 	  		}
 		});
