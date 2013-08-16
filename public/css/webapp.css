@@ -93,6 +93,11 @@ fieldset legend {
 	
 }
 
+#appNav{
+    background-color: purple;
+    font-size: 30px;
+}
+
 
 
 #message{height: 100px;
