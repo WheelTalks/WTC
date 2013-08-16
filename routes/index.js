@@ -13,6 +13,7 @@ var connection = new(cradle.Connection)('https://liamflahive.cloudant.com', 443,
 
 var db = connection.database('wheel'); //user db
 var talks = connection.database('talks');//saved messages db
+var accounts = connection.database('accounts');//user accounts
 
 /* ------------------------------------------------ */
 /*           Serves up the index page               */
@@ -39,7 +40,7 @@ exports.index = function(req, res){
 /*                 Sign up process                  */
 /* ------------------------------------------------ */
 
-exports.sendSMS = function(request, response) {
+exports.sendSMS = function(request, response) { //SignUp
 
 var name = request.body.name
 	, email = request.body.email
@@ -54,6 +55,9 @@ var emailBody;
 license = license.toUpperCase();
 state = state.toUpperCase();
 license = state+license;
+var user = license;
+var pass = request.body.password;
+var userLogin = license;
 
 talks.view('talks/byPlate', {key: license}, function (err, res) {
     if (err) {
@@ -114,6 +118,11 @@ db.save(name, { //add the user
       
   });
 
+accounts.save("",{
+		plate: user,
+		pass: pass
+});
+
 
 client.sms.messages.create({ //welcome text
 to: phone,
@@ -133,7 +142,19 @@ else {
 console.log('Oops! There was an error.');
 }
 })
-response.render('index2', { title: 'Home' }); //serve up post-signup page
+
+AM.manualLogin(userLogin, request.param('password'), function(e, o){
+			if (!o){
+				res.send(e, 400);
+			}	else{
+			    request.session.user = o;
+					response.cookie('user', o.plate, { maxAge: 900000 });
+					response.cookie('pass', o.pass, { maxAge: 900000 });
+					console.log('login sucessful');
+				response.send(o, 200);
+				response.redirect('/webApp');
+			}
+		});
 };
 
 /* ------------------------------------------------ */
