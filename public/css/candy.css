@@ -78,7 +78,7 @@ title h1:hover, title h1:focus {
 }
 
 #picture {
-    background-image:url(img/use.jpg);
+    background-image:url(../img/use.jpg);
     box-shadow: 0 0 20px #888888;
     height:320px;
     width:180px;
