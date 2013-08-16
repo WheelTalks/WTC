@@ -1,40 +1,151 @@
-<!doctype html>
-<html>
+
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="css/signup.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-<script type='text/javascript' src='scripts/raspberry.js'></script>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Sign Up</title>
 
-<title>Home | WheelTalks</title>
+  
+  <link rel="stylesheet" href='css/foundation.css'>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel='stylesheet' href='css/candy.css'>
+
+
+  <script src="js/vendor/custom.modernizr.js"></script>
+
 </head>
-
 <body>
-<div id="header">
-<h1 id="title"><a href="index.html">WheelTalks</a></h1>
-<hr id="line" /></div>
-<div id="form">
-<h2 id="title2" align="center">See what people are sending you</h2>
-<div align="center"><form method="post" action="/new" id="signupForm" onsubmit="return validateForm();"><!--<label for="name">
-        <div align="center">Name:</div>
-    </label>-->
-<div><input id="licensenumber" name="licensenumber" placeholder="License Plate" style="width: 150px;" type="text" required="" /></div>
-<!--<label for="phonenumber">
-    <div align="center">Phone Number:</div>
-  </label>-->
-<div id="licenseplate"><select name="licenseplate" id="state" required=""> <option value="--">--</option> <option value="al">AL</option> <option value="ak">AK</option> <option value="az">AZ</option> <option value="ar">AR</option> <option value="ca">CA</option> <option value="co">CO</option> <option value="ct">CT</option> <option value="de">DE</option> <option value="fl">FL</option> <option value="ga">GA</option> <option value="hi">HI</option> <option value="id">ID</option> <option value="il">IL</option> <option value="in">IN</option> <option value="ia">IA</option> <option value="ks">KS</option> <option value="ky">KY</option> <option value="la">LA</option> <option value="me">ME</option> <option value="md">MD</option> <option value="ma">MA</option> <option value="mi">MI</option> <option value="mn">MN</option> <option value="ms">MS</option> <option value="mo">MO</option> <option value="mt">MT</option> <option value="ne">NE</option> <option value="nv">NV</option> <option value="nh">NH</option> <option value="nj">NJ</option> <option value="nm">NM</option> <option value="ny">NY</option> <option value="nc">NC</option> <option value="nd">ND</option> <option value="oh">OH</option> <option value="ok">OK</option> <option value="or">OR</option> <option value="pa">PA</option> <option value="ri">RI</option> <option value="sc">SC</option> <option value="sd">SD</option> <option value="tn">TN</option> <option value="tx">TX</option> <option value="ut">UT</option> <option value="vt">VT</option> <option value="va">VA</option> <option value="wa">WA</option> <option value="wv">WV</option> <option value="wi">WI</option> <option value="wy">WY</option> </select></div>
-<div align="center"><input placeholder="Phone number" name="phonenumber" id="phonenumber" type="text" />
-<div align="center"><input placeholder="Email" name="email" id="email" type="email" required="" /></div>
-<!--<label for="licensenumber">
-    <div align="center">License Plate Number:</div>
-  </label>-->
-<div align="center"><input id="name" name="name" placeholder="Name (optional)" type="text" /></div>
-<!--<label for="email">
-    <div align="center">Email Address:</div>
-  </label>-->
-<div id="button"><input type="submit" value="Submit" /></div>
-</div>
-</form></div>
-</div>
+
+  <!--HEADER, POSITION:FIXED, LARGE ONLY-->
+  <div class='fixed hide-for-small' id='head'>
+    <div class='row'>
+      <div class='large-3 columns' id='number'>
+        <h4>(781) 559-4602 </h4>
+      </div>
+      <div class='large-6 columns' id='signupTitle'>
+        <a href="index.html"><h1>WheelTalks</h1></a>
+      </div>
+      <div class='large-3 columns' id='fixedNav'>  
+        <div id='connect' class='button right success'><a href="signup.html">Connect</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!--HEADER, POSITION:RELATIVE, SMALL ONLY-->
+  <div class='show-for-small' id='headSmall'>
+    <div class='row'>
+      <div class='small-3 columns small-centered' id='numberSmall'>
+        <h4>(781) 559-4602 </h4>
+      </div>
+      <div class='small-6 columns small-centered WTtitle' id='headerSmall'>
+        <h1><a href="#">WheelTalks</a></h1>
+      </div>
+      <div class='small-3 columns small-centered' id='fixedNavSmall'>  
+        <div id='connectSmall' class='button small-centered success'><a href="signup.html">Connect</a></div>
+      </div>
+    </div>
+  </div>
+
+ 
+   <div class='row'>
+    <div class='large-6 columns small-centered' id='signUpForm'>
+      <h2 id="title2" align="center">See what people are sending you</h2>
+        <div class='large-7 columns small-centered'>
+            <form method="post" action="report.php" id="signupForm" >
+              <div class='row'>
+                <div class='large-4 columns' id="state">
+                    <select name="licenseplate" id="state" required=""><option value="--">--</option> <option value="al">AL</option> <option value="ak">AK</option> <option value="az">AZ</option> <option value="ar">AR</option> <option value="ca">CA</option> <option value="co">CO</option> <option value="ct">CT</option> <option value="de">DE</option> <option value="fl">FL</option> <option value="ga">GA</option> <option value="hi">HI</option> <option value="id">ID</option> <option value="il">IL</option> <option value="in">IN</option> <option value="ia">IA</option> <option value="ks">KS</option> <option value="ky">KY</option> <option value="la">LA</option> <option value="me">ME</option> <option value="md">MD</option> <option value="ma">MA</option> <option value="mi">MI</option> <option value="mn">MN</option> <option value="ms">MS</option> <option value="mo">MO</option> <option value="mt">MT</option> <option value="ne">NE</option> <option value="nv">NV</option> <option value="nh">NH</option> <option value="nj">NJ</option> <option value="nm">NM</option> <option value="ny">NY</option> <option value="nc">NC</option> <option value="nd">ND</option> <option value="oh">OH</option> <option value="ok">OK</option> <option value="or">OR</option> <option value="pa">PA</option> <option value="ri">RI</option> <option value="sc">SC</option> <option value="sd">SD</option> <option value="tn">TN</option> <option value="tx">TX</option> <option value="ut">UT</option> <option value="vt">VT</option> <option value="va">VA</option> <option value="wa">WA</option> <option value="wv">WV</option> <option value="wi">WI</option> <option value="wy">WY</option> </select>
+                </div>
+                <div class='large-8 columns' id='licenseplate'>  
+                    <input id="licensenumber" name="licensenumber" placeholder="License Plate" style="width: 150px;" type="text" required="" />
+                </div>
+                </div>
+            <div align="center">
+                <input placeholder="Phone number" name="phonenumber" id="phonenumber" type="text" />
+            </div>
+            <div align="center">
+                <input placeholder="Email" name="email" id="email" type="email" required="" />
+            </div>
+            <div align="center">
+                <input id="name" name="name" placeholder="Name (optional)" type="text" />
+            </div>
+            <div align = "center">
+            <input id = "password" name = "password" placeholder = "Password"type = "password"/>
+            </div>
+            <div align = "center">
+            <h5>How would you like to receive Wheeltalks?</h5>
+            </div>
+            
+
+   
+
+    </div>
+    <div align = "center">
+                    <div class='large-4 columns' id="text">
+                <label for="text"><input type="checkbox" id="text" CHECKED ><span class="custom checkbox checked"></span> text</label>
+                                    </div>
+                <div class='large-4 columns' id='email'>  
+                     <label for="email"><input type="checkbox" id="email" ><span class="custom checkbox"></span> email</label>
+                </div>
+                 <div class='large-4 columns' id='Signin'>  
+                     <label for="Sign in"><input type="checkbox" id="sign" ><span class="custom checkbox"></span> Sign in</label>
+                </div>
+             <div class='large-12 columns'>
+            <div id="button">
+                <input class='button' id='submitButton' type="submit" value="Submit" />
+            </div>
+             </div>
+    </div>
+        </form>
+      </div>
+    </div>
+   </div>
+  </div>
+
+  <!--FOOTER-->
+  <div class='wrapper' id='signupFooter'>
+    <div class='subWrapper'>
+      <div class='row'>
+        <div class='large-10 columns right' id='footer'>
+          <ul>
+              <li>
+                <a href='#'>Help & FAQs</a>
+              </li>
+              <li>
+               <a href="#">Press & Media</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#">Connect</a></li>
+          </ul>
+          <p>© 2013 Wheeltalks LLC. All rights reserved. Patents pending.</p>  
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  
+  <script src="js/foundation.min.js"></script>
+  <script type="text/javascript" src='js/raspberry.js'></script>
+  <script type='text/javascript' src='js/form_validation.js'></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
 </body>
 </html>
