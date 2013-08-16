@@ -58,7 +58,9 @@ app.get('/signup', function(req, res){
 });
 
 app.get('/webapp', function(req, res){
-	console.log(req.cookies.user);
+	if (req.cookies.user == undefined || req.cookies.pass == undefined){
+			res.redirect('/loginPage');
+		}
   res.render('webapp', {
     title: 'Web App'
   });

@@ -19,8 +19,14 @@ var accounts = connection.database('accounts');//user accounts
 /*           Serves up the index page               */
 /* ------------------------------------------------ */
 exports.index = function(req, res){
-	console.log(req.cookies.user);
-  if (req.cookies.user == undefined || req.cookies.pass == undefined){
+	if(req.param('logout') == 'true'){
+			console.log('clearing cooks');
+			res.clearCookie('user');
+			res.clearCookie('pass');
+			req.session.destroy();
+			res.render('index', { title: 'Home' });
+		}
+	else if (req.cookies.user == undefined || req.cookies.pass == undefined){
 			res.render('index', { title: 'Home' });
 		}	else{
 	// attempt automatic login //
