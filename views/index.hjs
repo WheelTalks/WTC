@@ -29,7 +29,7 @@
         <h1>WheelTalks</h1>
       </div>
       <div class='large-3 columns' id='fixedNav'>  
-        <div id='connect' class='button right success'><a href="signup.html">Connect</a></div>
+        <div id='connect' class='button right success'><a href="/loginPage">Connect</a></div>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@
         <h1><a href="#">WheelTalks</a></h1>
       </div>
       <div class='small-3 columns small-centered' id='fixedNavSmall'>  
-        <div id='connectSmall' class='button small-centered success'><a href="signup.html">Connect</a></div>
+        <div id='connectSmall' class='button small-centered success'><a href="loginPage">Connect</a></div>
       </div>
     </div>
   </div>
@@ -62,7 +62,7 @@
       <div class='large-6 columns'>
         <h3 id='slogan'>Simple, Fun, and Free. See what people have been sending to your car!</h3>
         <div class='button large' id='signup_button'>
-            <a href='signup.html'><div>Sign up</div></a>
+            <a href='/signup'><div>Sign up</div></a>
         </div>
       </div>
       <div class='large-12 columns'>
@@ -90,7 +90,7 @@
       <div class='small-6 small-offset-2 columns'>
         <h3 id='sloganSmall'>Simple, Fun, and Free. See what people have been sending to your car!</h3>
         <div class='button large' id='signup_buttonSmall'>
-            <a href='signup.html'><div>Sign up</div></a>
+            <a href='/signup'><div>Sign up</div></a>
         </div>
       </div>
       <div class='small-12 columns'>
