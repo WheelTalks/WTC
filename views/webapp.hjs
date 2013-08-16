@@ -28,7 +28,7 @@
         <h1><a href="#">WheelTalks</a></h1>
       </div>
       <div class='large-3 columns' id='fixedNav'>  
-        <div id='connect' class='button right success'><a href="signup.html">Connect</a></div>
+        <div id='connect' class='button right success'><a href="/signup">Connect</a></div>
       </div>
     </div>
   </div>

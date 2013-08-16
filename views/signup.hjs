@@ -26,10 +26,10 @@
         <h4>(781) 559-4602 </h4>
       </div>
       <div class='large-6 columns' id='signupTitle'>
-        <a href="index.html"><h1>WheelTalks</h1></a>
+        <a href="/"><h1>WheelTalks</h1></a>
       </div>
       <div class='large-3 columns' id='fixedNav'>  
-        <div id='connect' class='button right success'><a href="signup.html">Connect</a></div>
+        <div id='connect' class='button right success'><a href="/loginPage">Connect</a></div>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@
         <h1><a href="#">WheelTalks</a></h1>
       </div>
       <div class='small-3 columns small-centered' id='fixedNavSmall'>  
-        <div id='connectSmall' class='button small-centered success'><a href="signup.html">Connect</a></div>
+        <div id='connectSmall' class='button small-centered success'><a href="/loginPage">Connect</a></div>
       </div>
     </div>
   </div>
