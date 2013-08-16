@@ -50,7 +50,6 @@ exports.manualLogin = function(user, pass, callback)
     }
     else{
     	var doc = o[0].value;
-    	var pass = doc.pass;
     	validatePassword(pass, doc.pass, function(err, res) {
 				if (res){
 					callback(null, doc);
@@ -60,6 +59,24 @@ exports.manualLogin = function(user, pass, callback)
 			});
     	}
     });
+
+exports.autoLogin = function(user, pass, callback)
+{
+	accounts.view('accounts/byPlate', {key: user}, function (e, o) {
+    if (o.length < 1) {
+      callback(null);
+    }
+    else{
+    	var doc = o[0].value;
+				if (pass==doc.pass){
+					console.log('Should be redirecting');
+					callback(null, doc);
+				}	else{
+					callback(null);
+				}
+			}
+		});
+};
       
 var validatePassword = function(plainPass, hashedPass, callback)
 {

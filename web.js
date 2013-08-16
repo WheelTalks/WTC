@@ -17,6 +17,7 @@ server.listen(port);
 app.configure( function() {
 	app.set('views', __dirname + '/views');
     app.set('view engine', 'hjs');
+    app.locals.pretty = true;
 	app.use(express.favicon());
     app.use(express.logger('dev'));
 	app.use( express.bodyParser() );
@@ -57,8 +58,15 @@ app.get('/signup', function(req, res){
 });
 
 app.get('/webapp', function(req, res){
+	console.log(req.cookies.user);
   res.render('webapp', {
     title: 'Web App'
+  });
+});
+
+app.get('/loginPage', function(req, res){
+  res.render('login', {
+    title: 'Log Up'
   });
 });
 // your homework -- create a route that serves up a different page. So, I want to be able to go to "www.wheeltalk.com/about" to learn more about the team. 
