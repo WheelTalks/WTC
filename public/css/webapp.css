@@ -68,7 +68,6 @@ h2, h3, h4, h5 {
 
 form {align: center;
 width:300px;
-margin-top: 100px;
 	height:325px;
 	background-color: none;
 	border: none;}
@@ -93,10 +92,7 @@ fieldset legend {
 	
 }
 
-#appNav{
-    background-color: purple;
-    font-size: 30px;
-}
+
 
 
 
