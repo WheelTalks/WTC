@@ -35,19 +35,17 @@
   </div>
 
   <!--HEADER, POSITION:RELATIVE, SMALL ONLY-->
-  <div class='show-for-small'>
     <nav class="top-bar" id='appNav'>
   <ul class="title-area">
         <li class="name">
-      <h1><a href="#">WheelTalks </a></h1>
+      <h1><a href="#">WheelTalks</a></h1>
   </ul>
 </nav>
-  </div>
 
 <div class='row'>
 <div align =  "center"><form method="post" action="/login">
-  <fieldset>
-    <legend>Sign in</legend>
+    <fieldset>
+    <legend align =  "center">Please Log In</legend>
 
     <div class="row">
       <div class="large-12 columns">
