@@ -71,6 +71,12 @@ app.get('/loginPage', function(req, res){
     title: 'Log Up'
   });
 });
+
+app.get('/fakeIndex', function(req, res){
+  res.render('about', {
+    title: 'About Us'
+  });
+});
 // your homework -- create a route that serves up a different page. So, I want to be able to go to "www.wheeltalk.com/about" to learn more about the team. 
 
 app.get('/', routes.index);
