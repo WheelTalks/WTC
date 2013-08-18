@@ -139,7 +139,7 @@ title h1:hover, title h1:focus {
 }
 
 /* * * * * * * * * * */
-/*     SECTION TWO   */
+/*     FEATURES      */
 /* * * * * * * * * * */
 #wrapperOne {
     box-shadow:0 -1px 2px rgba(0, 0, 0, 0.29);
@@ -173,6 +173,13 @@ title h1:hover, title h1:focus {
     width:7.5em;
 }
 
+#gems {
+    text-align: center;
+}
+
+.gemIcon {
+    font-size: 6em;
+}
 
 /* * * * * * * * * * */
 /*     FAQs          */

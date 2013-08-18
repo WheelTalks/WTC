@@ -12,7 +12,11 @@
   <link rel="stylesheet" href="css/foundation.css">
   <link rel='stylesheet' href='css/candy.css'>
   <link rel='stylesheet' href='css/cameleon.css'>
-  
+  <link rel='stylesheet' href='fonts/general/stylesheets/general_foundicons_ie7.css'>
+  <link rel='stylesheet' href='fonts/general/stylesheets/general_foundicons.css'>
+  <!-- <link rel='stylesheet' href='fonts/accessibility/stylesheets/acccessibility_foundicons_ie7.css'>
+  <link rel='stylesheet' href='fonts/accessibility/stylesheets/accessibility_foundicons.css'> -->
+
   <script src="js/vendor/custom.modernizr.js"></script>
 
 </head>
@@ -166,16 +170,40 @@
       <div class='row'>
         <div class='large-10 columns right'>
           <h3> Send gems to cars</h3>
-          <h5> A gem is a quick note that is randomly generated inisde of our pool of gems associated with particular emotions. You can send an emotion to a license plate and WheelTalks will randomly send gems to that persons account. </h5>
-          <ul id = "gems">
-            <li>Love</li>
-            <li>Fun</li>
-            <li>Funny</li>
-            <li>Cute</li>
-            <li>Sad</li>
-            <li>Angry</li>
-          </ul>
-          <h5>submit more gems at gems@WheelTalks.com</h5>
+          <p> A gem is a quick note that is randomly generated inisde of our pool of gems associated with particular emotions. You can send an emotion to a license plate and WheelTalks will randomly send gems to that persons account. </p>
+          <div class="large-12 columns" id = "gems">
+            <div class='large-6 small-6 columns'>
+              <i class='foundicon-heart gemIcon'></i>
+              <br>
+              <p>Love</p>
+            </div>
+            <div class='large-6 small-6 columns'>
+              <i class='foundicon-star gemIcon'></i>
+              <br>
+              <p>Fun</p>
+            </div>
+            <div class='large-6 small-6 columns'>
+              <i class='foundicon-smiley gemIcon'></i>
+              <br>
+              <p>Funny</p>
+            </div>
+            <div class='large-6 small-6 columns'>
+              <i class='foundicon-people gemIcon'></i>
+              <br>
+              <p>Cute</p>
+            </div>
+            <div class='large-6 small-6 columns'>
+              <i class='foundicon-remove gemIcon'></i>
+              <br>
+              <p>Sad</p>
+            </div>
+            <div class='large-6 small-6 columns'>
+              <i class='foundicon-error gemIcon'></i>
+              <br>
+              <p>Angry</p>
+            </div>
+          </div>
+          <h5>submit more gems at support@wheeltalks.com</h5>
         </div>
       </div>
     </div>
