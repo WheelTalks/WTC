@@ -181,13 +181,8 @@ $(document).ready(function () {
 
 //Display answer to FAQs on click
 $(document).ready(function() {
-    var child=$(this).children('p');
-    $('.question').click(function () {
-        if ($('.answer').css('display')='none') {
-            $('.answer').slideDown("fast");
-        } else{
-            $('.answer').slideUp("fast");
-        };
+    $('.question').click( function () {
+        $('.answer').slideToggle("fast");
     });
 });
 
