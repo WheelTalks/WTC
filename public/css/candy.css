@@ -88,6 +88,10 @@ title h1:hover, title h1:focus {
     width:180px;
 }
 
+#sloganBox {
+    margin-left:25%;
+}
+
 #slogan {
     color: #636363;
     font-weight:normal;
