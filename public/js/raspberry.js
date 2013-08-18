@@ -174,3 +174,20 @@ $(document).ready(function () {
         }
     });
 });
+
+
+//Display name on pages.
+//ADD CODE FOR THIS
+
+//Display answer to FAQs on click
+$(document).ready(function() {
+    var child=$(this).children('p');
+    $('.question').click(function () {
+        if ($('.answer').css('display')='none') {
+            $('.answer').slideDown("fast");
+        } else{
+            $('.answer').slideUp("fast");
+        };
+    });
+});
+

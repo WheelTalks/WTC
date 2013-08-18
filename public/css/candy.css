@@ -32,7 +32,9 @@ h2, h3, h4, h5 {
     min-width:32em;
 }
 
-/*TOP BAR */
+/* * * * * * * * * * */
+/*     TOP BAR       */
+/* * * * * * * * * * */
 #title {
     text-align:center;
     color: #990099;
@@ -70,7 +72,9 @@ title h1:hover, title h1:focus {
     margin-top:1.5em;
 }
 
-/*SECTION ONE*/
+/* * * * * * * * * * */
+/*     SECTION ONE   */
+/* * * * * * * * * * */
 #one {
     z-index:-100;
     margin-top:6em;
@@ -130,7 +134,9 @@ title h1:hover, title h1:focus {
     font-size:2em;
 }
 
-/*SECTION TWO*/
+/* * * * * * * * * * */
+/*     SECTION TWO   */
+/* * * * * * * * * * */
 #wrapperOne {
     box-shadow:0 -1px 2px rgba(0, 0, 0, 0.29);
     min-width:32em;
@@ -163,12 +169,54 @@ title h1:hover, title h1:focus {
     width:7.5em;
 }
 
-/*FOOTER*/
+
+/* * * * * * * * * * */
+/*     FAQs          */
+/* * * * * * * * * * */
+
+#faqs {
+
+}
+
+#faqs ul {
+    list-style: none;
+}
+
+.question {
+    color:purple;
+    cursor:pointer;
+}
+
+.answer {
+    margin-left:1em;
+    display:none;
+}
+
+
+/* * * * * * * * * * */
+/*     FOOTER        */
+/* * * * * * * * * * */
+
+.footer {
+    background-color:black;
+    text-shadow:none;
+}
+
+.footer ul {
+    list-style: none;
+}
+
 #footer {
     padding-top:1em;
 }
 
-/*SIGNUP PAGE*/
+
+/* * * * * * * * * * */
+/*********************/
+/*     SIGNUP PAGE   */
+/*********************/
+/* * * * * * * * * * */
+
 #signupTitle {
     text-align:center;
     color: #990099;
@@ -185,7 +233,6 @@ title h1:hover, title h1:focus {
 
 #signUpForm {
     margin-top:10em;
-    margin-bottom:40em;
 }
 
 #form input {
@@ -209,8 +256,7 @@ title h1:hover, title h1:focus {
 
 #signupFooter {
     position:relative;
-    margin-top:40em;
-    background-color:white;
+    margin-top: 10em;
     z-index:101;
 }
 
