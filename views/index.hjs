@@ -203,7 +203,7 @@
               <p>Angry</p>
             </div>
           </div>
-          <h5>submit more gems at support@wheeltalks.com</h5>
+          <p>submit more gems at support@wheeltalks.com</p>
         </div>
       </div>
     </div>
@@ -218,7 +218,7 @@
   </div>
     
 <!--FAQs-->
-  <div class='wrapper'>
+  <div class='wrapperGreen'>
     <div class='subWrapper'>
       <div class='row'>
         <div class='large-10 columns right' id='faqs'>
