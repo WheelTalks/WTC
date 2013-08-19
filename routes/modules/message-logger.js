@@ -41,6 +41,7 @@ messages.view('messages/byPhone', {key: numTo}, function (e, o) {
       console.log('user-not-found');
     }
     else{
+    	console.log('user-found');
     	var doc = o[0].value;
     	var plate = doc.plate;
     	var phone = doc.phone;
