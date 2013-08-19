@@ -48,7 +48,7 @@ h2, h3, h4, h5 {
 /* * * * * * * * * * */
 /*     TOP BAR       */
 /* * * * * * * * * * */
-#title {
+/*#title {
     text-align:center;
     color: #990099;
     text-decoration: none;
@@ -67,7 +67,7 @@ title h1:hover, title h1:focus {
 }
 
 #head {
-    /*background-image: linear-gradient(#f6f6f6 0%, #fafafa 50%, #fafafa 100%);*/
+    background-image: linear-gradient(#f6f6f6 0%, #fafafa 50%, #fafafa 100%);
     background-color:black;
     box-shadow:0 1px 2px rgba(0, 0, 0, 0.29);
     color:white;
@@ -84,7 +84,7 @@ title h1:hover, title h1:focus {
 
 #fixedNav {
     margin-top:1.5em;
-}
+}*/
 
 #navWrapper {
     height:3.5em;
@@ -117,6 +117,14 @@ title h1:hover, title h1:focus {
 
 .top-bar-section ul li.active > a {
     background-color:inherit;
+}
+
+.top-bar.expanded .title-area {
+    background-color:inherit !important;
+}
+
+.top-bar {
+    /*position:fixed;*/
 }
 
 /* * * * * * * * * * */
