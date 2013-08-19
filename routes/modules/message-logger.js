@@ -64,3 +64,40 @@ messages.view('messages/byPhone', {key: numTo}, function (e, o) {
 			}
 		});
     };
+exports.logSend = function(senderPlate, plateTo, body){
+	messages.view('messages/byPlate', {key: senderPlate}, function (e, o) {
+		if (e) {
+	      console.log('Connection failed to be established')
+	      return;
+	    }
+	    if (o.length < 1) {
+	      console.log('user-not-found');
+	    }
+	    else{
+	    	var doc = o[0].value;
+	    	var plate = doc.plate;
+	    	var phone = doc.phone;
+	    	var senderLog = doc.senderLog;
+	    	var recievedMssgLog = doc.recievedMssgLog;
+	    	var sentToLog = doc.sentToLog;
+	    	var sentMssgLog = doc.sentMssgLog;
+	    	var index = sentMssgLog.length;
+	    	sentToLog[index] = plateTo;
+	    	sentMssgLog[index] = body;
+
+	    	messages.save(doc._id, {
+	    		plate: plate,
+	    		phone: phone,
+	    		senderLog: senderLog,
+	    		recievedMssgLog: recievedMssgLog,
+	    		sentToLog: sentToLog,
+	    		sentMssgLog: sentMssgLog
+	    	});
+	    	console.log('sent-message-saved');
+				}
+			});
+	    };
+
+
+
+

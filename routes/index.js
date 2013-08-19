@@ -165,19 +165,19 @@ console.log('Oops! There was an error.');
 }
 })
 
-AM.manualLogin(userLogin, request.param('password'), function(e, o){
-			if (!o){
-				response.send(e, 400);
-			}	else{
-			    request.session.user = o;
-					response.cookie('user', o.plate, { maxAge: 900000 });
-					response.cookie('pass', o.pass, { maxAge: 900000 });
-					console.log('login sucessful');
-				response.send(o, 200);
-				response.redirect('/webApp');
-			}
-		});
-};
+response.redirect('/loginPage');
+// AM.manualLogin(userLogin, request.param('password'), function(e, o){
+// 			if (!o){
+// 				response.send(e, 400);
+// 			}	else{
+// 			    request.session.user = o;
+// 					response.cookie('user', o.plate, { maxAge: 900000 });
+// 					response.cookie('pass', o.pass, { maxAge: 900000 });
+// 					console.log('login sucessful');
+// 				response.send(o, 200);
+// 				response.redirect('/webApp');
+			
+		};
 
 /* ------------------------------------------------ */
 /*        Texting Service Function                  */
@@ -337,20 +337,22 @@ exports.webSend = function(request, response) {
 	var plate = request.param('licensenumber').trim().toUpperCase(),
 		state = request.param('state').trim().toUpperCase(),
 		mssg = request.param('textbody');
-
+		console.log('in websend');
 	var command =state + plate;
 		db.view('wheel/byPlate', {key: command}, function (err, res) {
+			console.log('attempting lookup');
 	    if (err) {
 	      console.log('Connection failed to be established')
 	      return;
 	    }
 	    else{
-	      if (res.length != 1) { //license plate does not exist
+	      if (res.length < 1) {
+	        console.log('failed to find plate') //license plate does not exist
 	        talks.save("", {
 	          plate: command,
 	          message: mssg,
 	        });
-	      
+	      response.redirect('/');
 	      }  
 	              
 	      else{
@@ -362,6 +364,7 @@ exports.webSend = function(request, response) {
 		      var last = doc.last;
 
 		    ML.sendMessage(num, request.cookies.user, mssg);
+		    ML.logSend(request.cookies.user, plate, mssg);
 
 
 		       db.save(doc._id, { //add the new sender
