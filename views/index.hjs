@@ -70,7 +70,8 @@
       </section>
     </nav>
   </div>
-  
+
+
 
 
 <!--SECTION 1, DISPLAY:FIXED, DISPLAYS MAIN INFORMATION, LARGE ONLY-->
@@ -84,7 +85,7 @@
       </div>
       <div class='large-6 columns'>
         <h3 id='slogan'>Simple, Fun, and Free. See what people have been sending to your car!</h3>
-        <a href='/signup'><div class='button large' id='signup_button'>
+        <a href='/signup'><div class='button large success' id='signup_button'>
             <div>Sign up</div>
         </div></a>
       </div>
@@ -277,7 +278,7 @@
   <div class='wrapper footer'>
     <div class='subWrapper'>
       <div class='row'>
-        <div class='large-11 columns small-centered' id='footer'>
+        <div class='large-12 columns' id='footer'>
           <ul>
               <li>
                 <a href='#'>Help & FAQs</a>
@@ -294,7 +295,7 @@
               <li>
                 <a href="#">Connect</a></li>
           </ul>
-          <p>© 2013 WheelTalks LLC. All rights reserved. Patents pending.</p>  
+          <p class='copyright'>© 2013 WheelTalks LLC. All rights reserved. Patents pending.</p>  
         </div>
       </div>
     </div>
@@ -308,6 +309,7 @@
   
   <script src="js/foundation.min.js"></script>
   <script src="js/foundation/foundation.topbar.js"></script>
+    <script src="js/foundation/foundation.topbar.js"></script>
   <script type="text/javascript" src='js/raspberry.js'></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 

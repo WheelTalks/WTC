@@ -262,17 +262,32 @@ title h1:hover, title h1:focus {
 /* * * * * * * * * * */
 
 .footer {
-    /background-color:#f0f0f0;
-    background-color:#fbe5ff;
+    background-color:#323232;
     text-shadow:none;
+    color: white;
+    text-align:center;
 }
 
 .footer ul {
     list-style: none;
+    display:inline;
+}
+
+.footer ul li {
+    display:inline;
+    margin:1em;
+    margin-left:-0.05em;
+    margin-bottom:3em;
+}
+.footer ul a {
+    color: yellow;
 }
 
 #footer {
     padding-top:1em;
+}
+.copyright {
+    margin-top:2em;
 }
 
 
