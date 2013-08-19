@@ -19,8 +19,32 @@
 </head>
 <body>
 
+  <!--HEADER FOR BOTH LARGE AND SMALL SCREENS-->
+ <div class='fixed contain-to-grid' id='navWrapper'>
+    <nav class="top-bar" id='appNav'>
+      <ul class="title-area">
+        <li class="name">
+          <a id='navName' href="/">WheelTalks</a>
+        </li>
+        <li class="toggle-topbar menu-icon">
+          <a href="#"><span></span></a>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right" id='navRight'>
+          <li class="divider show-for-small" >
+          </li>
+          <li class='active'>
+            <a href='/loginPage'>Log In</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+
+
   <!--HEADER, POSITION:FIXED, LARGE ONLY-->
-  <div class='fixed hide-for-small' id='head'>
+  <!--<div class='fixed hide-for-small' id='head'>
     <div class='row'>
       <div class='large-3 columns' id='number'>
         <h4>(781) 559-4602 </h4>
@@ -32,17 +56,17 @@
         <div id='connect' class='button right success'><a href="/signup">Connect</a></div>
       </div>
     </div>
-  </div>
+  </div>-->
 
   <!--HEADER, POSITION:RELATIVE, SMALL ONLY-->
-    <nav class="top-bar" id='appNav'>
+ <!--   <nav class="top-bar" id='appNav'>
   <ul class="title-area">
         <li class="name">
       <h1><a href="#">WheelTalks</a></h1>
   </ul>
-</nav>
+</nav>-->
 
-<div class='row'>
+<div class='row' id='loginForm'>
 <div align =  "center"><form method="post" action="/login">
     <fieldset>
     <legend align =  "center">Please Log In</legend>

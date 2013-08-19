@@ -14,6 +14,7 @@
   <link rel='stylesheet' href='css/cameleon.css'>
   <link rel='stylesheet' href='fonts/general/stylesheets/general_foundicons_ie7.css'>
   <link rel='stylesheet' href='fonts/general/stylesheets/general_foundicons.css'>
+
   <!-- <link rel='stylesheet' href='fonts/accessibility/stylesheets/acccessibility_foundicons_ie7.css'>
   <link rel='stylesheet' href='fonts/accessibility/stylesheets/accessibility_foundicons.css'> -->
 
@@ -24,7 +25,7 @@
 <body>
        
 <!--HEADER, POSITION:FIXED, LARGE ONLY-->
-  <div class='fixed hide-for-small' id='head'>
+  <!--<div class='fixed hide-for-small' id='head'>
     <div class='row'>
       <div class='large-3 columns' id='number'>
         <h4>(781) 559-4602 </h4>
@@ -36,22 +37,40 @@
         <div id='connect' class='button right success'><a href="/loginPage">Connect</a></div>
       </div>
     </div>
-  </div>
+  </div>-->
 
 <!--HEADER, POSITION:RELATIVE, SMALL ONLY-->
-  <div class='show-for-small' id='headSmall'>
-    <div class='row'>
-      <div class='small-3 columns small-centered' id='numberSmall'>
-        <h4>(781) 559-4602 </h4>
-      </div>
-      <div class='small-6 columns small-centered' id='headerSmall'>
-        <h1><a href="#">WheelTalks</a></h1>
-      </div>
-      <div class='small-3 columns small-centered' id='fixedNavSmall'>  
-        <div id='connectSmall' class='button small-centered success'><a href="loginPage">Connect</a></div>
-      </div>
-    </div>
+  <div class='fixed contain-to-grid' id='navWrapper'>
+    <nav class="top-bar" id='appNav'>
+      <ul class="title-area">
+        <li class="name">
+          <a id='navName' href="#">WheelTalks</a>
+        </li>
+        <li class="toggle-topbar menu-icon">
+          <a href="#"><span></span></a>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right" id='navRight'>
+          <li class="divider show-for-small" >
+          </li>
+          <li class="active" id='aboutLink'>
+            <a>About</a>
+          </li>
+          <li class='active' id='featuresLink'>
+            <a>Features</a>
+          </li>
+          <li class='active' id='faqsLink'>
+            <a>FAQs</a>
+          </li>
+          <li class='active'>
+            <a href='/loginPage'>Log In</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
   </div>
+  
 
 
 <!--SECTION 1, DISPLAY:FIXED, DISPLAYS MAIN INFORMATION, LARGE ONLY-->
@@ -65,18 +84,18 @@
       </div>
       <div class='large-6 columns'>
         <h3 id='slogan'>Simple, Fun, and Free. See what people have been sending to your car!</h3>
-        <div class='button large' id='signup_button'>
-            <a href='/signup'><div>Sign up</div></a>
-        </div>
+        <a href='/signup'><div class='button large' id='signup_button'>
+            <div>Sign up</div>
+        </div></a>
       </div>
       <div class='large-12 columns'>
-        <div id='menuButtons'>
+        <!--<div id='menuButtons'>
             <div id='aboutLink' class='menuButton'><p>ABOUT</p></div>
             <div id='featuresLink' class='menuButton'><p>FEATURES</p></div>
             <div id='learnMoreLink' class='menuButton'><p>LEARN MORE</p></div>
             <div id='faqsLink' class='menuButton'><p>FAQs</p></div>
             <div id='contactLink' class='menuButton'><p>CONTACT</p></div>
-        </div>
+        </div>-->
       </div>
     </div>   
   </div>
@@ -110,9 +129,9 @@
     
     
 <!--ABOUT-->
-  <div class='wrapperOne-large wrapperOne-small' id='wrapperOne'>
+  <div class='wrapperOne-large wrapperOne-small wrapper' id='wrapperOne'>
       <div class='row' id='two'>
-        <div class='large-2 columns'>
+        <!--<div class='large-2 columns'>
           <div class='menuBar hide-for-small'>                
             <div id='homeBar' class='menuButton'><p>HOME</p></div>
             <div id='aboutBar' class='menuButton'><p>ABOUT</p></div>
@@ -120,8 +139,8 @@
             <div id='faqsBar' class='menuButton'><p>FAQs</p></div>
             <div id='contactBar' class='menuButton'><p>CONTACT</p></div>
           </div>
-        </div>
-        <div class='large-10 columns' id='sectionTwo'>
+        </div>-->
+        <div class='large-11 columns small-centered' id='sectionTwo'>
           <h2>About WheelTalks</h2>
           <h3>Send a message on any phone</h3>
           <p>All you do is send a message to the WheelTalks phone number. Include a license plate and a message and that message will be there waiting for that driver.</p>
@@ -159,7 +178,7 @@
   <div class='wrapper' id='wrapperTwo'>
     <div class='subWrapper'>
       <div class='row'>
-        <div class='large-10 columns right' id='features'>
+        <div class='large-11 columns small-centered' id='features'>
           <h2>Features</h2>
           <h3>See what people have been saying</h3>
           <p>Click &quot;get connected&quot; and receive an email of all the messages that have been sent to your license plate. Make sure you're driving well, your car is safe and everyone on the road is wishing you well!<p>
@@ -168,7 +187,7 @@
     </div>
     <div class='subWrapper'>
       <div class='row'>
-        <div class='large-10 columns right'>
+        <div class='large-11 columns small-centered'>
           <h3> Send gems to cars</h3>
           <p> A gem is a quick note that is randomly generated inisde of our pool of gems associated with particular emotions. You can send an emotion to a license plate and WheelTalks will randomly send gems to that persons account. </p>
           <div class="large-12 columns" id = "gems">
@@ -209,7 +228,7 @@
     </div>
     <div class='subWrapper'>
       <div class='row'>
-        <div class='large-10 columns right'>
+        <div class='large-11 columns small-centered'>
           <h3>Scoring</h3>
           <p>Information regarding our scoring system will go here.</p>
         </div>
@@ -218,10 +237,10 @@
   </div>
     
 <!--FAQs-->
-  <div class='wrapperGreen'>
+  <div class='wrapper'>
     <div class='subWrapper'>
       <div class='row'>
-        <div class='large-10 columns right' id='faqs'>
+        <div class='large-11 columns small-centered' id='faqs'>
           <h2>Frequently Asked Questions</h2>
           <div class='row'>
             <div class='large-6 columns' id='faqsLeft'>
@@ -258,7 +277,7 @@
   <div class='wrapper footer'>
     <div class='subWrapper'>
       <div class='row'>
-        <div class='large-10 columns right' id='footer'>
+        <div class='large-11 columns small-centered' id='footer'>
           <ul>
               <li>
                 <a href='#'>Help & FAQs</a>
@@ -288,6 +307,7 @@
   </script>
   
   <script src="js/foundation.min.js"></script>
+  <script src="js/foundation/foundation.topbar.js"></script>
   <script type="text/javascript" src='js/raspberry.js'></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 

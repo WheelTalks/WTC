@@ -19,8 +19,31 @@
 </head>
 <body>
 
+  <!--HEADER FOR BOTH LARGE AND SMALL-->
+  <div class='fixed contain-to-grid' id='navWrapper'>
+    <nav class="top-bar" id='appNav'>
+      <ul class="title-area">
+        <li class="name">
+          <a id='navName' href="/">WheelTalks</a>
+        </li>
+        <li class="toggle-topbar menu-icon">
+          <a href="#"><span></span></a>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right" id='navRight'>
+          <li class="divider show-for-small" >
+            <li class='active'>
+              <a href='/loginPage'>Log In</a>
+            </li>
+          </li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+
   <!--HEADER, POSITION:FIXED, LARGE ONLY-->
-  <div class='fixed hide-for-small' id='head'>
+ <!-- <div class='fixed hide-for-small' id='head'>
     <div class='row'>
       <div class='large-3 columns' id='number'>
         <h4>(781) 559-4602 </h4>
@@ -32,10 +55,10 @@
         <div id='connect' class='button right success'><a href="/loginPage">Connect</a></div>
       </div>
     </div>
-  </div>
+  </div>-->
 
   <!--HEADER, POSITION:RELATIVE, SMALL ONLY-->
-  <div class='show-for-small' id='headSmall'>
+  <!--<div class='show-for-small' id='headSmall'>
     <div class='row'>
       <div class='small-3 columns small-centered' id='numberSmall'>
         <h4>(781) 559-4602 </h4>
@@ -47,7 +70,7 @@
         <div id='connectSmall' class='button small-centered success'><a href="/loginPage">Connect</a></div>
       </div>
     </div>
-  </div>
+  </div>-->
 
  
    <div class='row'>
