@@ -119,7 +119,8 @@ talks.view('talks/byPlate', {key: license}, function (err, res) {
       }
     });
 
-db.save(name, { //add the user
+db.save(plate, {
+	  name: name, //add the user
       email: email,
       plate: license,
       phone: phone,
@@ -392,9 +393,12 @@ exports.webSend = function(request, response) {
 /* ------------------------------------------------ */
 
 exports.logIn = function(req, res){
-		AM.manualLogin(req.param('user'), req.param('pass'), function(e, o){
+		var user = req.param('user').trim().toUpperCase();
+
+		AM.manualLogin(user, req.param('pass'), function(e, o){
 			if (!o){
 				res.send(e, 400);
+				res.redirect('/loginPage?loginFail='+e);
 			}	else{
 			    req.session.user = o;
 					res.cookie('user', o.plate, { maxAge: 900000 });
