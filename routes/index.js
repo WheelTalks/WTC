@@ -315,6 +315,7 @@ switch(command){
 				      var doc = res[0].value;
 				      var plate = doc.plate;
 				      ML.sendMessage(num, plate, body);
+				      ML.logSend(plate, command, body);
 				  }
 				}
 			});
