@@ -12,7 +12,11 @@
   <link rel="stylesheet" href="css/foundation.css">
   <link rel='stylesheet' href='css/candy.css'>
   <link rel='stylesheet' href='css/cameleon.css'>
-  
+  <link rel='stylesheet' href='fonts/general/stylesheets/general_foundicons_ie7.css'>
+  <link rel='stylesheet' href='fonts/general/stylesheets/general_foundicons.css'>
+  <!-- <link rel='stylesheet' href='fonts/accessibility/stylesheets/acccessibility_foundicons_ie7.css'>
+  <link rel='stylesheet' href='fonts/accessibility/stylesheets/accessibility_foundicons.css'> -->
+
   <script src="js/vendor/custom.modernizr.js"></script>
 
 </head>
@@ -87,7 +91,7 @@
       <div class='small-3 small-offset-0 columns'>
         <div id="pictureSmall"></div>
       </div>
-      <div class='small-6 small-offset-2 columns'>
+      <div class='small-6 small-offset-2 columns' id='sloganBox'>
         <h3 id='sloganSmall'>Simple, Fun, and Free. See what people have been sending to your car!</h3>
         <div class='button large' id='signup_buttonSmall'>
             <a href='/signup'><div>Sign up</div></a>
@@ -108,46 +112,46 @@
 <!--ABOUT-->
   <div class='wrapperOne-large wrapperOne-small' id='wrapperOne'>
       <div class='row' id='two'>
-      <div class='large-2 columns'>
-        <div class='menuBar hide-for-small'>                
-          <div id='homeBar' class='menuButton'><p>HOME</p></div>
-          <div id='aboutBar' class='menuButton'><p>ABOUT</p></div>
-          <div id='featuresBar' class='menuButton'><p>FEATURES</p></div>
-          <div id='faqsBar' class='menuButton'><p>FAQs</p></div>
-          <div id='contactBar' class='menuButton'><p>CONTACT</p></div>
+        <div class='large-2 columns'>
+          <div class='menuBar hide-for-small'>                
+            <div id='homeBar' class='menuButton'><p>HOME</p></div>
+            <div id='aboutBar' class='menuButton'><p>ABOUT</p></div>
+            <div id='featuresBar' class='menuButton'><p>FEATURES</p></div>
+            <div id='faqsBar' class='menuButton'><p>FAQs</p></div>
+            <div id='contactBar' class='menuButton'><p>CONTACT</p></div>
+          </div>
         </div>
-      </div>
-      <div class='large-10 columns' id='sectionTwo'>
-        <h2>About WheelTalks</h2>
+        <div class='large-10 columns' id='sectionTwo'>
+          <h2>About WheelTalks</h2>
           <h3>Send a message on any phone</h3>
-          <p>All you do is send a message to the wheeltalks phone number. Include a license plate and a message and that message will be there waiting for that driver. <p> 
-          <ul>
-            <li id = "compatible">
-                <h4>Universal</h4>
-                <p>Wheeltalks works on any phone. There are no downloads necessary. </p>
-            </li>
-            <li id="community">
-                <h4>Community</h4>
-                <p>The Wheeltalks community is devoted to making the driving community a friendlier and safer place. By using wheeltalks you are making a commitment to thinking about the person behind the wheel. </p>
-            </li>
-            <li id="simple">
-                <h4>Simple</h4>
-                <p>All it takes a license plate and a message and anyone in the world can have a message sent to them. </p>
-            </li>
-            <li id="fun">
-                <h4>Fun</h4>
-                <p>Wheeltalks is fun.  Messages </p>
-            </li>
-            <li id="anonymous">
-                <h4>Anonymous</h4>
-                <p>Wheeltalks keeps all messages anonymous.</p>
-            </li>
-            <li id="Outlet">
-                <h4>Outlet</h4>
-                <p>Wheeltalks provides an outlet for user in a trapped environment</p>
-            </li>
-          </ul> 
-      </div>
+          <p>All you do is send a message to the WheelTalks phone number. Include a license plate and a message and that message will be there waiting for that driver.</p>
+          <div class='large-12 columns' id='aboutGrid'> 
+            <div class='large-4 small-6 columns left aboutIcon'>
+              <h4>Universal</h4>
+              <p>WheelTalks works on any phone. There are no downloads necessary. All you need is the ability to send texts, although having a browswer to view our web app is a nice bonus.</p>
+            </div>
+            <div class='large-4 small-6 columns aboutIcon'>
+              <h4>Community</h4>
+              <p>The WheelTalks community is devoted to making the driving community a friendlier and safer place by commiting to thinking about the person behind the wheel. </p>
+            </div>
+            <div class='large-4 small-6 columns right aboutIcon'>
+              <h4>Simple</h4>
+              <p>All it takes a license plate and a message and anyone in the world can have a message sent to them. Also, our web app provides an easy-to-use interace with more functions.</p>
+            </div>
+            <div class='large-4 small-6 columns left aboutIcon'>
+              <h4>Fun</h4>
+              <p>WheelTalks is fun. Messages allow the worlds drivers to communicate with each other and create a more engaging driving experience.</p>
+            </div>
+            <div class='large-4 small-6 columns aboutIcon'>
+              <h4>Anonymous</h4>
+              <p>WheelTalks keeps all messages anonymous. The only information that gets shared is your license plate.</p>
+            </div>
+            <div class='large-4 small-6 columns right aboutIcon'>
+              <h4>Outlet</h4>
+              <p>WheelTalks provides an outlet for user in a trapped environment</p>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 
@@ -166,16 +170,40 @@
       <div class='row'>
         <div class='large-10 columns right'>
           <h3> Send gems to cars</h3>
-          <h5> A gem is a quick note that is randomly generated inisde of our pool of gems associated with particular emotions. You can send an emotion to a license plate and wheeltalks will randomly send gems to that persons account. </h5>
-          <ul id = "gems">
-            <li>Love</li>
-            <li>Fun</li>
-            <li>Funny</li>
-            <li>Cute</li>
-            <li>Sad</li>
-            <li>Angry</li>
-          </ul>
-          <h5>submit more gems at gems@wheeltalks.com</h5>
+          <p> A gem is a quick note that is randomly generated inisde of our pool of gems associated with particular emotions. You can send an emotion to a license plate and WheelTalks will randomly send gems to that persons account. </p>
+          <div class="large-12 columns" id = "gems">
+            <div class='large-6 small-6 columns'>
+              <i class='foundicon-heart gemIcon'></i>
+              <br>
+              <p>Love</p>
+            </div>
+            <div class='large-6 small-6 columns'>
+              <i class='foundicon-star gemIcon'></i>
+              <br>
+              <p>Fun</p>
+            </div>
+            <div class='large-6 small-6 columns'>
+              <i class='foundicon-smiley gemIcon'></i>
+              <br>
+              <p>Funny</p>
+            </div>
+            <div class='large-6 small-6 columns'>
+              <i class='foundicon-people gemIcon'></i>
+              <br>
+              <p>Cute</p>
+            </div>
+            <div class='large-6 small-6 columns'>
+              <i class='foundicon-remove gemIcon'></i>
+              <br>
+              <p>Sad</p>
+            </div>
+            <div class='large-6 small-6 columns'>
+              <i class='foundicon-error gemIcon'></i>
+              <br>
+              <p>Angry</p>
+            </div>
+          </div>
+          <p>submit more gems at support@wheeltalks.com</p>
         </div>
       </div>
     </div>
@@ -190,40 +218,44 @@
   </div>
     
 <!--FAQs-->
-  <div class='wrapper'>
+  <div class='wrapperGreen'>
     <div class='subWrapper'>
-        <div class='row'>
-          <div class='large-10 columns right' id='faqs'>
-            <h2>Frequently Asked Questions</h2>
-            <ul>
-              <li>
-                <h4>What happens if someone misuses wheeltalks?</h4>
-                <p>We reserve the right to block people from the wheeltalks service.</p>
-              </li>
-              <li>
-                <h4>Is there a wheeltalks app?</h4>
-                <p>No. Wheeltalks is a service based around text messaging. Apps are in production to help serve particular members of the community.</p>
-              </li>
-              <li>
-                <h4>Will my contact information be shared with anyone?</h4>
-                <p>Absolutely not. Anonyminity is an important part of Wheeltalks.</p>
-              </li>
-              <li>
-                <h4>How secure is Wheeltalks?</h4>
-                <p>User information is kept in a secure couchDB database.</p>
-              </li>
-              <li>
-                <h4>How will I know if my message has reached the car owner?</h4>
-                <p> You will receive a message saying your message has been sent to the car owner. </p>
-              </li>
-            </ul>  
+      <div class='row'>
+        <div class='large-10 columns right' id='faqs'>
+          <h2>Frequently Asked Questions</h2>
+          <div class='row'>
+            <div class='large-6 columns' id='faqsLeft'>
+              <div>
+                <h4 class='question'>What happens if someone misuses WheelTalks?</h4>
+                <p class='answer'>We reserve the right to block people from the WheelTalks service.</p>
+              </div>
+              <div>
+                <h4 class='question'>Is there a WheelTalks app?</h4>
+                <p class='answer'>No. WheelTalks is a service based around text messaging. Apps are in production to help serve particular members of the community.</p>
+              </div>
+              <div>
+                <h4 class='question'>Will my contact information be shared with anyone?</h4>
+                <p class='answer'>Absolutely not. Anonyminity is an important part of WheelTalks.</p>
+              </div>
+            </div>
+            <div class='large-6 columns' id='faqsRight'>
+              <div>
+                <h4 class='question'>How secure is WheelTalks?</h4>
+                <p class='answer'>User information is kept in a secure couchDB database.</p>
+              </div>
+              <div>
+                <h4 class='question'>How will I know if my message has reached the car owner?</h4>
+                <p class='answer'> You will receive a message saying your message has been sent to the car owner. </p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
     </div>  
   </div>
     
 <!--FOOTER-->
-  <div class='wrapper'>
+  <div class='wrapper footer'>
     <div class='subWrapper'>
       <div class='row'>
         <div class='large-10 columns right' id='footer'>
@@ -243,7 +275,7 @@
               <li>
                 <a href="#">Connect</a></li>
           </ul>
-          <p>© 2013 Wheeltalks LLC. All rights reserved. Patents pending.</p>  
+          <p>© 2013 WheelTalks LLC. All rights reserved. Patents pending.</p>  
         </div>
       </div>
     </div>

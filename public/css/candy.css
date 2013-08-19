@@ -13,6 +13,11 @@ h2, h3, h4, h5 {
     color:#4b4b4b;
 }
 
+.wrapperGreen h2, .wrapperGreen h3, .wrapperGreen h4, .wrapperGreen h5 {
+    color:purple;
+    text-shadow:none;
+}
+
 .button {
     opacity:.7;
 }
@@ -23,8 +28,16 @@ h2, h3, h4, h5 {
     min-width:32em;
 }
 
+.wrapperGreen {
+    box-shadow:0 -1px 2px rgba(0, 0, 0, 0.29);
+    background-color:#5da423;
+    color:white;
+    min-width:32em;
+    text-shadow:none;
+}
+
 .subWrapper {
-    border-bottom:1px solid #d2d2d2;
+    /*border-bottom:1px solid #d2d2d2;*/
     min-width:32em;
 }
 
@@ -32,7 +45,9 @@ h2, h3, h4, h5 {
     min-width:32em;
 }
 
-/*TOP BAR */
+/* * * * * * * * * * */
+/*     TOP BAR       */
+/* * * * * * * * * * */
 #title {
     text-align:center;
     color: #990099;
@@ -70,7 +85,11 @@ title h1:hover, title h1:focus {
     margin-top:1.5em;
 }
 
-/*SECTION ONE*/
+
+/* * * * * * * * * * */
+/*     SECTION ONE   */
+/* * * * * * * * * * */
+
 #one {
     z-index:-100;
     margin-top:6em;
@@ -82,6 +101,10 @@ title h1:hover, title h1:focus {
     box-shadow: 0 0 20px #888888;
     height:320px;
     width:180px;
+}
+
+#sloganBox {
+    margin-left:25%;
 }
 
 #slogan {
@@ -130,15 +153,29 @@ title h1:hover, title h1:focus {
     font-size:2em;
 }
 
-/*SECTION TWO*/
+
+/* * * * * * * * * * */
+/*     ABOUT         */
+/* * * * * * * * * * */
+
 #wrapperOne {
     box-shadow:0 -1px 2px rgba(0, 0, 0, 0.29);
     min-width:32em;
+    background-color:#5da423;
+    text-shadow:none;
 }
 
 #two {
-    background-color:#ffffff;
+    background-color:#5da423;
     min-width:32em;
+}
+
+#sectionTwo {
+    color:white;
+}
+#wrapperOne h2, #wrapperOne h3, #wrapperOne h4, #wrapperOne h5 {
+    color:purple;
+    text-shadow:none;
 }
 
 .menuBar {
@@ -163,12 +200,58 @@ title h1:hover, title h1:focus {
     width:7.5em;
 }
 
-/*FOOTER*/
+
+/* * * * * * * * * * */
+/*     FEATURES      */
+/* * * * * * * * * * */
+
+#gems {
+    text-align: center;
+}
+
+.gemIcon {
+    font-size: 6em;
+}
+
+/* * * * * * * * * * */
+/*     FAQs          */
+/* * * * * * * * * * */
+
+.question {
+    color:white !important;
+    cursor:pointer;
+}
+
+.answer {
+    margin-left:1em;
+    display:none;
+}
+
+
+/* * * * * * * * * * */
+/*     FOOTER        */
+/* * * * * * * * * * */
+
+.footer {
+    background-color:black;
+    text-shadow:none;
+}
+
+.footer ul {
+    list-style: none;
+}
+
 #footer {
     padding-top:1em;
 }
 
-/*SIGNUP PAGE*/
+
+/* * * * * * * * * * */
+/*********************/
+/*     SIGNUP PAGE   */
+/*********************/
+/* * * * * * * * * * */
+
 #signupTitle {
     text-align:center;
     color: #990099;
@@ -185,7 +268,6 @@ title h1:hover, title h1:focus {
 
 #signUpForm {
     margin-top:10em;
-    margin-bottom:40em;
 }
 
 #form input {
@@ -209,8 +291,7 @@ title h1:hover, title h1:focus {
 
 #signupFooter {
     position:relative;
-    margin-top:40em;
-    background-color:white;
+    margin-top: 10em;
     z-index:101;
 }
 
