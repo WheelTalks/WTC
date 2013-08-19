@@ -5,6 +5,7 @@ var twilio = require('twilio')
   	, cradle = require('cradle')
     , postmark = require("postmark")("15ea587a-4786-4d15-b71f-927b3a503ba6")
 
+
  
 var client = new twilio.RestClient('AC24575d92aa61d1e316f4fd7461a00ba0', '39e3617174572e50095c0c34401f58f3');
 
@@ -37,6 +38,7 @@ exports.index = function(req, res){
 					res.redirect('/webApp');
 				}	else{
 					res.render('index', { title: 'Home' });
+
 				}
 			});
 		}
@@ -333,6 +335,9 @@ switch(command){
     }//close switch  
 };//close resSMS
 
+/* ------------------------------------------------ */
+/*        Send messages from the app                */
+/* ------------------------------------------------ */
 
 exports.webSend = function(request, response) {
 	var plate = request.param('licensenumber').trim().toUpperCase(),
@@ -381,6 +386,10 @@ exports.webSend = function(request, response) {
 
 
 };
+
+/* ------------------------------------------------ */
+/*        Handle the log in process                 */
+/* ------------------------------------------------ */
 
 exports.logIn = function(req, res){
 		AM.manualLogin(req.param('user'), req.param('pass'), function(e, o){
