@@ -1,5 +1,6 @@
 // Load the twilio module
 var AM = require('./modules/account-manager');
+var ML = require('./modules/message-logger');
 var twilio = require('twilio')
   	, cradle = require('cradle')
     , postmark = require("postmark")("15ea587a-4786-4d15-b71f-927b3a503ba6")
@@ -14,7 +15,7 @@ var connection = new(cradle.Connection)('https://liamflahive.cloudant.com', 443,
 var db = connection.database('wheel'); //user db
 var talks = connection.database('talks');//saved messages db
 var accounts = connection.database('accounts');//user accounts
-
+var messages = connection.database('messages');
 /* ------------------------------------------------ */
 /*           Serves up the index page               */
 /* ------------------------------------------------ */
@@ -31,7 +32,6 @@ exports.index = function(req, res){
 		}	else{
 	// attempt automatic login //
 			AM.autoLogin(req.cookies.user, req.cookies.pass, function(e, o){
-				console.log(o);
 				if (o != null){
 				    req.session.user = o;
 					res.redirect('/webApp');
@@ -53,7 +53,8 @@ var name = request.body.name
 	, state = request.body.licenseplate.trim()
 	, license = request.body.licensenumber.trim()
 	, phone = request.body.phonenumber;
-var phone = '+1'+phone;  
+var phone = '+1'+phone; 
+var phone2 = phone; 
 
 var emailBody;
 
@@ -64,6 +65,7 @@ license = state+license;
 var user = license;
 var pass = request.body.password;
 var userLogin = license;
+var plate = license;
 
 talks.view('talks/byPlate', {key: license}, function (err, res) {
     if (err) {
@@ -129,6 +131,20 @@ accounts.save("",{
 		pass: pass
 });
 
+var senderLog = [];
+var recievedMssgLog = [];
+var sentMssgLog = [];
+var sentToLog = [];
+
+messages.save("",
+{
+		plate: plate,
+    	phone: phone2,
+    	senderLog: senderLog,
+    	recievedMssgLog: recievedMssgLog,
+    	sentToLog: sentToLog,
+    	sentMssgLog: sentMssgLog
+});
 
 client.sms.messages.create({ //welcome text
 to: phone,
@@ -151,7 +167,7 @@ console.log('Oops! There was an error.');
 
 AM.manualLogin(userLogin, request.param('password'), function(e, o){
 			if (!o){
-				res.send(e, 400);
+				response.send(e, 400);
 			}	else{
 			    request.session.user = o;
 					response.cookie('user', o.plate, { maxAge: 900000 });
@@ -286,12 +302,22 @@ switch(command){
 		      var score = doc.score;
 		      var last = doc.last;
 
-
-		      client.sms.messages.create({ //forward message to intended recipient
-		        to: num,
-		        from:'+17815594602',
-		        body: body
-		        });
+		      db.view('wheel/byPhone', {key: sender}, function (err, res) {//view sender
+			    if (err) {
+			      console.log('Connection failed to be established')
+			      return;
+			    }
+			    else{
+			      if (res.length < 1) { //license plate does not exist
+			        ML.sendMessage(num, '#NoSender', body);
+			        }			      			     			              
+			      else{
+				      var doc = res[0].value;
+				      var plate = doc.plate;
+				      ML.sendMessage(num, plate, body);
+				  }
+				}
+			});
 
 		       db.save(doc._id, { //add the new sender
 		       email: email,
@@ -313,8 +339,6 @@ exports.webSend = function(request, response) {
 		mssg = request.param('textbody');
 
 	var command =state + plate;
-	console.log(command);
-	console.log(mssg);
 		db.view('wheel/byPlate', {key: command}, function (err, res) {
 	    if (err) {
 	      console.log('Connection failed to be established')
@@ -337,26 +361,8 @@ exports.webSend = function(request, response) {
 		      var score = doc.score;
 		      var last = doc.last;
 
-		      console.log(num);
+		    ML.sendMessage(num, request.cookies.user, mssg);
 
-		      client.sms.messages.create({ //forward message to intended recipient
-		        to: num,
-		        from:'+17815594602',
-		        body: mssg
-		        }, function(error, message) {
-
-					if (!error) {
-
-					console.log('Success! The SID for this SMS message is:');
-					console.log(message.sid);
-					 
-					console.log('Message sent on:');
-					console.log(message.dateCreated);
-					}
-					else {
-					console.log(error);
-					}
-					});
 
 		       db.save(doc._id, { //add the new sender
 		       email: email,

@@ -69,7 +69,6 @@ exports.autoLogin = function(user, pass, callback)
     else{
     	var doc = o[0].value;
 				if (pass==doc.pass){
-					console.log('Should be redirecting');
 					callback(null, doc);
 				}	else{
 					callback(null);
