@@ -15,10 +15,12 @@
   <link rel='stylesheet' href='fonts/general/stylesheets/general_foundicons_ie7.css'>
   <link rel='stylesheet' href='fonts/general/stylesheets/general_foundicons.css'>
 
+
   <!-- <link rel='stylesheet' href='fonts/accessibility/stylesheets/acccessibility_foundicons_ie7.css'>
   <link rel='stylesheet' href='fonts/accessibility/stylesheets/accessibility_foundicons.css'> -->
 
   <script src="js/vendor/custom.modernizr.js"></script>
+
 
 </head>
 
@@ -39,7 +41,7 @@
     </div>
   </div>-->
 
-<!--HEADER, POSITION:RELATIVE, SMALL ONLY-->
+<!--HEADER, POSITION:FIXED, SMALL AND LARGE-->
   <div class='fixed contain-to-grid' id='navWrapper'>
     <nav class="top-bar" id='appNav'>
       <ul class="title-area">
@@ -70,6 +72,27 @@
       </section>
     </nav>
   </div>
+
+
+<!--FOR REFERENCE FROM WEBAPP.HJS-->
+<!--<nav class="top-bar" id='appNav'>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">WheelTalks </a></h1>
+      <li class="toggle-topbar menu-icon">
+        <a href="#"><span>Menu</span></a>
+      </li>
+  </ul>
+
+  <section class="top-bar-section">
+
+    
+    <ul class="right">
+      <li class="divider show-for-small" ></li>
+      <li class="active"><a href="/?logout=true">Log Out</a></li>
+    </ul>
+  </section>
+</nav>-->
 
 
 
@@ -308,12 +331,11 @@
   </script>
   
   <script src="js/foundation.min.js"></script>
+  <script src="js/vendor/zepto.js"></script>
+  <script src="js/foundation/foundation.js"></script>
+  <script src="js/foundation/foundation.forms.js"></script>
   <script src="js/foundation/foundation.topbar.js"></script>
-    <script src="js/foundation/foundation.topbar.js"></script>
-  <script type="text/javascript" src='js/raspberry.js'></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-
-  
+  <!--<script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>-->
   <script>
     $(document).foundation();
   </script>

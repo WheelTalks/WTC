@@ -6,13 +6,11 @@
 <meta name="viewport" content="width=device-width">
 <title>WheelTalks</title>
 
+<link rel="icon" type="image/png" href="img/logo.png">
 <link rel="stylesheet" href="css/foundation.css">
 <link rel="stylesheet" type="text/css" href="css/webapp.css">
 
 <script src="js/vendor/custom.modernizr.js"></script>
-<script src="js/vendor/zepto.js"></script>
-<script src="js/foundation/foundation.js"></script>
-<script src="js/foundation/foundation.forms.js"></script>
 
 </head>
 
