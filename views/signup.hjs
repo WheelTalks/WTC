@@ -43,37 +43,6 @@
       </section>
     </nav>
   </div>
-
-  <!--HEADER, POSITION:FIXED, LARGE ONLY-->
- <!-- <div class='fixed hide-for-small' id='head'>
-    <div class='row'>
-      <div class='large-3 columns' id='number'>
-        <h4>(781) 559-4602 </h4>
-      </div>
-      <div class='large-6 columns' id='signupTitle'>
-        <a href="/"><h1>WheelTalks</h1></a>
-      </div>
-      <div class='large-3 columns' id='fixedNav'>  
-        <div id='connect' class='button right success'><a href="/loginPage">Connect</a></div>
-      </div>
-    </div>
-  </div>-->
-
-  <!--HEADER, POSITION:RELATIVE, SMALL ONLY-->
-  <!--<div class='show-for-small' id='headSmall'>
-    <div class='row'>
-      <div class='small-3 columns small-centered' id='numberSmall'>
-        <h4>(781) 559-4602 </h4>
-      </div>
-      <div class='small-6 columns small-centered WTtitle' id='headerSmall'>
-        <h1><a href="#">WheelTalks</a></h1>
-      </div>
-      <div class='small-3 columns small-centered' id='fixedNavSmall'>  
-        <div id='connectSmall' class='button small-centered success'><a href="/loginPage">Connect</a></div>
-      </div>
-    </div>
-  </div>-->
-
  
    <div class='row'>
     <div class='large-6 columns small-centered' id='signUpForm'>

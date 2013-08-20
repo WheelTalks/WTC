@@ -46,7 +46,7 @@
 }
 
 form {
-    align: center;
+    text-align: center;
     margin-top: 25px;
     width:300px;
     height:325px;
@@ -61,15 +61,45 @@ fieldset legend {
     color: #222222;  
 }
 
-[data-abide] .error small.error, [data-abide] span.error, [data-abide] small.error {
-    color:green;
+.error small.error, span.error, small.error {
+    background: #d45252 !important;
+	border-radius: 3px 3px 3px 3px;
+	color: white;
+	margin-left:8px;
+	padding: 1px 6px;
+	z-index: 98; /* hints stay above all other elements */
+	position: absolute; /* allows proper formatting if hint is two lines */
+	display: none;
+	text-shadow:none;
 }
 
-[data-abide] .error small.error, [data-abide] span.error, [data-abide] small.error {
-    background-color:orange;
+.error small.error::before, span.error::before, small.error::before {
+	content: "\25C0";
+	color:#d45252;
+	position: absolute;
+	top:5px;
+	left:-9px;
+	border:none;
 }
+
 
 .error input, .error textarea, .error select {
-    background-color:purple;
-    border-color:green;
+    background: #fff url('../img/asterisk.png') no-repeat 98% center;
 }
+
+input:required:valid, textarea:required:valid {
+	background: #fff url('../img/valid.png') no-repeat 98% center;
+	box-shadow: 0 0 5px #5cd053;
+	border-color: #28921f;
+}
+
+input:focus:invalid, textarea:focus:invalid {
+	background: #fff url('../img/invalid.png') no-repeat 98% center;
+	box-shadow: 0 0 5px #d45252;
+	border-color: #b03535
+}
+
+input:focus {
+	display:inline;
+}
+
