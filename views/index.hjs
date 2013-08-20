@@ -57,12 +57,12 @@
 
 
 <!--SECTION 1, DISPLAY:FIXED, DISPLAYS MAIN INFORMATION, LARGE ONLY-->
-  <div class='fixed hide-for-small' id='one'>
+  <div class='one-large one-small' id='one'>
     <div class='row'>
       <div class='large-12 columns'>
           <h2>Anonymously message any car.</h2>
       </div>
-      <div class='large-3 large-offset-2 columns'>
+      <div class='large-3 large-offset-2 columns hide-for-small'>
         <div id="picture"></div>
       </div>
       <div class='large-6 columns'>
@@ -71,58 +71,12 @@
             <div>Sign up</div>
         </div></a>
       </div>
-      <div class='large-12 columns'>
-        <!--<div id='menuButtons'>
-            <div id='aboutLink' class='menuButton'><p>ABOUT</p></div>
-            <div id='featuresLink' class='menuButton'><p>FEATURES</p></div>
-            <div id='learnMoreLink' class='menuButton'><p>LEARN MORE</p></div>
-            <div id='faqsLink' class='menuButton'><p>FAQs</p></div>
-            <div id='contactLink' class='menuButton'><p>CONTACT</p></div>
-        </div>-->
-      </div>
     </div>   
   </div>
-  
-    
-<!--SECTION 1, DISPLAY:RELATIVE, DISPLAYS MAIN INFORMATION, SMALL ONLY-->
-  <div class='show-for-small' id='oneSmall'>
-    <div class='row'>
-      <div class='small-12 columns'>
-          <h2>Anonymously message any car.</h2>
-      </div>
-      <div class='small-3 small-offset-0 columns'>
-        <div id="pictureSmall"></div>
-      </div>
-      <div class='small-6 small-offset-2 columns' id='sloganBox'>
-        <h3 id='sloganSmall'>Simple, Fun, and Free. See what people have been sending to your car!</h3>
-        <div class='button large' id='signup_buttonSmall'>
-            <a href='/signup'><div>Sign up</div></a>
-        </div>
-      </div>
-      <div class='small-12 columns'>
-        <div id='menuButtonsSmall'>
-            <div id='aboutSmall' class='menuButton'><p>ABOUT</p></div>
-            <div id='featuresSmall' class='menuButton'><p>FEATURES</p></div>
-            <div id='faqsSmall' class='menuButton'><p>FAQs</p></div>
-            <div id='contactSmall' class='menuButton'><p>CONTACT</p></div>
-        </div>
-      </div>
-    </div>   
-  </div>
-    
     
 <!--ABOUT-->
   <div class='wrapperOne-large wrapperOne-small wrapper' id='wrapperOne'>
       <div class='row' id='two'>
-        <!--<div class='large-2 columns'>
-          <div class='menuBar hide-for-small'>                
-            <div id='homeBar' class='menuButton'><p>HOME</p></div>
-            <div id='aboutBar' class='menuButton'><p>ABOUT</p></div>
-            <div id='featuresBar' class='menuButton'><p>FEATURES</p></div>
-            <div id='faqsBar' class='menuButton'><p>FAQs</p></div>
-            <div id='contactBar' class='menuButton'><p>CONTACT</p></div>
-          </div>
-        </div>-->
         <div class='large-11 columns small-centered' id='sectionTwo'>
           <h2>About WheelTalks</h2>
           <h3>Send a message on any phone</h3>

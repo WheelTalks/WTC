@@ -8,6 +8,9 @@
     margin-top:0em; }
     .main-small {
     margin-left:30%; }
+    .one-small {
+        position:relative;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -15,6 +18,13 @@
       margin-top:35em; }
     .main-large {
       margin-left:0; }
+    .one-large {
+        width: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        z-index: 99; ;
+    }
 }
 
 /*HEADER*/
