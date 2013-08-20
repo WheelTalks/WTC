@@ -11,6 +11,7 @@
   
   <link rel="stylesheet" href='css/foundation.css'>
   <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="css/signup.css">
   <link rel='stylesheet' href='css/candy.css'>
   <link rel='stylesheet' href='css/validator.css'>
 

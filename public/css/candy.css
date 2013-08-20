@@ -2,7 +2,7 @@
 
 /* CSS Document */
  body {
-    padding:0;
+    padding-top:0 !important;
     margin:0;
     margin-top:0;
     font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -107,7 +107,6 @@ title h1:hover, title h1:focus {
     text-align:center;
     background-color:inherit;
     font-weight: bold;
-    padding-bottom:5em;
 }
 
 #navRight {
@@ -296,81 +295,4 @@ title h1:hover, title h1:focus {
 }
 .copyright {
     margin-top:2em;
-}
-
-
-/* * * * * * * * * * */
-/*********************/
-/*     SIGNUP PAGE   */
-/*********************/
-/* * * * * * * * * * */
-
-#signupTitle {
-    text-align:center;
-    color: #990099;
-    text-decoration: none;
-    line-height: inherit;
-    margin-top:1em;
-}
-
-#signupTitle h1 {
-    color: #990099;
-    line-height: inherit;
-    cursor:pointer;
-}
-
-#signUpForm {
-    margin-top:10em;
-}
-
-#form input {
-	border: 2px dotted black;
-	border:none;
-	border-radius:5px;
-}
-
-#state {
-    margin-top:0.2em;
-}
-
-#submitButton {
-    padding-top:1.1em;
-    width:100%;
-    height:3.5em;
-    text-shadow:none;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-#signupFooter {
-    position:relative;
-    margin-top: 10em;
-    z-index:101;
-}
-
-form {
-    align: center;
-    margin-top: 25px;
-    width:300px;
-    height:325px;
-    background-color: none;
-    border: none;
-}
-
-fieldset legend {
-    margin-top: 30px;
-    padding-top:10px;
-    font-size: 30px;
-    color: #222222;  
-}
-
-
-/* * * * * * * * * * */
-/*********************/
-/*     LOGIN PAGE    */
-/*********************/
-/* * * * * * * * * * */
-
-#loginForm {
-    margin-top:10em;
 }
