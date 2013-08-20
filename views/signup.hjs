@@ -13,7 +13,7 @@
   <link rel="icon" type="image/png" href="img/logo.png">
   <link rel="stylesheet" href="css/signup.css">
   <link rel='stylesheet' href='css/candy.css'>
-  <link rel='stylesheet' href='css/validator.css'>
+ 
 
 
   <script src="js/vendor/custom.modernizr.js"></script>
@@ -45,59 +45,76 @@
   </div>
  
    <div class='row'>
-    <div class='large-6 columns small-centered' id='signUpForm'>
-      <h2 id="title2" align="center">See what people are sending you</h2>
-        <div class='large-7 columns small-centered'>
-            <form data-abide form method="post" action="/new" id="signupForm">
-              <div class='row'>
-                <ul>
-                <div class='large-4 columns' id="state">
-                    <select name="licenseplate" id="state" required pattern="[a-zA-Z]+"><option value="--">--</option> <option value="al">AL</option> <option value="ak">AK</option> <option value="az">AZ</option> <option value="ar">AR</option> <option value="ca">CA</option> <option value="co">CO</option> <option value="ct">CT</option> <option value="de">DE</option> <option value="fl">FL</option> <option value="ga">GA</option> <option value="hi">HI</option> <option value="id">ID</option> <option value="il">IL</option> <option value="in">IN</option> <option value="ia">IA</option> <option value="ks">KS</option> <option value="ky">KY</option> <option value="la">LA</option> <option value="me">ME</option> <option value="md">MD</option> <option value="ma">MA</option> <option value="mi">MI</option> <option value="mn">MN</option> <option value="ms">MS</option> <option value="mo">MO</option> <option value="mt">MT</option> <option value="ne">NE</option> <option value="nv">NV</option> <option value="nh">NH</option> <option value="nj">NJ</option> <option value="nm">NM</option> <option value="ny">NY</option> <option value="nc">NC</option> <option value="nd">ND</option> <option value="oh">OH</option> <option value="ok">OK</option> <option value="or">OR</option> <option value="pa">PA</option> <option value="ri">RI</option> <option value="sc">SC</option> <option value="sd">SD</option> <option value="tn">TN</option> <option value="tx">TX</option> <option value="ut">UT</option> <option value="vt">VT</option> <option value="va">VA</option> <option value="wa">WA</option> <option value="wv">WV</option> <option value="wi">WI</option> <option value="wy">WY</option> </select>
-                     <small class="error" data-error-message>Please enter a valid State.</small>
-                </div>
-                <div class='large-8 columns' id='licenseplate'>  
-                    <input id="licensenumber" name="licensenumber" placeholder="License Plate" style="width: 150px;" type="text" required />
-                    <small class="error">License plate is required.</small>
-                </div>
-                </div>
-            <div align="center">
+    <div class='large-10 columns small-centered' id='signUpForm'>
+      <fieldset>
+        <legend><h5 id="title2" class="small-centered columns">See what people are sending you</h5></legend>
+        <div class='large-12 columns'>
+          <form data-abide form method="post" action="/new" id="signupForm">
+            <div class='row'>
+              <div class='large-2 columns' id="state">
+                  <select name="licenseplate" id="state" required pattern="[a-zA-Z]+"><option value="--">--</option> <option value="al">AL</option> <option value="ak">AK</option> <option value="az">AZ</option> <option value="ar">AR</option> <option value="ca">CA</option> <option value="co">CO</option> <option value="ct">CT</option> <option value="de">DE</option> <option value="fl">FL</option> <option value="ga">GA</option> <option value="hi">HI</option> <option value="id">ID</option> <option value="il">IL</option> <option value="in">IN</option> <option value="ia">IA</option> <option value="ks">KS</option> <option value="ky">KY</option> <option value="la">LA</option> <option value="me">ME</option> <option value="md">MD</option> <option value="ma">MA</option> <option value="mi">MI</option> <option value="mn">MN</option> <option value="ms">MS</option> <option value="mo">MO</option> <option value="mt">MT</option> <option value="ne">NE</option> <option value="nv">NV</option> <option value="nh">NH</option> <option value="nj">NJ</option> <option value="nm">NM</option> <option value="ny">NY</option> <option value="nc">NC</option> <option value="nd">ND</option> <option value="oh">OH</option> <option value="ok">OK</option> <option value="or">OR</option> <option value="pa">PA</option> <option value="ri">RI</option> <option value="sc">SC</option> <option value="sd">SD</option> <option value="tn">TN</option> <option value="tx">TX</option> <option value="ut">UT</option> <option value="vt">VT</option> <option value="va">VA</option> <option value="wa">WA</option> <option value="wv">WV</option> <option value="wi">WI</option> <option value="wy">WY</option> </select>
+                   <small class="error" data-error-message>Please enter a valid State.</small>
+              </div>
+              <div class='large-4 columns left' id='licenseplate'>  
+                  <input id="licensenumber" name="licensenumber" placeholder="License Plate" type="text" required />
+                  <small class="error">License plate is required.</small>
+              </div>
+              <small class="error">License plate is required.</small>
+            </div>
+            <div class='row'>
+              <div class='large-12 columns'>
                 <input placeholder="Phone number" name="phonenumber" id="phonenumber" type="tel" required />
-                <small class="error">Phone number is required.</small>
+                <div class='large-4 columns right'>
+                  <small class="error">Phone number is required.</small>
+                </div>
+              </div>
             </div>
-            <div align="center">
+            <div class='row'>
+              <div class="large-12 columns">
                 <input placeholder="Email" name="email" id="email" type="email" required />
+                <div class='large-4 columns right'>
                   <small class="error">A valid email address is required.</small>
+                </div>
+              </div>
             </div>
-            <div align="center">
-                <input id="name" name="name" placeholder="Full Name (optional)" type="text" />
+            <div class='row'>
+              <div class="large-12 columns">
+                  <input id="name" name="name" placeholder="Full Name (optional)" type="text" />
+              </div>
             </div>
-            <div align = "center">
-            <input id = "password" name = "password" placeholder = "Password" type = "password" required/>
-              <small class="error">make sure to enter a password with more than 8 characters, including one capital letter, one lower case letter and one number</small>
+            <div class='row'>
+              <div class = "large-12 columns">
+                <input id = "password" name = "password" placeholder = "Password" type = "password" required/>
+                <div class='large-4 columns right'>
+                  <small class="error">make sure to enter a password with more than 8 characters, including one capital letter, one lower case letter and one number</small>
+                </div>
+              </div>
             </div>
-            <div align = "center">
-            <h5>How would you like to receive Wheeltalks?</h5>
+            <div class='row'>
+              <div class = "large-6 columns">
+                <h5>How would you like to receive Wheeltalks?</h5>
+              </div>
             </div>
-            
-
-   
-
-    </div>
-    <div align = "center">
-                    <div class='large-4 columns' id="text">
-                <label for="text"><input type="checkbox" id="text" CHECKED ><span class="custom checkbox checked"></span> text</label>
-                                    </div>
+            <div class='row'>
+              <div class='large-6 columns'>
+                <div class='large-4 columns' id="text">
+                  <label for="text"><input type="checkbox" id="text" CHECKED ><span class="custom checkbox checked"></span> text</label>
+                </div>
                 <div class='large-4 columns' id='email'>  
-                     <label for="email"><input type="checkbox" id="email" ><span class="custom checkbox"></span> email</label>
+                  <label for="email"><input type="checkbox" id="email" ><span class="custom checkbox"></span> email</label>
                 </div>
-                 <div class='large-4 columns' id='Signin'>  
-                     <label for="Sign in"><input type="checkbox" id="sign" ><span class="custom checkbox"></span> Sign in</label>
+                <div class='large-4 columns' id='Signin'>  
+                  <label for="Sign in"><input type="checkbox" id="sign" ><span class="custom checkbox"></span> Sign in</label>
                 </div>
-             <div class='large-12 columns'>
-            <div id="button">
-                <input class='button' id='submitButton' type="submit" value="Submit" />
+              </div>
             </div>
-             </div>
+            <div class='row'>
+              <div class='large-6 columns'>
+                <div id="button">
+                  <input class='button' id='submitButton' type="submit" value="Submit" />
+                </div>
+              </div>
+            </div>
     </div>
         </form>
 

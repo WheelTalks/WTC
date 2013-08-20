@@ -16,8 +16,13 @@
     cursor:pointer;
 }
 
+#title2 {
+	text-align:center;
+}
+
 #signUpForm {
     margin-top:10em;
+    text-align: center;
 }
 
 #form input {
@@ -48,8 +53,6 @@
 form {
     text-align: center;
     margin-top: 25px;
-    width:300px;
-    height:325px;
     background-color: none;
     border: none;
 }
@@ -82,6 +85,9 @@ fieldset legend {
 	border:none;
 }
 
+input:required {
+	width:50% !important;
+}
 
 .error input, .error textarea, .error select {
     background: #fff url('../img/asterisk.png') no-repeat 98% center;
