@@ -22,7 +22,6 @@
 
 #signUpForm {
     margin-top:10em;
-    text-align: center;
 }
 
 #form input {
@@ -31,8 +30,25 @@
 	border-radius:5px;
 }
 
+#lplate {
+}
+
 #state {
     margin-top:0.2em;
+}
+
+#stateInput {
+	width:10%;
+	float:left;
+	min-width:5em;
+}
+
+#licensenumber {
+	width:30%;
+}
+
+#licensenumber:focus {
+	width:40%;
 }
 
 #submitButton {
@@ -68,7 +84,6 @@ fieldset legend {
     background: #d45252 !important;
 	border-radius: 3px 3px 3px 3px;
 	color: white;
-	margin-left:8px;
 	padding: 1px 6px;
 	z-index: 98; /* hints stay above all other elements */
 	position: absolute; /* allows proper formatting if hint is two lines */
@@ -85,12 +100,13 @@ fieldset legend {
 	border:none;
 }
 
-input:required {
+.inputReg {
 	width:50% !important;
 }
 
 .error input, .error textarea, .error select {
     background: #fff url('../img/asterisk.png') no-repeat 98% center;
+    margin-bottom:1em;
 }
 
 input:required:valid, textarea:required:valid {
@@ -102,10 +118,10 @@ input:required:valid, textarea:required:valid {
 input:focus:invalid, textarea:focus:invalid {
 	background: #fff url('../img/invalid.png') no-repeat 98% center;
 	box-shadow: 0 0 5px #d45252;
-	border-color: #b03535
+	border-color: #b03535;
 }
 
-input:focus {
-	display:inline;
+.inputReg:focus {
+	width:60% !important;
 }
 

@@ -7,15 +7,12 @@
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Sign Up</title>
-
-  
+ 
   <link rel="stylesheet" href='css/foundation.css'>
   <link rel="icon" type="image/png" href="img/logo.png">
   <link rel="stylesheet" href="css/signup.css">
   <link rel='stylesheet' href='css/candy.css'>
  
-
-
   <script src="js/vendor/custom.modernizr.js"></script>
 
 </head>
@@ -50,20 +47,20 @@
         <legend><h5 id="title2" class="small-centered columns">See what people are sending you</h5></legend>
         <div class='large-12 columns'>
           <form data-abide form method="post" action="/new" id="signupForm">
-            <div class='row'>
-              <div class='large-2 columns' id="state">
-                  <select name="licenseplate" id="state" required pattern="[a-zA-Z]+"><option value="--">--</option> <option value="al">AL</option> <option value="ak">AK</option> <option value="az">AZ</option> <option value="ar">AR</option> <option value="ca">CA</option> <option value="co">CO</option> <option value="ct">CT</option> <option value="de">DE</option> <option value="fl">FL</option> <option value="ga">GA</option> <option value="hi">HI</option> <option value="id">ID</option> <option value="il">IL</option> <option value="in">IN</option> <option value="ia">IA</option> <option value="ks">KS</option> <option value="ky">KY</option> <option value="la">LA</option> <option value="me">ME</option> <option value="md">MD</option> <option value="ma">MA</option> <option value="mi">MI</option> <option value="mn">MN</option> <option value="ms">MS</option> <option value="mo">MO</option> <option value="mt">MT</option> <option value="ne">NE</option> <option value="nv">NV</option> <option value="nh">NH</option> <option value="nj">NJ</option> <option value="nm">NM</option> <option value="ny">NY</option> <option value="nc">NC</option> <option value="nd">ND</option> <option value="oh">OH</option> <option value="ok">OK</option> <option value="or">OR</option> <option value="pa">PA</option> <option value="ri">RI</option> <option value="sc">SC</option> <option value="sd">SD</option> <option value="tn">TN</option> <option value="tx">TX</option> <option value="ut">UT</option> <option value="vt">VT</option> <option value="va">VA</option> <option value="wa">WA</option> <option value="wv">WV</option> <option value="wi">WI</option> <option value="wy">WY</option> </select>
-                   <small class="error" data-error-message>Please enter a valid State.</small>
+            <div class='row' id='lplate'>
+              <div class='columns' id="state">
+                  <select name="licenseplate" id="stateInput" required pattern="[a-zA-Z]+"><option value="--">--</option> <option value="al">AL</option> <option value="ak">AK</option> <option value="az">AZ</option> <option value="ar">AR</option> <option value="ca">CA</option> <option value="co">CO</option> <option value="ct">CT</option> <option value="de">DE</option> <option value="fl">FL</option> <option value="ga">GA</option> <option value="hi">HI</option> <option value="id">ID</option> <option value="il">IL</option> <option value="in">IN</option> <option value="ia">IA</option> <option value="ks">KS</option> <option value="ky">KY</option> <option value="la">LA</option> <option value="me">ME</option> <option value="md">MD</option> <option value="ma">MA</option> <option value="mi">MI</option> <option value="mn">MN</option> <option value="ms">MS</option> <option value="mo">MO</option> <option value="mt">MT</option> <option value="ne">NE</option> <option value="nv">NV</option> <option value="nh">NH</option> <option value="nj">NJ</option> <option value="nm">NM</option> <option value="ny">NY</option> <option value="nc">NC</option> <option value="nd">ND</option> <option value="oh">OH</option> <option value="ok">OK</option> <option value="or">OR</option> <option value="pa">PA</option> <option value="ri">RI</option> <option value="sc">SC</option> <option value="sd">SD</option> <option value="tn">TN</option> <option value="tx">TX</option> <option value="ut">UT</option> <option value="vt">VT</option> <option value="va">VA</option> <option value="wa">WA</option> <option value="wv">WV</option> <option value="wi">WI</option> <option value="wy">WY</option> </select>
               </div>
-              <div class='large-4 columns left' id='licenseplate'>  
+              <div class='large-12 columns' id='licenseplate'>  
                   <input id="licensenumber" name="licensenumber" placeholder="License Plate" type="text" required />
-                  <small class="error">License plate is required.</small>
+                  <div class='large-4 columns right'>
+                    <small class="error">License plate is required.</small>
+                  </div>
               </div>
-              <small class="error">License plate is required.</small>
             </div>
             <div class='row'>
               <div class='large-12 columns'>
-                <input placeholder="Phone number" name="phonenumber" id="phonenumber" type="tel" required />
+                <input class='inputReg' placeholder="Phone number" name="phonenumber" id="phonenumber" type="tel" required />
                 <div class='large-4 columns right'>
                   <small class="error">Phone number is required.</small>
                 </div>
@@ -71,7 +68,7 @@
             </div>
             <div class='row'>
               <div class="large-12 columns">
-                <input placeholder="Email" name="email" id="email" type="email" required />
+                <input class='inputReg' placeholder="Email" name="email" id="email" type="email" required />
                 <div class='large-4 columns right'>
                   <small class="error">A valid email address is required.</small>
                 </div>
@@ -79,12 +76,12 @@
             </div>
             <div class='row'>
               <div class="large-12 columns">
-                  <input id="name" name="name" placeholder="Full Name (optional)" type="text" />
+                  <input class='inputReg' id="name" name="name" placeholder="Full Name (optional)" type="text" />
               </div>
             </div>
             <div class='row'>
               <div class = "large-12 columns">
-                <input id = "password" name = "password" placeholder = "Password" type = "password" required/>
+                <input class='inputReg' id = "password" name = "password" placeholder = "Password" type = "password" required/>
                 <div class='large-4 columns right'>
                   <small class="error">make sure to enter a password with more than 8 characters, including one capital letter, one lower case letter and one number</small>
                 </div>
