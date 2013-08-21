@@ -2,6 +2,8 @@
 /* CSS Document */
 
 /* General Rules */
+
+/*Form Rules*/
 #signupTitle {
     text-align:center;
     color: #990099;
@@ -45,10 +47,8 @@
 
 #licensenumber {
 	width:30%;
-}
-
-#licensenumber:focus {
-	width:40%;
+	margin-left:20%;
+	margin-top:-2.5em;
 }
 
 #submitButton {
@@ -80,20 +80,22 @@ fieldset legend {
     color: #222222;  
 }
 
+
+/*Validtion Rules*/
 .error small.error, span.error, small.error {
-    background: #d45252 !important;
+	background:white !important;
 	border-radius: 3px 3px 3px 3px;
-	color: white;
+	color: red !important;
 	padding: 1px 6px;
-	z-index: 98; /* hints stay above all other elements */
-	position: absolute; /* allows proper formatting if hint is two lines */
+	z-index: 98;
+	position: absolute;
 	display: none;
 	text-shadow:none;
+	margin-left:55%;
+	margin-top:-3.5em !important;
 }
 
 .error small.error::before, span.error::before, small.error::before {
-	content: "\25C0";
-	color:#d45252;
 	position: absolute;
 	top:5px;
 	left:-9px;
@@ -120,8 +122,3 @@ input:focus:invalid, textarea:focus:invalid {
 	box-shadow: 0 0 5px #d45252;
 	border-color: #b03535;
 }
-
-.inputReg:focus {
-	width:60% !important;
-}
-

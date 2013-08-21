@@ -53,47 +53,40 @@
               </div>
               <div class='large-12 columns' id='licenseplate'>  
                   <input id="licensenumber" name="licensenumber" placeholder="License Plate" type="text" required />
-                  <div class='large-4 columns right'>
-                    <small class="error">License plate is required.</small>
-                  </div>
+                    <small class="error">Please enter a valid license plate.</small>
               </div>
             </div>
             <div class='row'>
               <div class='large-12 columns'>
-                <input class='inputReg' placeholder="Phone number" name="phonenumber" id="phonenumber" type="tel" required />
-                <div class='large-4 columns right'>
-                  <small class="error">Phone number is required.</small>
-                </div>
+                <input class='inputReg' placeholder="Phone Number" name="phonenumber" id="phonenumber" type="tel" required />
+                  <small class="error">Please enter a valid phone number.</small>
+              </div>
+            </div>
+            <div class='row'>
+              <div class="large-12 columns">
+                  <input class='inputReg' id="name" name="name" placeholder="Name" type="text" required/>
+                  <small class='error'>Please enter your name.</small>
               </div>
             </div>
             <div class='row'>
               <div class="large-12 columns">
                 <input class='inputReg' placeholder="Email" name="email" id="email" type="email" required />
-                <div class='large-4 columns right'>
-                  <small class="error">A valid email address is required.</small>
-                </div>
-              </div>
-            </div>
-            <div class='row'>
-              <div class="large-12 columns">
-                  <input class='inputReg' id="name" name="name" placeholder="Full Name (optional)" type="text" />
+                  <small class="error">Please enter a valid email.</small>
               </div>
             </div>
             <div class='row'>
               <div class = "large-12 columns">
                 <input class='inputReg' id = "password" name = "password" placeholder = "Password" type = "password" required/>
-                <div class='large-4 columns right'>
-                  <small class="error">make sure to enter a password with more than 8 characters, including one capital letter, one lower case letter and one number</small>
-                </div>
+                  <small class="error">Password must be at least 8 characters and include at least one capital letter, one lower case letter and one number.</small>
               </div>
             </div>
             <div class='row'>
-              <div class = "large-6 columns">
+              <div class = "large-6 small-6 columns">
                 <h5>How would you like to receive Wheeltalks?</h5>
               </div>
             </div>
             <div class='row'>
-              <div class='large-6 columns'>
+              <div class='large-6 small-6 columns'>
                 <div class='large-4 columns' id="text">
                   <label for="text"><input type="checkbox" id="text" CHECKED ><span class="custom checkbox checked"></span> text</label>
                 </div>
@@ -106,7 +99,7 @@
               </div>
             </div>
             <div class='row'>
-              <div class='large-6 columns'>
+              <div class='large-6 small-6 columns'>
                 <div id="button">
                   <input class='button' id='submitButton' type="submit" value="Submit" />
                 </div>
@@ -154,6 +147,7 @@
   '.js><\/script>')
   </script>
   
+  <script src='js/foundation/foundation.abide.js'></script>
   <script src="js/foundation.min.js"></script>
   <script type="text/javascript" src='js/raspberry.js'></script>
   <script type='text/javascript' src='js/form_validation.js'></script>
