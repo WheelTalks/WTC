@@ -124,6 +124,7 @@ title h1:hover, title h1:focus {
 
 .top-bar {
     /*position:fixed;*/
+    padding-bottom: 50px;
 }
 
 /* * * * * * * * * * */
@@ -132,7 +133,7 @@ title h1:hover, title h1:focus {
 
 #one {
     z-index:-100;
-    margin-top:10em;
+    margin-top:6em;
     text-align:center;
 }
 
