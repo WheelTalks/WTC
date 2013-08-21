@@ -59,7 +59,7 @@
 <!--SECTION 1, DISPLAY:FIXED, DISPLAYS MAIN INFORMATION, LARGE ONLY-->
   <div class='one-large one-small' id='one'>
     <div class='row'>
-      <div class='large-12 columns'>
+      <div class='large-12 small-12 columns'>
           <h2>Anonymously message any car.</h2>
       </div>
       <div class='large-3 large-offset-2 columns hide-for-small'>
