@@ -93,13 +93,7 @@ fieldset legend {
 	text-shadow:none;
 	margin-left:55%;
 	margin-top:-3.5em !important;
-}
-
-.error small.error::before, span.error::before, small.error::before {
-	position: absolute;
-	top:5px;
-	left:-9px;
-	border:none;
+	text-align:left;
 }
 
 .inputReg {
@@ -111,14 +105,100 @@ fieldset legend {
     margin-bottom:1em;
 }
 
-input:required:valid, textarea:required:valid {
+.valid input:required, .valid textarea:required {
 	background: #fff url('../img/valid.png') no-repeat 98% center;
 	box-shadow: 0 0 5px #5cd053;
 	border-color: #28921f;
+	margin-bottom:1em;
 }
 
-input:focus:invalid, textarea:focus:invalid {
+.error input:focus:invalid, .error textarea:focus:invalid {
 	background: #fff url('../img/invalid.png') no-repeat 98% center;
 	box-shadow: 0 0 5px #d45252;
 	border-color: #b03535;
 }
+
+#state.error select {
+	background: none;
+	border-radius:10px;
+	margin-bottom: 1em;
+}
+
+
+/*valid handling*/
+.valid small.valid, span.valid, small.valid {
+	background:white !important;
+	border-radius: 3px 3px 3px 3px;
+	color: #28921f !important;
+	padding: 1px 6px;
+	z-index: 98;
+	position: absolute;
+	display: none;
+	text-shadow:none;
+	margin-left:55%;
+	margin-top:-3.5em !important;
+	text-align:left;
+}
+
+	/*DEFAULTS FROM FOUNDATIONS WITH CLASS CHANGED TO VALID*/
+	[data-abide] .valid small.valid, [data-abide] span.valid, [data-abide] small.valid {
+	  display: block;
+	  padding: 0.375em 0.25em;
+	  margin-top: -1.3125em;
+	  margin-bottom: 1em;
+	  font-size: 0.75em;
+	  font-weight: bold;
+	  background: #c60f13;
+	  color: white;
+	  margin-top: 0; }
+	[data-abide] span.valid, [data-abide] small.valid {
+	  display: none; }
+
+	span.valid, small.valid {
+	  display: block;
+	  padding: 0.375em 0.25em;
+	  margin-top: -1.3125em;
+	  margin-bottom: 1em;
+	  font-size: 0.75em;
+	  font-weight: bold;
+	  background: #c60f13;
+	  color: white; }
+
+	.valid input,
+	.valid textarea,
+	.valid select {
+	  .valid input:focus,
+	  .valid textarea:focus,
+	  .valid select:focus {
+	    background: #fafafa;
+	    border-color: #999999; }
+	.valid label,
+	.valid label.valid {
+	  color: #c60f13; }
+	.valid small.valid {
+	  display: block;
+	  padding: 0.375em 0.25em;
+	  margin-top: -1.3125em;
+	  margin-bottom: 1em;
+	  font-size: 0.75em;
+	  font-weight: bold;
+	  background: #c60f13;
+	  color: white; }
+	.valid span.valid-message {
+	  display: block; }
+
+	input.valid,
+	textarea.valid {
+	  border-color: #c60f13;
+	  background-color: rgba(198, 15, 19, 0.1); }
+	  input.valid:focus,
+	  textarea.valid:focus {
+	    background: #fafafa;
+	    border-color: #999999; }
+
+	.valid select {
+	  border-color: #c60f13;
+	  background-color: rgba(198, 15, 19, 0.1); }
+	  .valid select:focus {
+	    background: #fafafa;
+	    border-color: #999999; }

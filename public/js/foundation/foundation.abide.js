@@ -158,10 +158,12 @@
         } else {
           if (el_patterns[i][1].test(value) && valid_length ||
             !required && el.value.length < 1) {
-            $(el).removeAttr('data-invalid').parent().toggleClass('valid');
+            $(el).removeAttr('data-invalid').parent().removeClass('error');
+            $(el).attr('data-valid', '').parent().addClass('valid');
             validations.push(true);
           } else {
-            $(el).attr('data-invalid', '').parent().toggleClass('error');
+            $(el).attr('data-invalid', '').parent().addClass('error');
+            $(el).removeAttr('data-valid').parent().removeClass('valid');
             validations.push(false);
           }
         }
