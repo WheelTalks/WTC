@@ -15,7 +15,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#learnMoreLink').click(function () {
         $('html,body').animate({
-            scrollTop: $('#sectionTwo').offset().top - 87
+            scrollTop: $('#sectionTwo').offset().top - 63
         });
     });
 });
@@ -25,7 +25,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#aboutLink').click(function () {
         $('html,body').animate({
-            scrollTop: $('#sectionTwo').offset().top - 87
+            scrollTop: $('#sectionTwo').offset().top - 63
         });
     });
 });
@@ -34,7 +34,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#featuresLink').click(function () {
         $('html,body').animate({
-            scrollTop: $('#features').offset().top - 87
+            scrollTop: $('#features').offset().top - 63
         });
     });
 });
@@ -43,7 +43,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#faqsLink').click(function () {
         $('html,body').animate({
-            scrollTop: $('#faqs').offset().top - 86
+            scrollTop: $('#faqs').offset().top - 63
         });
     });
 });
@@ -52,7 +52,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#contactLink').click(function () {
         $('html,body').animate({
-            scrollTop: $('#footer').offset().top - 87
+            scrollTop: $('#footer').offset().top - 63
         });
     });
 });
@@ -106,7 +106,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#aboutBar').click(function () {
         $('html,body').animate({
-            scrollTop: $('#sectionTwo').offset().top - 87
+            scrollTop: $('#sectionTwo').offset().top - 63
         });
     });
 });
@@ -115,7 +115,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#featuresBar').click(function () {
         $('html,body').animate({
-            scrollTop: $('#features').offset().top - 87
+            scrollTop: $('#features').offset().top - 63
         });
     });
 });
@@ -124,7 +124,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#faqsBar').click(function () {
         $('html,body').animate({
-            scrollTop: $('#faqs').offset().top - 87
+            scrollTop: $('#faqs').offset().top - 63
         });
     });
 });
@@ -133,7 +133,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#contactBar').click(function () {
         $('html,body').animate({
-            scrollTop: $('#footer').offset().top - 87
+            scrollTop: $('#footer').offset().top - 63
         });
     });
 });

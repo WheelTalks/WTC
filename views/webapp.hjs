@@ -17,52 +17,26 @@
 <body>
 <body>
 <!--HEADER, POSITION:FIXED, LARGE ONLY-->
-  <nav class="top-bar" id='appNav'>
-  <ul class="title-area">
+  <div class='fixed contain-to-grid' id='navWrapper'>
+    <nav class="top-bar" id='appNav'>
+      <ul class="title-area">
         <li class="name">
-      <h1><a href="#">WheelTalks </a></h1>
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-
-  <section class="top-bar-section">
-
-    
-    <ul class="right">
-      <li class="divider show-for-small" ></li>
-      <li class="active"><a href="/?logout=true">Log Out</a></li>
-    </ul>
-  </section>
-</nav>
+          <a id='navName' href="#">WheelTalks</a>
+        </li>
+        <li class="toggle-topbar menu-icon">
+          <a href="#"><span></span></a>
+        </li>
+      </ul>
+      <section class="top-bar-section"> 
+      <ul class="right">
+        <li class="divider show-for-small" ></li>
+        <li class="active"><a href="/?logout=true">Log Out</a></li>
+      </ul>
+      </section>
+    </nav>
+  </div>
 
   
-  <!--HEADER, POSITION:RELATIVE, SMALL ONLY-->
-  <!-- <div class='show-for-small' id='headSmall'>
-    <div class='row'>
-
-        <nav  class="top-bar" id = "appNav">
-          <ul>
-
-            <li class="name">
-              <h1>
-                <a href="#">
-                  WheelTalks
-                </a>
-              </h1>
-            </li>
-          <li class="toggle-topbar"><a href="#"></a></li>
-        </ul>
-
-          <section class="top-bar-section">
-
-            <ul class="right">
-              <li class="divider"></li>
-              <li class><a href="#">Main Item 1</a></li>
-            </ul>
-          </section>
-        </nav>
-        </div>
-  </div>
- -->
 <!-- form code-->
 <div align =  "center"><form class="custom" method="post" action="/webSend" >
   <fieldset>
