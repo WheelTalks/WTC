@@ -16,7 +16,8 @@
 
 <body>
 <body>
-<!--HEADER, POSITION:FIXED, LARGE ONLY-->
+  
+<!--HEADER, POSITION:FIXED, SMALL AND LARGE-->
   <div class='fixed contain-to-grid' id='navWrapper'>
     <nav class="top-bar" id='appNav'>
       <ul class="title-area">
