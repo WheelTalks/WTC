@@ -21,6 +21,19 @@
     background-color:#323232;
 }
 
+body {
+  background-image: url('../img/WTbackground.jpg')
+}
+/*CONTAINER RULES*/
+
+#messageContainer {
+  margin-top:5em;
+}
+
+.content {
+  background:none !important;
+}
+
 /*GENERAL MESSAGE RULES*/
 .header {
   margin-top:2em;

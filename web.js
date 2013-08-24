@@ -72,8 +72,11 @@ app.get('/loginPage', function(req, res){
   });
 });
 
-app.get('/messageboard', function(req, res){
-  res.render('messages', {
+app.get('/messages', function(req, res){
+	if (req.cookies.user == undefined || req.cookies.pass == undefined){
+			res.redirect('/loginPage');
+		}
+  res.render('messageboard', {
     title: 'Messages'
   });
 });
