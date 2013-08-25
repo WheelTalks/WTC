@@ -68,7 +68,13 @@ app.get('/webapp', function(req, res){
 
 app.get('/loginPage', function(req, res){
   res.render('login', {
-    title: 'Log Up'
+    title: 'Log In'
+  });
+});
+
+app.get('/test', function(req, res){
+  res.render('test', {
+    title: 'Test'
   });
 });
 

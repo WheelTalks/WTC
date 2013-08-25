@@ -3,6 +3,11 @@
 
 var user = getCookie('user');
 
+if(user!=null){
+	$(document).ready(function(){
+	    $('.right').prepend('<li class="active"><a href="#">'+user+'</a></li>');
+	});
+}
 
 
 function getCookie(c_name)
