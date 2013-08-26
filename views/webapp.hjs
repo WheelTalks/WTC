@@ -43,9 +43,9 @@
 
   
 <!-- form code-->
-<div align =  "center"><form class="custom" method="post" action="/webSend" >
+<div align="center" id="messengerForm"><form class="custom" method="post" action="/webSend" >
   <fieldset>
-		<legend align =  "center">Messenger</legend>
+		<legend align="center">Messenger</legend>
     
     <div class="row collapse" >
     <div class="large-3 small-3 columns">
