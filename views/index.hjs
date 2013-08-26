@@ -28,7 +28,7 @@
     <nav class="top-bar" id='appNav'>
       <ul class="title-area">
         <li class="name">
-          <a id='navName' href="#">WheelTalks</a>
+          <a id='navName'>WheelTalks</a>
         </li>
         <li class="toggle-topbar menu-icon">
           <a href="#"><span></span></a>
@@ -245,14 +245,13 @@
   '.js><\/script>')
   </script>-->
 
-  <!--<script src='js/vendor/jquery.js'></script>
+  <script src='js/vendor/jquery.js'></script>
   <script src="js/foundation.min.js"></script>
   <script src="js/foundation/foundation.js"></script>
   <script src="js/foundation/foundation.magellan.js"></script>
   <script src='js/foundation/foundation.tooltips.js'></script>
   <script src="js/foundation/foundation.forms.js"></script>
-  <script src="js/foundation/foundation.topbar.js"></script>-->
-  <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+  <script src="js/foundation/foundation.topbar.js"></script>
   <script src="js/raspberry.js"></script>
   
   <script>
