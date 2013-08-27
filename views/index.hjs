@@ -63,7 +63,7 @@
           <h2>Anonymously message any car.</h2>
       </div>
       <div class='large-3 large-offset-2 columns hide-for-small'>
-        <div id="picture"></div>
+        <img src="img/iphone_wt.png">
       </div>
       <div class='large-6 small-12 columns'>
         <h3 id='slogan'>Simple, Fun, and Free. See what people have been sending to your car</h3>
@@ -80,7 +80,7 @@
         <div class='large-11 columns small-centered' id='sectionTwo'>
           <h2>About WheelTalks</h2>
           <h3>Send a message on any phone</h3>
-          <p>Instantly send a message to any car on the road. Simply send a text to the WheelTalks phone number. Include the state and license plate number of your desired recipient followed by your message and we’ll take care of the rest. Also, you can send messages using our web app that is available on desktop and mobile..</p>
+          <p>Instantly send a message to any car on the road. Simply send a text to the WheelTalks phone number. Include the state and license plate number of your desired recipient followed by your message and we’ll take care of the rest. Also, you can send messages using our web app that is available on desktop and mobile.</p>
           <div class='large-12 columns' id='aboutGrid'> 
             <div class='large-4 small-6 columns left aboutIcon'>
               <h4>Universal</h4>
@@ -125,7 +125,7 @@
     <div class='subWrapper'>
       <div class='row'>
         <div class='large-11 columns small-centered'>
-          <h3>Scoring</h3>
+          <h3>Influence</h3>
           <p>WheelTalks goes beyond a way to send messages. It allows you to give feedback to other drivers, and monitor your own perception on the road. In order to make the WheelTalks experience more engaging we have given you the ability to give messages a good or bad rating. Response to a message with a “:)” and give the sender 5 points of influence, but respond with a “:(“ and they will lose 5 points. Also, you gain a point of influence for every message you send.</p>
           <p>As you gain more influence in the WheelTalks community, you will have the opportunity to gain levels and the higher your level the more respect you have from the community and us. Each week the user with the highest influence gets to choose the issue of the week that our community will focus on. We will delve into conversation on Facebook and twitter and WheelTalks sent with the hashtag of the week will get posted to the conversation. We are excited to see how you will use your influence.</p>
         </div>
