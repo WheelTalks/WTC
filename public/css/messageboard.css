@@ -28,21 +28,32 @@ body {
 
 #messageContainer {
   margin-top:5em;
+  z-index:101;
 }
 
 .content {
   background:none !important;
 }
 
+.title {
+  background-color:#323232 !important;
+}
+
+.title a {
+  color:yellow !important;
+  text-shadow:none;
+}
+
+
 /*GENERAL MESSAGE RULES*/
 .header {
   margin-top:2em;
-  /text-align:center;
 }
 
 .messageBox {
   margin-top:1em;
-  background-color:#eee;
+  /*background-color:#eee;*/
+  background-color:#fff;
   opacity:;
   padding-top:1em;
   border-radius: 1em;

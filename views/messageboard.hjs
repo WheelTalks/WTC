@@ -44,7 +44,7 @@
   </div>
 
   <div class='containerWrapper small-10 columns small-centered'>
-    <div class="section-container auto" id='messageContainer' data-section>
+    <div class="section-container vertical-tabs" id='messageContainer' data-section="vertical-tabs">
       <section id='inbox'>
         <p class="title" data-section-title><a href="#panel1">Inbox</a></p>
         <div class="content" id="messagesSection" data-section-content>
