@@ -3,6 +3,7 @@ var express = require('express')	// express is pretty much a must have module to
 	, routes = require('./routes')
 	, http = require('http')
 	, path = require('path')
+	, forward = require('./forward.js')
 	, server = http.createServer(app) 		// create the actual server
 
 	// nano is a module for managing databases. you'll work with this later.
@@ -25,6 +26,7 @@ app.configure( function() {
 	app.use(express.session({ secret: 'super-duper-secret-secret' }));
 	app.use(express.methodOverride());
 	app.use(app.router);
+	app.use(forward(/\/db\/(.*)/, 'https://liamflahive:swatter5@liamflahive.cloudant.com'));
 	app.use( express.static(path.join(__dirname + '/public') ));
 });
 
