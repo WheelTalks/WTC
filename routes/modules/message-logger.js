@@ -86,7 +86,7 @@ exports.logSend = function(senderPlate, plateTo, body){
 	    	sentToLog[index] = plateTo;
 	    	sentMssgLog[index] = body;
 
-	    	messages.save(doc._id, {
+	    	messages.save(plate, {
 	    		plate: plate,
 	    		phone: phone,
 	    		senderLog: senderLog,
