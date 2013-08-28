@@ -232,28 +232,6 @@ title h1:hover, title h1:focus {
     min-height:14em;
 }
 
-#aboutTitle {
-    margin-top:2em;
-}
-
-#message {
-    margin-top:1em;
-}
-
-#messageImage {
-    margin-top:-3em;
-    margin-left:10em;
-}
-
-#community {
-    margin-top:6em;
-}
-
-#communityImage {
-    margin-bottom:4em;
-    margin-left:10em;
-}
-
 
 /* * * * * * * * * * */
 /*     FEATURES      */
