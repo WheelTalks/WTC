@@ -53,7 +53,7 @@ messages.view('messages/byPhone', {key: numTo}, function (e, o) {
     	senderLog[index] = plateFrom;
     	recievedMssgLog[index] = body;
 
-    	messages.save(doc._id, {
+    	messages.save(plate, {
     		plate: plate,
     		phone: phone,
     		senderLog: senderLog,
