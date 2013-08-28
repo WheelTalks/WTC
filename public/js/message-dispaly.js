@@ -3,7 +3,7 @@
 
 var user = getCookie('user');
 
-var couch = sag.server("localhost", "/");
+var couch = sag.server('wheeltalks.herokuapp.com','/');
 
 couch.setPathPrefix('db');
  
