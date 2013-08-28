@@ -137,13 +137,6 @@ title h1:hover, title h1:focus {
     text-align:center;
 }
 
-#picture {
-    background-image:url('/img/use.jpg');
-    box-shadow: 0 0 20px #888888;
-    height:320px;
-    width:180px;
-}
-
 #sloganBox {
     margin-left:25%;
 }

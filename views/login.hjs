@@ -44,30 +44,6 @@
     </nav>
   </div>
 
-
-  <!--HEADER, POSITION:FIXED, LARGE ONLY-->
-  <!--<div class='fixed hide-for-small' id='head'>
-    <div class='row'>
-      <div class='large-3 columns' id='number'>
-        <h4>(781) 559-4602 </h4>
-      </div>
-      <div class='large-6 columns' id='signupTitle'>
-        <a href="/"><h1>WheelTalks</h1></a>
-      </div>
-      <div class='large-3 columns' id='fixedNav'>  
-        <div id='connect' class='button right success'><a href="/signup">Connect</a></div>
-      </div>
-    </div>
-  </div>-->
-
-  <!--HEADER, POSITION:RELATIVE, SMALL ONLY-->
- <!--   <nav class="top-bar" id='appNav'>
-  <ul class="title-area">
-        <li class="name">
-      <h1><a href="#">WheelTalks</a></h1>
-  </ul>
-</nav>-->
-
 <div class='row' id='loginForm'>
 <div align =  "center"><form method="post" action="/login">
     <fieldset>
@@ -93,7 +69,7 @@
     </div>
 
       <div id="button">
-                <input class='button' id='submitButton' type="submit" value="Submit" />
+                <input class='button success' id='submitButton' type="submit" value="Submit" />
             </div>
             
   </fieldset>

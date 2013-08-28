@@ -80,6 +80,15 @@ app.get('/test', function(req, res){
   });
 });
 
+app.get('/messages', function(req, res){
+	if (req.cookies.user == undefined || req.cookies.pass == undefined){
+			res.redirect('/loginPage');
+		}
+  res.render('messageboard', {
+    title: 'Messages'
+  });
+});
+
 // your homework -- create a route that serves up a different page. So, I want to be able to go to "www.wheeltalk.com/about" to learn more about the team. 
 
 app.get('/', routes.index);

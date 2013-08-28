@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*GENERAL RULES*/
+
+/*TOP BAR*/
+@media only screen and (min-width: 58.75em) {
+    .top-bar-section {
+        margin-top:0 !important;
+    }
+}
+
+@media only screen {
+    .top-bar-section {
+        margin-top:1em;
+    }
+}
+
+.top-bar-section ul li.active > a {
+    padding-top:0.5em;
+    background-color:#323232;
+}
+
+body {
+  background-image: url('../img/WTbackground.jpg')
+}
+/*CONTAINER RULES*/
+
+#messageContainer {
+  margin-top:5em;
+  z-index:101;
+}
+
+.content {
+  background:none !important;
+}
+
+.title {
+  background-color:#323232 !important;
+}
+
+.title a {
+  color:yellow !important;
+  text-shadow:none;
+}
+
+
+/*GENERAL MESSAGE RULES*/
+.header {
+  margin-top:2em;
+}
+
+.messageBox {
+  margin-top:-1em;
+  /*background-color:#eee;*/
+  background-color:#fff;
+  padding-top:1em;
+  border-radius: 1em;
+  border:1px gray solid;
+  box-shadow: 0 0 5px 1px gray;
+  text-shadow:none;
+  color:#323232;
+}
+
+.messageHead {
+  box-shadow: 0 5px 5px -5px gray;
+}
+
+.messageHead div {
+  opacity:.7;
+}
+
+.contentWrapper {
+  padding-top:1em;
+  box-shadow: 0 5px 5px -5px gray;
+}
+
+.date {
+  text-align:right;
+}
+
+/*MESSAGE:RECEIVED RULES*/
+
+.messageFunctions {
+  margin-top:1em;
+}
+
+.messageFunctions li {
+  display:inline;
+  list-style: none;
+  margin-right:3em;
+  opacity:.7;
+}
+
+.messageFunctions li a {
+  color:blue;
+}
+
+.functionImage {
+  margin-bottom:-10em;
+}
+

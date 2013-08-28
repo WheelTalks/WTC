@@ -289,7 +289,7 @@ switch(command){
 	    }
 	    else{
 	      if (res.length != 1) { //license plate does not exist
-	        response.send('<Response><Sms>This plate was not recognized :(</Sms></Response>');
+	        response.send("<Response><Sms>This user hasn't signed up for WheelTalks yet, but you're message will be waiting for them. Spread the word so all car owners can start communicating!</Sms></Response>");
 	        talks.save("", {
 	          plate: command,
 	          message: body,

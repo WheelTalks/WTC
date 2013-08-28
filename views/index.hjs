@@ -28,7 +28,7 @@
     <nav class="top-bar" id='appNav'>
       <ul class="title-area">
         <li class="name">
-          <a id='navName' href="#">WheelTalks</a>
+          <a id='navName'>WheelTalks</a>
         </li>
         <li class="toggle-topbar menu-icon">
           <a href="#"><span></span></a>
@@ -56,14 +56,14 @@
   </div>
 
 
-<!--SECTION 1, DISPLAY:FIXED, DISPLAYS MAIN INFORMATION, LARGE ONLY-->
+<!--SECTION 1, DISPLAY:FIXED, DISPLAYS MAIN INFORMATION-->
   <div class='one-large one-small' id='one'>
     <div class='row'>
       <div class='large-12 small-12 columns'>
           <h2>Anonymously message any car.</h2>
       </div>
       <div class='large-3 large-offset-2 columns hide-for-small'>
-        <div id="picture"></div>
+        <img src="img/iphone_wt.png">
       </div>
       <div class='large-6 small-12 columns'>
         <h3 id='slogan'>Simple, Fun, and Free. See what people have been sending to your car</h3>
@@ -80,19 +80,19 @@
         <div class='large-11 columns small-centered' id='sectionTwo'>
           <h2>About WheelTalks</h2>
           <h3>Send a message on any phone</h3>
-          <p>All you do is send a message to the WheelTalks phone number. Include a license plate and a message and that message will be there waiting for that driver.</p>
+          <p>Instantly send a message to any car on the road. Simply send a text to the WheelTalks phone number. Include the state and license plate number of your desired recipient followed by your message and we’ll take care of the rest. Also, you can send messages using our web app that is available on desktop and mobile.</p>
           <div class='large-12 columns' id='aboutGrid'> 
             <div class='large-4 small-6 columns left aboutIcon'>
               <h4>Universal</h4>
-              <p>WheelTalks works on any phone. There are no downloads necessary. All you need is the ability to send texts, although having a browswer to view our web app is a nice bonus.</p>
+              <p>WheelTalks works on any phone. There are no downloads necessary. All you need is the ability to send texts, although having a browser to view our web app is a nice bonus.</p>
             </div>
             <div class='large-4 small-6 columns aboutIcon'>
               <h4>Community</h4>
-              <p>The WheelTalks community is devoted to making the driving community a friendlier and safer place by commiting to thinking about the person behind the wheel. </p>
+              <p>The WheelTalks community is devoted to making the driving community a friendlier and safer place by committing to thinking about the person behind the wheel.</p>
             </div>
             <div class='large-4 small-6 columns right aboutIcon'>
               <h4>Simple</h4>
-              <p>All it takes a license plate and a message and anyone in the world can have a message sent to them. Also, our web app provides an easy-to-use interace with more functions.</p>
+              <p>All it takes a license plate and a message and anyone in the world can have a message sent to them. Also, our web app provides an easy-to-use interface with more functions.</p>
             </div>
             <div class='large-4 small-6 columns left aboutIcon'>
               <h4>Fun</h4>
@@ -100,11 +100,11 @@
             </div>
             <div class='large-4 small-6 columns aboutIcon'>
               <h4>Anonymous</h4>
-              <p>WheelTalks keeps all messages anonymous. The only information that gets shared is your license plate.</p>
+              <p>WheelTalks keeps all messages anonymous. The only information that gets shared is your license plate. Unless you would like to share more information... But that’s up to you.</p>
             </div>
             <div class='large-4 small-6 columns right aboutIcon'>
               <h4>Outlet</h4>
-              <p>WheelTalks provides an outlet for user in a trapped environment</p>
+              <p>WheelTalks provides an outlet for user in a trapped environment. How will you use this outlet in your driving experience? Let us know at support@wheeltalks.com.</p>
             </div>
           </div>
         </div>
@@ -118,57 +118,16 @@
         <div class='large-11 columns small-centered' id='features'>
           <h2>Features</h2>
           <h3>See what people have been saying</h3>
-          <p>Click &quot;get connected&quot; and receive an email of all the messages that have been sent to your license plate. Make sure you're driving well, your car is safe and everyone on the road is wishing you well!<p>
+          <p>Click &quot;sign up&quot; and receive an email of all the messages that have been sent to your license plate. Make sure you're driving well, your car is safe and everyone on the road is wishing you well!<p>
         </div>
       </div>
     </div>
     <div class='subWrapper'>
       <div class='row'>
         <div class='large-11 columns small-centered'>
-          <h3> Send gems to cars</h3>
-          <p> A gem is a quick note that is randomly generated inisde of our pool of gems associated with particular emotions. You can send an emotion to a license plate and WheelTalks will randomly send gems to that persons account. </p>
-          <div class="large-12 columns" id = "gems">
-            <div class='large-6 small-6 columns'>
-              <i class='foundicon-heart gemIcon'></i>
-              <br>
-              <p>Love</p>
-            </div>
-            <div class='large-6 small-6 columns'>
-              <i class='foundicon-star gemIcon'></i>
-              <br>
-              <p>Fun</p>
-            </div>
-            <div class='large-6 small-6 columns'>
-              <i class='foundicon-smiley gemIcon'></i>
-              <br>
-              <p>Funny</p>
-            </div>
-            <div class='large-6 small-6 columns'>
-              <i class='foundicon-people gemIcon'></i>
-              <br>
-              <p>Cute</p>
-            </div>
-            <div class='large-6 small-6 columns'>
-              <i class='foundicon-remove gemIcon'></i>
-              <br>
-              <p>Sad</p>
-            </div>
-            <div class='large-6 small-6 columns'>
-              <i class='foundicon-error gemIcon'></i>
-              <br>
-              <p>Angry</p>
-            </div>
-          </div>
-          <p>submit more gems at support@wheeltalks.com</p>
-        </div>
-      </div>
-    </div>
-    <div class='subWrapper'>
-      <div class='row'>
-        <div class='large-11 columns small-centered'>
-          <h3>Scoring</h3>
-          <p>Gain influence by being a good member of the wheeltalks community. Anytime you send a message to someone they can give you points by replying with ":)" to wheeltalks. This will give you 5 points of influence. A ":(" reply, results in negative 5 points from your influence. You get a point of influence with every message you send</p>
-          <p>Work hard to gain influence. The person with the most influence each week gets to choose the issue of the week that wheeltalks focuses on. Wheeltalks will post on facebook, twitter, and on their website regarding a particular issue. But only great members of the community get to have that kind of power.
+          <h3>Influence</h3>
+          <p>WheelTalks goes beyond a way to send messages. It allows you to give feedback to other drivers, and monitor your own perception on the road. In order to make the WheelTalks experience more engaging we have given you the ability to give messages a good or bad rating. Response to a message with a “:)” and give the sender 5 points of influence, but respond with a “:(“ and they will lose 5 points. Also, you gain a point of influence for every message you send.</p>
+          <p>As you gain more influence in the WheelTalks community, you will have the opportunity to gain levels and the higher your level the more respect you have from the community and us. Each week the user with the highest influence gets to choose the issue of the week that our community will focus on. We will delve into conversation on Facebook and twitter and WheelTalks sent with the hashtag of the week will get posted to the conversation. We are excited to see how you will use your influence.</p>
         </div>
       </div>  
     </div>

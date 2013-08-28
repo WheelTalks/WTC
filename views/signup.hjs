@@ -106,7 +106,7 @@
             <div class='row'>
               <div class='large-6 small-6 columns'>
                 <div id="button">
-                  <input class='button' id='submitButton' type="submit" value="Submit" />
+                  <input class='button success' id='submitButton' type="submit" value="Submit" />
                 </div>
               </div>
             </div>
@@ -122,7 +122,7 @@
   <div class='wrapper footer' id='signupFooter'>
     <div class='subWrapper'>
       <div class='row'>
-        <div class='large-10 columns right' id='footer'>
+        <div class='large-10 columns small-centered' id='footer'>
           <ul>
               <li>
                 <a href='#'>Help & FAQs</a>
