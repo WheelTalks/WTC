@@ -7,30 +7,46 @@
 <title>WheelTalks</title>
 
 <link rel="stylesheet" href="css/foundation.css">
-<link rel="stylesheet" type="text/css" href="css/webapp.css">
-
 <script src="js/vendor/custom.modernizr.js"></script>
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="js/login-display.js"></script>
+
+
+
 
 </head>
 <body>
-	<nav class="top-bar" id='appNav'>
-  <ul class="title-area">
-        <li class="name">
-      <h1><a href="#">WheelTalks </a></h1>
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-
-  <section class="top-bar-section">
-
-    
-    <ul class="right" id="change">
-      <li class="divider show-for-small" ></li>
-      <li class="active"><a href="/?logout=true">Log Out</a></li>
-    </ul>
+	
+<div class="section-container auto" data-section>
+  <section>
+    <p class="title" data-section-title><a href="#panel1">Recieved</a></p>
+    <div class="content" data-section-content>
+      <!--<p>Content of section 1.</p>-->
+    </div>
   </section>
-</nav>
+  <section>
+    <p class="title" data-section-title><a href="#panel2">Sent</a></p>
+    <div class="content" data-section-content>
+    </div>
+  </section>
+</div>
+ <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script src="js/vendor/zepto.js"></script>
+  <script src="js/foundation/foundation.js"></script>
+
+  <script src="js/foundation/foundation.section.js"></script>
+  <script src="js/sag-0.4.0.js"> </script>
+
+  <script src="js/message-dispaly.js"></script>
+  
+  <script>
+    $(document).foundation();
+  </script>
 
 </body>
+</html>
