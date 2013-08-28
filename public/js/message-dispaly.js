@@ -1,16 +1,14 @@
 
 'use strict';
 
-// var request = new XMLHttpRequest();
-// request.open("GET", "https://liamflahive:swatter5@liamflahive.cloudant.com/wheel/_all_docs", false);
-// request.send("");
-// //alert(request.responseText);
+var user = getCookie('user');
+
 var couch = sag.server('localhost', 5000);
 
 couch.setPathPrefix('/db');
  
     // Set the database
-    couch.setDatabase('wheel');
+    couch.setDatabase('messages');
 
     couch.login({
       user: 'liamflahive',
@@ -19,14 +17,29 @@ couch.setPathPrefix('/db');
     });
 
     couch.get({
-      url: '/RA',
+      url: '/'+user,
       callback: function(resp, success) {
       	var doc;
       	if(success) {
           var doc = resp.body;
-          $(document).ready(function(){
-		    $('.content').append('<p>'+ doc.plate +'</p>');
-			});
+          var inMessages = doc.recievedMssgLog;
+          var outMessages = doc.sentMssgLog;
+          for(var i = 0; i < inMessages.length; i++){
+				(function(foo){
+				$(document).ready(function(){
+					    $('#messagesSection').append("<div class='small-12 columns small-centered receivedWrapper'><div class='messageBox small-12 columns'><div class='row messageHead'><div class='from columns small-4'><p>From: <span class='fromName' id='from12345'>Joe Smith</span></p></div><div class='date columns right small-4'><p>Sent: <span class='dateRec' id='date12345'>1/1/2001</span></p></div></div><div class='row contentWrapper'><div class='messageContent columns'><p><span class='contentRec' id='contentRec12345'>"+inMessages[foo]+"</span></p></div></div><ul class='messageFunctions columns'><li class='like'><a href='#likepost12345'>Like <i class='foundicon-up-arrow functionImage'></i></a></li><li class='dislike'><a href='#dislikepost12345'>Dislike <i class='foundicon-down-arrow functionImage'></i></a></li><li class='reply'><a href='#replyPost12345'>Reply <i class='foundicon-add-doc functionImage'></i></a></li><li class='report'><a href='#reportPost12345'>Report <i class='foundicon-flag functionImage'></i></a></li><li class='archive'><a href='#archivePost12345'>Archive <i class='foundicon-trash functionImage'></i></a></li></ul></div></div> ");
+
+
+					});
+				}(i));
+			};
+		   for(var i = 0; i < outMessages.length; i++){
+				(function(foo){
+				$(document).ready(function(){
+					    $('#outbox').append("<div class='small-12 columns small-centered receivedWrapper'><div class='messageBox small-12 columns'><div class='row messageHead'><div class='from columns small-4'><p>From: <span class='fromName' id='from12345'>Joe Smith</span></p></div><div class='date columns right small-4'><p>Sent: <span class='dateRec' id='date12345'>1/1/2001</span></p></div></div><div class='row contentWrapper'><div class='messageContent columns'><p><span class='contentRec' id='contentRec12345'>"+outMessages[foo]+"</span></p></div></div><ul class='messageFunctions columns'><li class='like'><a href='#likepost12345'>Like <i class='foundicon-up-arrow functionImage'></i></a></li><li class='dislike'><a href='#dislikepost12345'>Dislike <i class='foundicon-down-arrow functionImage'></i></a></li><li class='reply'><a href='#replyPost12345'>Reply <i class='foundicon-add-doc functionImage'></i></a></li><li class='report'><a href='#reportPost12345'>Report <i class='foundicon-flag functionImage'></i></a></li><li class='archive'><a href='#archivePost12345'>Archive <i class='foundicon-trash functionImage'></i></a></li></ul></div></div> ");
+					});
+				}(i));
+			};
         }
         else if(resp._HTTP.status == 404) {
           alert('boo');
@@ -34,33 +47,6 @@ couch.setPathPrefix('/db');
       }
   	});
 
-
-
-//var res = JSON.parse($db);
-
-// instantiate a new XMLHttpRequest object
-// var req = new XMLHttpRequest()
-// // Open a GET request to "/all_dbs"
-// req.open("GET", "https://liamflahive:swatter5@liamflahive.cloudant.com/_all_dbs")
-// // Send nothing as the request body
-// req.send("")
-// // Get the response
-// var res = JSON.parse(req.responseText);
-//alert(res);
-
-var messages = [];
-messages[0] = 'Hi there';
-messages[1]= "nice car"
-messages[2]= "cool face"
-
-
-for(var i = 0; i < messages.length; i++){
-	(function(foo){
-	$(document).ready(function(){
-		    $('.content').append('<p>'+ messages[foo] +'</p>');
-		});
-	}(i));
-};
 
 
 

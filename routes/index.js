@@ -139,7 +139,7 @@ var recievedMssgLog = [];
 var sentMssgLog = [];
 var sentToLog = [];
 
-messages.save("",
+messages.save(plate,
 {
 		plate: plate,
     	phone: phone2,
