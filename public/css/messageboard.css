@@ -51,7 +51,7 @@ body {
 }
 
 .messageBox {
-  margin-top:1em;
+  margin-top:-1em;
   /*background-color:#eee;*/
   background-color:#fff;
   opacity:;
