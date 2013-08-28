@@ -106,7 +106,7 @@
             <div class='row'>
               <div class='large-6 small-6 columns'>
                 <div id="button">
-                  <input class='button' id='submitButton' type="submit" value="Submit" />
+                  <input class='button success' id='submitButton' type="submit" value="Submit" />
                 </div>
               </div>
             </div>
