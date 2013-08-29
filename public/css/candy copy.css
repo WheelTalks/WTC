@@ -1,17 +1,12 @@
 @charset"UTF-8";
 
 /* CSS Document */
-html {
-    height:100%;
-}
-
  body {
     padding-top:0 !important;
     margin:0;
     margin-top:0;
     font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     text-shadow: 0 1px 0 #fff;
-    height:100%;
 }
 
 h2, h3, h4, h5 {
@@ -106,8 +101,7 @@ title h1:hover, title h1:focus {
 }
 
 #navName {
-    /*margin-top:-.1em;*/
-    margin-top:0.1em;
+    margin-top:-.1em;
     font-size: 2.5em;
     color:yellow;
     text-align:center;
@@ -132,105 +126,6 @@ title h1:hover, title h1:focus {
     /*position:fixed;*/
     padding-bottom: 50px;
 }
-
-
-
-
-#navName {
-    text-shadow:none;
-}
-.navLinkBar {
-    float:right;
-    display:inline;
-    list-style: none;
-    margin-top:.75em;
-}
-
-.navLink {
-    display:inline;
-    margin-left:1em;
-}
-
-.navLink a {
-    color:white;
-    text-shadow:none;
-}
-
-#sideBarButton {
-    height:1.2em;
-    width:2em;
-    margin-top:-1.6em;
-    margin-left:0.5em;
-    cursor:pointer;
-}
-
-@media only screen {
-    .navLinkBar {
-        display:none;
-    }
-    #sideBarButton {
-        display:block;
-    }
-    #navName {
-        margin-left:1.5em;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .navLinkBar {
-        display:block;
-    }
-    #sideBarButton {
-        display:none;
-    }
-    #navName {
-        margin-left:0;
-    }
-}
-
-#sideBarPanel {
-    background-color:#323232;
-    width:15em;
-    height:100%;
-    margin-left:-0.1em;
-    margin-top:-6.1em;
-    display:none;
-
-}
-
-#sideBarPanel ul {
-    margin-top:3em;
-}
-
-.sideBarLink {
-    margin-top:1em;
-}
-
-.sideBarLink a {
-    color:white;
-    text-shadow:none;
-}
-
-#sideBarPanel ul {
-    list-style:none;
-}
-
-.active {
-    margin-left:14.8em;
-}
-
-.active #sideBarPanel {
-    margin-left:-14.9em;
-    display:block;
-    position:fixed;
-    z-index:-100;
-    overflow:hidden;
-}
-
-.active #navWrapper {
-    margin-left:14.8em;
-}
-
 
 /* * * * * * * * * * */
 /*     SECTION ONE   */
@@ -335,28 +230,6 @@ title h1:hover, title h1:focus {
 
 .aboutIcon {
     min-height:14em;
-}
-
-#aboutTitle {
-    margin-top:2em;
-}
-
-#message {
-    margin-top:1em;
-}
-
-#messageImage {
-    margin-top:-3em;
-    margin-left:10em;
-}
-
-#community {
-    margin-top:6em;
-}
-
-#communityImage {
-    margin-bottom:4em;
-    margin-left:10em;
 }
 
 

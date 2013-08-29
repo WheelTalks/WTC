@@ -10,32 +10,26 @@ $(document).ready(function () {
     $('.menuButton').mouseleave(function () {
         $(this).fadeTo('fast', 0.7);
     });
-//Scroll capabilities for 'Learn More' button on top screen
-    $('#learnMoreLink').click(function () {
-        $('html,body').animate({
-            scrollTop: $('#sectionTwo').offset().top - 63
-        });
-    });
 //Scroll capabilities for 'about' button on top screen
-    $('#aboutLink').click(function () {
+    $('.aboutLink').click(function () {
         $('html,body').animate({
-            scrollTop: $('#sectionTwo').offset().top - 63
+            scrollTop: $('#two').offset().top - 57
         });
     });
 //Scroll capabilities for 'features' button on top screen
-    $('#featuresLink').click(function () {
+    $('.featuresLink').click(function () {
         $('html,body').animate({
             scrollTop: $('#features').offset().top - 63
         });
     });
 //Scroll capabilities for 'faqs' button on top screen
-    $('#faqsLink').click(function () {
+    $('.faqsLink').click(function () {
         $('html,body').animate({
             scrollTop: $('#faqs').offset().top - 63
         });
     });
 //Scroll capabilities for 'contact' button on top screen
-    $('#contactLink').click(function () {
+    $('.contactLink').click(function () {
         $('html,body').animate({
             scrollTop: $('#footer').offset().top - 63
         });
@@ -69,6 +63,10 @@ $(document).ready(function () {
 //Display answer to FAQs on click
     $('.question').click( function () {
         $(this).next('.answer').slideToggle("fast");
+    });
+//display sidebar
+    $('#sideBarButton').click(function() {
+        $('body').toggleClass('active')
     });
 
 //End

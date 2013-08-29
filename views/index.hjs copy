@@ -23,7 +23,7 @@
 
 
 <!--HEADER, POSITION:FIXED, SMALL AND LARGE-->
-  <!--<div class='fixed contain-to-grid' id='navWrapper'>
+  <div class='fixed contain-to-grid' id='navWrapper'>
     <nav class="top-bar" id='appNav'>
       <ul class="title-area">
         <li class="name">
@@ -52,48 +52,7 @@
         </ul>
       </section>
     </nav>
-  </div>-->
-
-  <div class='fixed' id='navWrapper'>
-    <div class="large-12 columns">
-      <a id="navName">WheelTalks</a>
-      <ul class="navLinkBar">
-        <li class="navLink aboutLink">
-          <a>About</a>
-        </li>
-        <li class='navLink featuresLink'>
-          <a>Features</a>
-        </li>
-        <li class='navLink faqsLink'>
-          <a>FAQs</a>
-        </li>
-        <li class='navLink'>
-          <a href='/loginPage'>Log In</a>
-        </li>
-      </ul>
-      <img id="sideBarButton" src="/img/menuButton.png">
-    </div>
   </div>
-
-  <div class="panel" id="sideBarPanel">
-    <div id="sideBar">
-      <ul id="sideBarMenu">
-        <li class="sideBarLink aboutLink">
-          <a>About</a>
-        </li>
-        <li class='sideBarLink featuresLink'>
-          <a>Features</a>
-        </li>
-        <li class='sideBarLink faqsLink'>
-          <a>FAQs</a>
-        </li>
-        <li class='sideBarLink'>
-          <a href='/loginPage'>Log In</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
 
 
 <!--SECTION 1, DISPLAY:FIXED, DISPLAYS MAIN INFORMATION-->
@@ -117,19 +76,36 @@
 <!--ABOUT-->
   <div class='wrapperOne-large wrapperOne-small wrapper' id='wrapperOne'>
       <div class='row' id='two'>
-        <h2 id='aboutTitle'>About WheelTalks</h2>
-        <div class='small-6 columns' id='message'>
+        <div class='large-11 columns small-centered' id='sectionTwo'>
+          <h2>About WheelTalks</h2>
           <h3>Send a message on any phone</h3>
           <p>Instantly send a message to any car on the road. Simply send a text to the WheelTalks phone number. Include the state and license plate number of your desired recipient followed by your message and we’ll take care of the rest. Also, you can send messages using our web app that is available on desktop and mobile.</p>
-        </div>
-        <img src="/img/iphone_wt.png" id="messageImage">
-      </div>
-      <div class="row">
-        <img src="/img/iphone_wt.png" id="communityImage">
-        <div class='small-6 columns right' id="community">
-          <h3>Community</h3>
-          <p>The WheelTalks community is devoted to making the driving community a friendlier and safer place by committing to thinking about the person behind the wheel. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+          <div class='large-12 columns' id='aboutGrid'> 
+            <div class='large-4 small-6 columns left aboutIcon'>
+              <h4>Universal</h4>
+              <p>WheelTalks works on any phone. There are no downloads necessary. All you need is the ability to send texts, although having a browser to view our web app is a nice bonus.</p>
+            </div>
+            <div class='large-4 small-6 columns aboutIcon'>
+              <h4>Community</h4>
+              <p>The WheelTalks community is devoted to making the driving community a friendlier and safer place by committing to thinking about the person behind the wheel.</p>
+            </div>
+            <div class='large-4 small-6 columns right aboutIcon'>
+              <h4>Simple</h4>
+              <p>All it takes a license plate and a message and anyone in the world can have a message sent to them. Also, our web app provides an easy-to-use interface with more functions.</p>
+            </div>
+            <div class='large-4 small-6 columns left aboutIcon'>
+              <h4>Fun</h4>
+              <p>WheelTalks is fun. Messages allow the worlds drivers to communicate with each other and create a more engaging driving experience.</p>
+            </div>
+            <div class='large-4 small-6 columns aboutIcon'>
+              <h4>Anonymous</h4>
+              <p>WheelTalks keeps all messages anonymous. The only information that gets shared is your license plate. Unless you would like to share more information... But that’s up to you.</p>
+            </div>
+            <div class='large-4 small-6 columns right aboutIcon'>
+              <h4>Outlet</h4>
+              <p>WheelTalks provides an outlet for user in a trapped environment. How will you use this outlet in your driving experience? Let us know at support@wheeltalks.com.</p>
+            </div>
+          </div>
         </div>
     </div>
   </div>
