@@ -10,16 +10,10 @@ $(document).ready(function () {
     $('.menuButton').mouseleave(function () {
         $(this).fadeTo('fast', 0.7);
     });
-//Scroll capabilities for 'Learn More' button on top screen
-    $('#learnMoreLink').click(function () {
-        $('html,body').animate({
-            scrollTop: $('#sectionTwo').offset().top - 63
-        });
-    });
 //Scroll capabilities for 'about' button on top screen
     $('#aboutLink').click(function () {
         $('html,body').animate({
-            scrollTop: $('#sectionTwo').offset().top - 63
+            scrollTop: $('#two').offset().top - 57
         });
     });
 //Scroll capabilities for 'features' button on top screen
