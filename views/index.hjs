@@ -23,7 +23,7 @@
 
 
 <!--HEADER, POSITION:FIXED, SMALL AND LARGE-->
-  <div class='fixed contain-to-grid' id='navWrapper'>
+  <!--<div class='fixed contain-to-grid' id='navWrapper'>
     <nav class="top-bar" id='appNav'>
       <ul class="title-area">
         <li class="name">
@@ -52,7 +52,48 @@
         </ul>
       </section>
     </nav>
+  </div>-->
+
+  <div class='fixed' id='navWrapper'>
+    <div class="large-12 columns">
+      <a id="navName">WheelTalks</a>
+      <ul class="navLinkBar">
+        <li class="navLink aboutLink">
+          <a>About</a>
+        </li>
+        <li class='navLink featuresLink'>
+          <a>Features</a>
+        </li>
+        <li class='navLink faqsLink'>
+          <a>FAQs</a>
+        </li>
+        <li class='navLink'>
+          <a href='/loginPage'>Log In</a>
+        </li>
+      </ul>
+      <img id="sideBarButton" src="/img/menuButton.png">
+    </div>
   </div>
+
+  <div class="panel" id="sideBarPanel">
+    <div id="sideBar">
+      <ul id="sideBarMenu">
+        <li class="sideBarLink aboutLink">
+          <a>About</a>
+        </li>
+        <li class='sideBarLink featuresLink'>
+          <a>Features</a>
+        </li>
+        <li class='sideBarLink faqsLink'>
+          <a>FAQs</a>
+        </li>
+        <li class='sideBarLink'>
+          <a href='/loginPage'>Log In</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
 
 
 <!--SECTION 1, DISPLAY:FIXED, DISPLAYS MAIN INFORMATION-->
