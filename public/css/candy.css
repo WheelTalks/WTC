@@ -347,6 +347,7 @@ title h1:hover, title h1:focus {
 
 #aboutTitle {
     margin-top:2em;
+    margin-left:.5em;
 }
 
 #message {
