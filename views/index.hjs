@@ -105,9 +105,9 @@
       <div class='large-3 large-offset-2 columns hide-for-small'>
         <img src="img/iphone_wt.png">
       </div>
-      <div class='large-5 small-12 left small-offset-1 columns'>
-        <h3 id='slogan'>Anonymously message any car and join our community.</h3>
-        <a href='/signup'><div class='button large success ' id='signup_button'>
+      <div class='mainBoxRight-small mainBoxRight-large columns'>
+        <h3 class="slogan-large slogan-small" id='slogan'>Anonymously message any car and join our community.</h3>
+        <a href='/signup'><div class='button large success signupButton-small signupButton-large' id='signup_button'>
             <div>Sign up</div>
         </div></a>
       </div>
@@ -122,7 +122,7 @@
           <h3>Send a message on any phone</h3>
           <p>Instantly send a message to any car on the road. Simply send a text to the WheelTalks phone number. Include the state and license plate number of your desired recipient followed by your message and we’ll take care of the rest. Also, you can send messages using our web app that is available on desktop and mobile.</p>
         </div>
-        <img src="/img/iphone_wt.png" id="messageImage">
+        <img src="/img/iphone_wt.png" class="messageImage" id="messageImage">
       </div>
       <div class="row">
         <img src="/img/iphone_wt.png" id="communityImage">

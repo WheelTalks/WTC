@@ -11,6 +11,17 @@
     .one-small {
         position:relative;
     }
+    .mainBoxRight-small {
+        width:100%;
+        text-align:center;
+        margin-left:500px;
+    }
+    .slogan-small {
+        margin-left:0;
+    }
+    .signupButton-large {
+        margin-left:0;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -24,5 +35,35 @@
         position: fixed;
         top: 0;
         z-index: 99; ;
+    }
+    .mainBoxRight-large {
+        width:41.66667%;
+    }
+    .slogan-large {
+        margin-left:-20%;
+        width:95%;
+    }
+    .signupButton-large {
+        margin-left:-40% !important;
+    }
+    #messageImage {
+        float:none !important;
+        margin-top:0 !important;
+    }
+    #communityImage {
+        margin-bottom:4em !important;
+        margin-left:10em !important;
+        margin-top:0 !important;
+    }
+}
+
+@media only screen and (min-width: 0px) {
+    #messageImage {
+        float:right;
+        margin-top:-22em;
+    }
+    #communityImage {
+        margin-left:.5em;
+        margin-top:5em;
     }
 }
