@@ -217,6 +217,7 @@ title h1:hover, title h1:focus {
 .sideBarLink a {
     color:white;
     text-shadow:none;
+    font-size: 1.25em;
 }
 
 #sideBarPanel ul {

@@ -19,7 +19,7 @@
 <body>
 
   <!--HEADER FOR BOTH LARGE AND SMALL-->
-  <div class='fixed contain-to-grid' id='navWrapper'>
+  <!--<div class='fixed contain-to-grid' id='navWrapper'>
     <nav class="top-bar" id='appNav'>
       <ul class="title-area">
         <li class="name">
@@ -39,6 +39,40 @@
         </ul>
       </section>
     </nav>
+  </div>-->
+
+  <!--NEW HEADER-->
+  <div class='fixed' id='navWrapper'>
+    <div class="large-12 columns">
+      <a id="navName">WheelTalks</a>
+      <ul class="navLinkBar">
+        <li class="navLink aboutLink">
+          <a href="/">Home</a>
+        </li>
+        <li class='navLink faqsLink'>
+          <a href="signup">Sign Up</a>
+        </li>
+        <li class='navLink'>
+          <a href='/loginPage'>Log In</a>
+        </li>
+      </ul>
+      <img id="sideBarButton" src="/img/menuButton.png">
+    </div>
+  </div>
+  <div class="panel" id="sideBarPanel">
+    <div id="sideBar">
+      <ul id="sideBarMenu">
+        <li class="sideBarLink aboutLink">
+          <a>Home</a>
+        </li>
+        <li class='sideBarLink faqsLink'>
+          <a href="signup">Sign Up</a>
+        </li>
+        <li class='sideBarLink'>
+          <a href='/loginPage'>Log In</a>
+        </li>
+      </ul>
+    </div>
   </div>
  
    <div class='row'>

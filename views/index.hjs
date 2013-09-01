@@ -54,8 +54,9 @@
     </nav>
   </div>-->
 
+<!--NEW HEADER-->
   <div class='fixed' id='navWrapper'>
-    <div class="large-12 columns" id="navBarWrapper">
+    <div class="large-12 columns">
       <a id="navName">WheelTalks</a>
       <ul class="navLinkBar">
         <li class="navLink aboutLink">
@@ -67,6 +68,9 @@
         <li class='navLink faqsLink'>
           <a>FAQs</a>
         </li>
+        <li class="navLink">
+          <a href="signup">Sign Up</a>
+        </li>
         <li class='navLink'>
           <a href='/loginPage'>Log In</a>
         </li>
@@ -74,7 +78,6 @@
       <img id="sideBarButton" src="/img/menuButton.png">
     </div>
   </div>
-
   <div class="panel" id="sideBarPanel">
     <div id="sideBar">
       <ul id="sideBarMenu">
@@ -86,6 +89,9 @@
         </li>
         <li class='sideBarLink faqsLink'>
           <a>FAQs</a>
+        </li>
+        <li class="sideBarLink">
+          <a href="signup">Sign Up</a>
         </li>
         <li class='sideBarLink'>
           <a href='/loginPage'>Log In</a>
