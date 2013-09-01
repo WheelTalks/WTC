@@ -67,7 +67,7 @@
     <div id="sideBar">
       <ul id="sideBarMenu">
         <li class="sideBarLink aboutLink">
-          <a>Home</a>
+          <a href="/">Home</a>
         </li>
         <li class='sideBarLink faqsLink'>
           <a href="signup">Sign Up</a>
