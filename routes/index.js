@@ -13,8 +13,6 @@ var connection = new(cradle.Connection)('https://liamflahive.cloudant.com', 443,
       auth: { username: 'liamflahive', password: 'swatter5' }
   });
 
-var db = connection.database('wheel'); //user db
-var talks = connection.database('talks');//saved messages db
 var accounts = connection.database('accounts');//user accounts
 var messages = connection.database('messages');
 /* ------------------------------------------------ */
@@ -56,119 +54,75 @@ var name = request.body.name
 	, license = request.body.licensenumber.trim()
 	, phone = request.body.phonenumber;
 var phone = '+1'+phone; 
-var phone2 = phone; 
-
+var phone2 = phone;
 var emailBody;
-
-
 license = license.toUpperCase();
 state = state.toUpperCase();
 license = state+license;
-var user = license;
+plate = license
 var pass = request.body.password;
-var userLogin = license;
-var plate = license;
 
-talks.view('talks/byPlate', {key: license}, function (err, res) {
-    if (err) {
-      console.log('Connection failed to be established')
-      return;
-    }
-    else{
-      if (res.length < 1) { //license plate does not exist
-        emailBody = "You haven't recieved any messages yet.";
 
-        postmark.send({ //send a welcome email
-          "From": "welcome@wheeltalks.com",
-          "To": email,
-          "Subject": "Welcome to Wheeltalks",
-          "TextBody": "Congratulations "+name +"\n" + emailBody,
-          "Tag": "WheelTalks"
-          }, function(error, success) {
-              if(error) {
-                  console.error("Unable to send via postmark: " + error.message);
-                 return;
-              }
-              console.info("Sent to postmark for delivery")
-          });
 
-        }
-              
-      else{
-        var doc = res[0].value;
-        var savedMssg = doc.message;
 
-        emailBody = "People have already been trying to contact you. \nThese are your saved messages:\n \n     \""
-                    + savedMssg + "\" \n \n"
-                    + "We are excited to have you join the Wheel Talks community. \nYou will find that your fellow wheeltalkers have alot to offer.\n"
-                    + "\n Feel free to reply to this email with questions as it will be sent to our customer support staff.\n \nSincerely,\n  -The WheelTalks Crew";
-        postmark.send({ //send a welcome email
-          "From": "welcome@wheeltalks.com",
-          "To": email,
-          "Subject": "Welcome to Wheeltalks",
-          "TextBody": "Congratulations! "+name +",\n" + emailBody,
-          "Tag": "WheelTalks"
-          }, function(error, success) {
-              if(error) {
-                  console.error("Unable to send via postmark: " + error.message);
-                 return;
-              }
-              console.info("Sent to postmark for delivery")
-          });              
-        }
-      }
-    });
-
-db.save(plate, {
-	  name: name, //add the user
+var data = {
+	  name: name, 
       email: email,
       plate: license,
+      pass: pass,
       phone: phone,
       score: 1,
       last: null
       
-  });
+  }
 
-accounts.save("",{
-		plate: user,
-		pass: pass
-});
+AM.addNewAccount(data, function(res){
+	console.log(res);
+	if(res = 'account-created'){
+		client.sms.messages.create({ //welcome text
+		to: phone,
+		from:'+17815594602',
+		body:'Welcome to WheelTalks! Save this number in your contacts.'
+		}, function(error, message) {
 
-var senderLog = [];
-var recievedMssgLog = [];
-var sentMssgLog = [];
-var sentToLog = [];
+		if (!error) {
 
-messages.save(plate,
-{
-		plate: plate,
-    	phone: phone2,
-    	senderLog: senderLog,
-    	recievedMssgLog: recievedMssgLog,
-    	sentToLog: sentToLog,
-    	sentMssgLog: sentMssgLog
-});
+		console.log('Success! The SID for this SMS message is:');
+		console.log(message.sid);
+		 
+		console.log('Message sent on:');
+		console.log(message.dateCreated);
+		}
+		else {
+		console.log('Oops! There was an error.');
+		}
+		})
+		response.redirect('/loginPage');
+	}
 
-client.sms.messages.create({ //welcome text
-to: phone,
-from:'+17815594602',
-body:'Welcome to WheelTalks! Save this number in your contacts.'
-}, function(error, message) {
+	else{
+           response.redirect('/signUp?plateTaken=true')      
+        }
+    });
 
-if (!error) {
+	var senderLog = [];
+	var recievedMssgLog = [];
+	var sentMssgLog = [];
+	var sentToLog = [];
 
-console.log('Success! The SID for this SMS message is:');
-console.log(message.sid);
- 
-console.log('Message sent on:');
-console.log(message.dateCreated);
+	messages.save(plate,
+	{
+			plate: plate,
+	    	phone: phone2,
+	    	senderLog: senderLog,
+	    	recievedMssgLog: recievedMssgLog,
+	    	sentToLog: sentToLog,
+	    	sentMssgLog: sentMssgLog
+	});
 }
-else {
-console.log('Oops! There was an error.');
-}
-})
 
-response.redirect('/loginPage');
+
+
 // AM.manualLogin(userLogin, request.param('password'), function(e, o){
 // 			if (!o){
 // 				response.send(e, 400);
@@ -179,9 +133,6 @@ response.redirect('/loginPage');
 // 					console.log('login sucessful');
 // 				response.send(o, 200);
 // 				response.redirect('/webApp');
-			
-		};
-
 /* ------------------------------------------------ */
 /*        Texting Service Function                  */
 /* ------------------------------------------------ */
@@ -205,7 +156,7 @@ switch(command){
 			var infChange = -2,
 			infMssg = "You've lost some Influence. It probably wasn't your fault. We still think your awesome.";
 		}	
-		db.view('wheel/byPhone', {key: sender}, function (err, res) {//view sender
+		accounts.view('accounts/byPhone', {key: sender}, function (err, res) {//view sender
 	    if (err) {
 	      console.log('Connection failed to be established')
 	      return;
@@ -220,7 +171,7 @@ switch(command){
 	      else{
 		      var doc = res[0].value;
 		      var last = doc.last;
-				db.view('wheel/byPhone', {key: last}, function (err, res) {//view winner 
+				accounts.view('accounts/byPhone', {key: last}, function (err, res) {//view winner 
 					if (err) {
 						console.log('Connection failed to be established')
 					return;
@@ -236,6 +187,7 @@ switch(command){
 						    var num_w = winner.phone;
 						    var score_w = winner.score;
 						    var last_w = winner.last;
+						    var pass_w = winner.pass;
 
 						    client.sms.messages.create({ //forward message to intended recipient
 					        to: num_w,
@@ -243,9 +195,10 @@ switch(command){
 					        body: infMssg
 					        });
 
-						    db.save(winner._id, { //add the new sender
+						    accounts.save(winner._id, { //add the new sender
 					        email: email_w,
 					        plate: plate_w,
+					        pass: pass_w,
 					        phone: num_w,
 					        score: score_w + infChange,
 					        last:  last_w });
@@ -260,7 +213,7 @@ switch(command){
 	break;
 
 	case '$':
-		db.view('wheel/byPhone', {key: sender}, function (err, res) {//view sender
+		accounts.view('accounts/byPhone', {key: sender}, function (err, res) {//view sender
 	    if (err) {
 	      console.log('Connection failed to be established')
 	      return;
@@ -282,7 +235,7 @@ switch(command){
 	break;
 
 	default:
-	db.view('wheel/byPlate', {key: command}, function (err, res) {
+	accounts.view('accounts/byPlate', {key: command}, function (err, res) {
 	    if (err) {
 	      console.log('Connection failed to be established')
 	      return;
@@ -301,11 +254,12 @@ switch(command){
 		      var doc = res[0].value;
 		      var email = doc.email;
 		      var plate = doc.plate;
+		      var pass = doc.pass;
 		      var num = doc.phone;
 		      var score = doc.score;
 		      var last = doc.last;
 
-		      db.view('wheel/byPhone', {key: sender}, function (err, res) {//view sender
+		      accounts.view('accounts/byPhone', {key: sender}, function (err, res) {//view sender
 			    if (err) {
 			      console.log('Connection failed to be established')
 			      return;
@@ -323,9 +277,10 @@ switch(command){
 				}
 			});
 
-		       db.save(doc._id, { //add the new sender
+		       accounts.save(doc._id, { //add the new sender
 		       email: email,
 		       plate: plate,
+		       pass: pass,
 		       phone: num,
 		       score: score,
 		       last: sender });
@@ -346,7 +301,7 @@ exports.webSend = function(request, response) {
 		mssg = request.param('textbody');
 		console.log('in websend');
 	var command =state + plate;
-		db.view('wheel/byPlate', {key: command}, function (err, res) {
+		accounts.view('accounts/byPlate', {key: command}, function (err, res) {
 			console.log('attempting lookup');
 	    if (err) {
 	      console.log('Connection failed to be established')
@@ -366,6 +321,7 @@ exports.webSend = function(request, response) {
 		      var doc = res[0].value;
 		      var email = doc.email;
 		      var plate = doc.plate;
+		      var pass = doc.pass
 		      var num = doc.phone;
 		      var score = doc.score;
 		      var last = doc.last;
@@ -374,9 +330,10 @@ exports.webSend = function(request, response) {
 		    ML.logSend(request.cookies.user, plate, mssg);
 
 
-		       db.save(doc._id, { //add the new sender
+		       accounts.save(doc._id, { //add the new sender
 		       email: email,
 		       plate: plate,
+		       pass: pass,
 		       phone: num,
 		       score: score,
 		       last: last });
@@ -410,6 +367,64 @@ exports.logIn = function(req, res){
 		});
 	};
 // 
+
+// db.view('wheel/byPlate', {key: license}, function (err, res) {
+//     if (err) {
+//       console.log('Connection failed to be established')
+//       return;
+//     }
+//     else{
+//       if (res.length < 1) { //license plate does not exist
+//         console.log('plate is good')
+//         talks.view('talks/byPlate', {key: license}, function (err, res) {
+//     if (err) {
+//       console.log('Connection failed to be established')
+//       return;
+//     }
+//     else{
+//       if (res.length < 1) { //license plate does not exist
+//         emailBody = "You haven't recieved any messages yet.";
+
+//         postmark.send({ //send a welcome email
+//           "From": "welcome@wheeltalks.com",
+//           "To": email,
+//           "Subject": "Welcome to Wheeltalks",
+//           "TextBody": "Congratulations "+name +"\n" + emailBody,
+//           "Tag": "WheelTalks"
+//           }, function(error, success) {
+//               if(error) {
+//                   console.error("Unable to send via postmark: " + error.message);
+//                  return;
+//               }
+//               console.info("Sent to postmark for delivery")
+//           });
+
+//         }
+              
+//       else{
+//         var doc = res[0].value;
+//         var savedMssg = doc.message;
+
+//         emailBody = "People have already been trying to contact you. \nThese are your saved messages:\n \n     \""
+//                     + savedMssg + "\" \n \n"
+//                     + "We are excited to have you join the Wheel Talks community. \nYou will find that your fellow wheeltalkers have alot to offer.\n"
+//                     + "\n Feel free to reply to this email with questions as it will be sent to our customer support staff.\n \nSincerely,\n  -The WheelTalks Crew";
+//         postmark.send({ //send a welcome email
+//           "From": "welcome@wheeltalks.com",
+//           "To": email,
+//           "Subject": "Welcome to Wheeltalks",
+//           "TextBody": "Congratulations! "+name +",\n" + emailBody,
+//           "Tag": "WheelTalks"
+//           }, function(error, success) {
+//               if(error) {
+//                   console.error("Unable to send via postmark: " + error.message);
+//                  return;
+//               }
+//               console.info("Sent to postmark for delivery")
+//           });              
+//         }
+//       }
+//     });
 
 
 

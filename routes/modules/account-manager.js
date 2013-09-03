@@ -98,7 +98,26 @@ var validatePassword = function(plainPass, hashedPass, callback)
 
 // /* record insertion, update & deletion methods */
 
-// exports.addNewAccount = function(newData, callback)
+ exports.addNewAccount = function(newData, callback)
+ {
+ 	accounts.view('accounts/byPlate', {key: newData.plate}, function (err, res) {
+    if (err) {
+      console.log('Connection failed to be established')
+      return;
+    }
+    else{
+      if (res.length < 1) { //license plate does not exist
+        console.log('plate is good')
+        accounts.save(newData.plate, newData);
+        callback('account-created');
+
+        }
+    else{
+    	callback('plate-taken');
+        }
+ }
+});
+ }
 // {
 // 	accounts.findOne({user:newData.user}, function(e, o) {
 // 		if (o){
