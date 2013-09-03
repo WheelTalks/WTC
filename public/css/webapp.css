@@ -35,65 +35,6 @@ h2, h3, h4, h5 {
 }
 
 
-/*HEADER RULES*/
-#navWrapper {
-    height:3.5em;
-    background-color:#323232;
-}
-
-#navWrapper section {
-    background-color:inherit;
-}
-
-#appNav {
-    text-shadow:none;
-    background-color:inherit;
-}
-
-#navName {
-    margin-top:-.1em;
-    font-size: 2.5em;
-    color:yellow;
-    text-align:center;
-    background-color:inherit;
-    font-weight: bold;
-}
-
-#navRight {
-    margin-top:.4em;
-    background-color:inherit;
-}
-
-.top-bar-section ul li.active > a {
-    background-color:inherit;
-}
-
-.top-bar.expanded .title-area {
-    background-color:inherit !important;
-}
-
-.top-bar {
-    /*position:fixed;*/
-    padding-bottom: 50px;
-}
-
-@media only screen and (min-width: 58.75em) {
-    .top-bar-section {
-        margin-top:0 !important;
-    }
-}
-
-@media only screen {
-    .top-bar-section {
-        margin-top:1em;
-    }
-}
-
-.top-bar-section ul li.active > a {
-    padding-top:0.5em;
-    background-color:#323232;
-}
-
 /*FORM AND BODY RULES*/
 #messengerForm {
     margin-top:6em;

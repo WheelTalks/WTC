@@ -23,7 +23,7 @@
 <body>
 
 <!--HEADER, POSITION:FIXED, SMALL AND LARGE-->
-  <div class='fixed contain-to-grid' id='navWrapper'>
+  <!--<div class='fixed contain-to-grid' id='navWrapper'>
     <nav class="top-bar" id='appNav'>
       <ul class="title-area">
         <li class="name">
@@ -41,7 +41,37 @@
       </ul>
       </section>
     </nav>
+  </div>-->
+
+
+<!--NEW HEADER-->
+  <div class='fixed' id='navWrapper'>
+    <div class="large-12 columns">
+      <a id="navName">WheelTalks</a>
+      <ul class="navLinkBar">
+        <li class='navLink'>
+          <a href='webapp'>Messenger</a>
+        </li>
+        <li class='navLink'>
+          <a href='/?logout=true'>Log Out</a>
+        </li>
+      </ul>
+      <img id="sideBarButton" src="/img/menuButton.png">
+    </div>
   </div>
+  <div class="panel" id="sideBarPanel">
+    <div id="sideBar">
+      <ul id="sideBarMenu">
+        <li class='sideBarLink'>
+          <a href='webapp'>Messenger</a>
+        </li>
+        <li class='sideBarLink'>
+          <a href='/?logout=true'>Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
 
   <div class='containerWrapper small-10 columns small-centered'>
     <div class="section-container vertical-tabs" id='messageContainer' data-section="vertical-tabs">
@@ -70,6 +100,7 @@
   ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
   '.js><\/script>')
   </script>-->
+
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src='js/vendor/jquery.js'></script>
   <script src="js/foundation.min.js"></script>
