@@ -43,8 +43,12 @@ var accounts = connection.database('accounts');
 
 exports.manualLogin = function(user, pass, callback)
 {
-
+	console.log('this '+ user)
 	accounts.view('accounts/byPlate', {key: user}, function (e, o) {
+	if (e){
+		console.log('connection failed to be established');
+		return;
+	}
     if (o.length < 1) {
       callback('user-not-found');
     }
@@ -63,6 +67,10 @@ exports.manualLogin = function(user, pass, callback)
 exports.autoLogin = function(user, pass, callback)
 {
 	accounts.view('accounts/byPlate', {key: user}, function (e, o) {
+	if (e){
+		console.log('connection failed to be established');
+		return;
+	}
     if (o.length < 1) {
       callback(null);
     }

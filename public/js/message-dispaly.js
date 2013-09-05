@@ -3,9 +3,9 @@
 
 var user = getCookie('user');
 
-var couch = sag.server('wheeltalks.com','/');
+var couch = sag.server('localhost','5000');
 
-couch.setPathPrefix('db');
+couch.setPathPrefix('/db');
  
     // Set the database
     couch.setDatabase('messages');
@@ -23,11 +23,13 @@ couch.setPathPrefix('db');
       	if(success) {
           var doc = resp.body;
           var inMessages = doc.recievedMssgLog;
+          var inSenders = doc.senderLog
           var outMessages = doc.sentMssgLog;
+          var outSentTo = doc.sentToLog
           for(var i = inMessages.length-1; i >= 0; i--){
 				(function(foo){
 				$(document).ready(function(){
-					    $('#messagesSection').append("<div class='small-12 columns small-centered receivedWrapper'><div class='messageBox small-12 columns'><div class='row messageHead'><div class='from columns small-4'><p>From: <span class='fromName' id='from12345'>Joe Smith</span></p></div><div class='date columns right small-4'><p>Sent: <span class='dateRec' id='date12345'>1/1/2001</span></p></div></div><div class='row contentWrapper'><div class='messageContent columns'><p><span class='contentRec' id='contentRec12345'>"+inMessages[foo]+"</span></p></div></div><ul class='messageFunctions columns'><li class='like'><a href='#likepost12345'>Like <i class='foundicon-up-arrow functionImage'></i></a></li><li class='dislike'><a href='#dislikepost12345'>Dislike <i class='foundicon-down-arrow functionImage'></i></a></li><li class='reply'><a href='#replyPost12345'>Reply <i class='foundicon-add-doc functionImage'></i></a></li><li class='report'><a href='#reportPost12345'>Report <i class='foundicon-flag functionImage'></i></a></li><li class='archive'><a href='#archivePost12345'>Archive <i class='foundicon-trash functionImage'></i></a></li></ul></div></div> ");
+					    $('#messagesSection').append("<div class='small-12 columns small-centered receivedWrapper'><div class='messageBox small-12 columns'><div class='row messageHead'><div class='from columns small-4'><p>From: <span class='fromName' id='from12345'>"+inSenders[foo]+"</span></p></div><div class='date columns right small-4'></div></div><div class='row contentWrapper'><div class='messageContent columns'><p><span class='contentRec' id='contentRec12345'>"+inMessages[foo]+"</span></p></div></div><ul class='messageFunctions columns'><li class='like'><a href='#likepost12345'>Like <i class='foundicon-up-arrow functionImage'></i></a></li><li class='dislike'><a href='#dislikepost12345'>Dislike <i class='foundicon-down-arrow functionImage'></i></a></li><li class='reply'><a href='#replyPost12345'>Reply <i class='foundicon-add-doc functionImage'></i></a></li><li class='report'><a href='#reportPost12345'>Report <i class='foundicon-flag functionImage'></i></a></li><li class='archive'><a href='#archivePost12345'>Archive <i class='foundicon-trash functionImage'></i></a></li></ul></div></div> ");
 
 
 					});
@@ -36,7 +38,7 @@ couch.setPathPrefix('db');
 		   for(var i = outMessages.length-1; i >= 0; i--){
 				(function(foo){
 				$(document).ready(function(){
-					    $('#outbox').append("<div class='small-12 columns small-centered receivedWrapper'><div class='messageBox small-12 columns'><div class='row messageHead'><div class='from columns small-4'><p>From: <span class='fromName' id='from12345'>Joe Smith</span></p></div><div class='date columns right small-4'><p>Sent: <span class='dateRec' id='date12345'>1/1/2001</span></p></div></div><div class='row contentWrapper'><div class='messageContent columns'><p><span class='contentRec' id='contentRec12345'>"+outMessages[foo]+"</span></p></div></div><ul class='messageFunctions columns'><li class='like'><a href='#likepost12345'>Like <i class='foundicon-up-arrow functionImage'></i></a></li><li class='dislike'><a href='#dislikepost12345'>Dislike <i class='foundicon-down-arrow functionImage'></i></a></li><li class='reply'><a href='#replyPost12345'>Reply <i class='foundicon-add-doc functionImage'></i></a></li><li class='report'><a href='#reportPost12345'>Report <i class='foundicon-flag functionImage'></i></a></li><li class='archive'><a href='#archivePost12345'>Archive <i class='foundicon-trash functionImage'></i></a></li></ul></div></div> ");
+					    $('#outbox').append("<div class='small-12 columns small-centered receivedWrapper'><div class='messageBox small-12 columns'><div class='row messageHead'><div class='from columns small-4'><p>To: <span class='fromName' id='from12345'>"+outSentTo[foo]+"</span></p></div><div class='date columns right small-4'></div></div><div class='row contentWrapper'><div class='messageContent columns'><p><span class='contentRec' id='contentRec12345'>"+outMessages[foo]+"</span></p></div></div><ul class='messageFunctions columns'><li class='like'><a href='#likepost12345'>Like <i class='foundicon-up-arrow functionImage'></i></a></li><li class='dislike'><a href='#dislikepost12345'>Dislike <i class='foundicon-down-arrow functionImage'></i></a></li><li class='reply'><a href='#replyPost12345'>Reply <i class='foundicon-add-doc functionImage'></i></a></li><li class='report'><a href='#reportPost12345'>Report <i class='foundicon-flag functionImage'></i></a></li><li class='archive'><a href='#archivePost12345'>Archive <i class='foundicon-trash functionImage'></i></a></li></ul></div></div> ");
 					});
 				}(i));
 			};

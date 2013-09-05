@@ -60,6 +60,7 @@ body {
   box-shadow: 0 0 5px 1px gray;
   text-shadow:none;
   color:#323232;
+  margin-bottom: 1em;
 }
 
 .messageHead {

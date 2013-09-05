@@ -182,26 +182,14 @@ switch(command){
 						}
 						else{
 							var winner = res[0].value;
-						    var email_w = winner.email;
-						    var plate_w = winner.plate;
-						    var num_w = winner.phone;
-						    var score_w = winner.score;
-						    var last_w = winner.last;
-						    var pass_w = winner.pass;
 
 						    client.sms.messages.create({ //forward message to intended recipient
 					        to: num_w,
 					        from:'+17815594602',
 					        body: infMssg
 					        });
-
-						    accounts.save(winner._id, { //add the new sender
-					        email: email_w,
-					        plate: plate_w,
-					        pass: pass_w,
-					        phone: num_w,
-					        score: score_w + infChange,
-					        last:  last_w });
+						    winner.score = winner.score+infChange
+						    accounts.save(winner._id, winner);
 
 					        
 						}
@@ -252,12 +240,6 @@ switch(command){
 	              
 	      else{
 		      var doc = res[0].value;
-		      var email = doc.email;
-		      var plate = doc.plate;
-		      var pass = doc.pass;
-		      var num = doc.phone;
-		      var score = doc.score;
-		      var last = doc.last;
 
 		      accounts.view('accounts/byPhone', {key: sender}, function (err, res) {//view sender
 			    if (err) {
@@ -266,7 +248,7 @@ switch(command){
 			    }
 			    else{
 			      if (res.length < 1) { //license plate does not exist
-			        ML.sendMessage(num, '#NoSender', body);
+			        ML.sendMessage(num, 'Unregistered', body);
 			        }			      			     			              
 			      else{
 				      var doc = res[0].value;
@@ -276,14 +258,8 @@ switch(command){
 				  }
 				}
 			});
-
-		       accounts.save(doc._id, { //add the new sender
-		       email: email,
-		       plate: plate,
-		       pass: pass,
-		       phone: num,
-		       score: score,
-		       last: sender });
+		       doc.last = sender;
+		       accounts.save(doc._id, doc);
 		      response.send('<Response><Sms>Your message has been sent. Thank you for using wheel talks!</Sms></Response>');
 	  			}
 	  		}
@@ -319,24 +295,12 @@ exports.webSend = function(request, response) {
 	              
 	      else{
 		      var doc = res[0].value;
-		      var email = doc.email;
 		      var plate = doc.plate;
-		      var pass = doc.pass
 		      var num = doc.phone;
-		      var score = doc.score;
-		      var last = doc.last;
 
 		    ML.sendMessage(num, request.cookies.user, mssg);
 		    ML.logSend(request.cookies.user, plate, mssg);
 
-
-		       accounts.save(doc._id, { //add the new sender
-		       email: email,
-		       plate: plate,
-		       pass: pass,
-		       phone: num,
-		       score: score,
-		       last: last });
 		       response.redirect('/');
 	  			}
 	  		}
@@ -358,8 +322,8 @@ exports.logIn = function(req, res){
 				res.redirect('/loginPage?loginFail='+e);
 			}	else{
 			    req.session.user = o;
-					res.cookie('user', o.plate, { maxAge: 900000 });
-					res.cookie('pass', o.pass, { maxAge: 900000 });
+					res.cookie('user', o.plate, { maxAge: 9000000000000000000000000000000000000 });
+					res.cookie('pass', o.pass, { maxAge: 9000000000000000000000000000000000000 });
 					console.log('login sucessful');
 				res.send(o, 200);
 				res.redirect('/webApp');
