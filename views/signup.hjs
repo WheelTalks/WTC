@@ -100,16 +100,16 @@
             </div>
             <div class='row'>
               <div class="large-12 columns">
-                  <input class='inputReg' id="name" name="name" placeholder="Name" type="text" pattern="alpha" required/>
+                  <input class='inputReg' id="name" name="name" placeholder="Name (optional)" type="text"/> <!--pattern="alpha" required/>
                   <small class='error'>Please enter your name.</small>
-                  <small class='valid'>Name looks good!</small>
+                  <small class='valid'>Name looks good!</small>-->
               </div>
             </div>
             <div class='row'>
               <div class="large-12 columns">
-                <input class='inputReg' placeholder="Email" name="email" id="email" type="text" pattern="email" required />
+                <input class='inputReg' placeholder="Email (optional)" name="email" id="email" type="text"/> <!-- pattern="email" required />
                   <small class="error">Please enter a valid email.</small>
-                  <small class='valid'>Email looks good!</small>
+                  <small class='valid'>Email looks good!</small>-->
               </div>
             </div>
             <div class='row'>
@@ -120,7 +120,7 @@
               </div>
             </div>
             <div class='row'>
-              <div class = "large-6 small-6 columns">
+              <!--<div class = "large-6 small-6 columns">
                 <h5>How would you like to receive Wheeltalks?</h5>
               </div>
             </div>
@@ -135,10 +135,10 @@
                 <div class='large-4 columns' id='Signin'>  
                   <label for="Sign in"><input type="checkbox" id="sign" ><span class="custom checkbox"></span> Sign in</label>
                 </div>
-              </div>
+              </div>-->
             </div>
             <div class='row'>
-              <div class='large-6 small-6 columns'>
+              <div class='columns submitButtonWrapper'>
                 <div id="button">
                   <input class='button success' id='submitButton' type="submit" value="Submit" />
                 </div>
