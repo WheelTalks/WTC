@@ -2,6 +2,10 @@
 
 /* CSS Document */
 
+body {
+	max-height:30em;
+}
+
 #loginForm {
     margin-top:10em;
     width: 300px;

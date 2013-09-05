@@ -80,6 +80,10 @@ fieldset legend {
     color: #222222;  
 }
 
+.submitButtonWrapper {
+    width:52%;
+}
+
 
 /*Validtion Rules*/
 .error small.error, span.error, small.error {
