@@ -31,3 +31,7 @@ fieldset legend {
 .button {
 	opacity: .7;
 }
+
+#failedLogIn {
+	color:red;
+}

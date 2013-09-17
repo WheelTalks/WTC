@@ -126,7 +126,7 @@
         <h2 id='aboutTitle'>About WheelTalks</h2>
         <div class='small-6 columns' id='message'>
           <h3>Send a message on any phone</h3>
-          <p>Instantly send a message to any car on the road. Simply send a text to the WheelTalks phone number. Include the state and license plate number of your desired recipient followed by your message and we’ll take care of the rest. Also, you can send messages using our web app that is available on desktop and mobile.</p>
+          <p>Instantly send a message to any car. Simply send a text to the WheelTalks phone number. Include the state and license plate number of your desired recipient followed by your message and we’ll take care of the rest. Also, you can send messages using our web app that is available on desktop and mobile.</p>
         </div>
         <img src="/img/iphone_wt.png" class="messageImage" id="messageImage">
       </div>
@@ -147,7 +147,7 @@
         <div class='large-11 columns small-centered' id='features'>
           <h2>Features</h2>
           <h3>See what people have been saying</h3>
-          <p>Click &quot;sign up&quot; and receive an email of all the messages that have been sent to your license plate. Make sure you're driving well, your car is safe and everyone on the road is wishing you well!<p>
+          <p>Click &quot;sign up&quot; and receive an email of all the messages that have been sent to your license plate. Make sure you're driving well, your car is safe and everyone is wishing you well!<p>
         </div>
       </div>
     </div>
@@ -155,7 +155,7 @@
       <div class='row'>
         <div class='large-11 columns small-centered'>
           <h3>Influence</h3>
-          <p>WheelTalks goes beyond a way to send messages. It allows you to give feedback to other drivers, and monitor your own perception on the road. In order to make the WheelTalks experience more engaging we have given you the ability to give messages a good or bad rating. Response to a message with a “:)” and give the sender 5 points of influence, but respond with a “:(“ and they will lose 5 points. Also, you gain a point of influence for every message you send.</p>
+          <p>WheelTalks goes beyond a way to send messages. It allows you to give feedback to other drivers, and monitor your own driving habits. In order to make the WheelTalks experience more engaging we have given you the ability to give messages a good or bad rating. Response to a message with a “:)” and give the sender 5 points of influence, but respond with a “:(“ and they will lose 5 points. Also, you gain a point of influence for every message you send.</p>
           <p>As you gain more influence in the WheelTalks community, you will have the opportunity to gain levels and the higher your level the more respect you have from the community and us. Each week the user with the highest influence gets to choose the issue of the week that our community will focus on. We will delve into conversation on Facebook and twitter and WheelTalks sent with the hashtag of the week will get posted to the conversation. We are excited to see how you will use your influence.</p>
         </div>
       </div>  

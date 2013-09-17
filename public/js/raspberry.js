@@ -72,10 +72,12 @@ $(document).ready(function () {
 //End
 });
 
-function getURLParameter(name) {
-    return decodeURI(
-        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
-    );
-    console.log(x);
-}
+//JAVASCRIPT CODE
+function getUrlLoginFailed() {
+    var loginUrl = location.search.substring(11);
+    if (loginUrl == "invalid-password") {
+        $("#failedLogIn").append("Please enter a valid username and password");
+    }
+};
+
 
