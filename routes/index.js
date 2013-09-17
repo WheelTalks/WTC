@@ -109,6 +109,7 @@ AM.addNewAccount(data, function(res){
 	var recievedMssgLog = [];
 	var sentMssgLog = [];
 	var sentToLog = [];
+	var blocked = [];
 
 	messages.save(plate,
 	{
@@ -117,7 +118,8 @@ AM.addNewAccount(data, function(res){
 	    	senderLog: senderLog,
 	    	recievedMssgLog: recievedMssgLog,
 	    	sentToLog: sentToLog,
-	    	sentMssgLog: sentMssgLog
+	    	sentMssgLog: sentMssgLog,
+	    	blocked: blocked
 	});
 }
 
@@ -286,10 +288,6 @@ exports.webSend = function(request, response) {
 	    else{
 	      if (res.length < 1) {
 	        console.log('failed to find plate') //license plate does not exist
-	        talks.save("", {
-	          plate: command,
-	          message: mssg,
-	        });
 	      response.redirect('/');
 	      }  
 	              
@@ -322,8 +320,8 @@ exports.logIn = function(req, res){
 				res.redirect('/loginPage?loginFail='+e);
 			}	else{
 			    req.session.user = o;
-					res.cookie('user', o.plate, { maxAge: 9000000000000000000000000000000000000 });
-					res.cookie('pass', o.pass, { maxAge: 9000000000000000000000000000000000000 });
+					res.cookie('user', o.plate, { maxAge: 365 * 24 * 60 * 60 * 1000 });
+					res.cookie('pass', o.pass, { maxAge: 365 * 24 * 60 * 60 * 1000 });
 					console.log('login sucessful');
 				res.send(o, 200);
 				res.redirect('/webApp');

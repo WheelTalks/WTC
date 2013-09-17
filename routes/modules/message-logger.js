@@ -13,7 +13,7 @@ var messages = connection.database('messages');
 
 
 exports.sendMessage = function(numTo, plateFrom, body){
-	client.sms.messages.create({ //welcome text
+client.sms.messages.create({ //welcome text
 to: numTo,
 from:'+17815594602',
 body: body
@@ -44,29 +44,18 @@ messages.view('messages/byPhone', {key: numTo}, function (e, o) {
     	console.log('user-found');
     	var doc = o[0].value;
     	var plate = doc.plate;
-    	var phone = doc.phone;
-    	var senderLog = doc.senderLog;
-    	var recievedMssgLog = doc.recievedMssgLog;
-    	var sentToLog = doc.sentToLog;
-    	var sentMssgLog = doc.sentMssgLog;
-    	var index = recievedMssgLog.length;
-    	senderLog[index] = plateFrom;
-    	recievedMssgLog[index] = body;
+    	var index = doc.recievedMssgLog.length;
+    	doc.senderLog[index] = plateFrom;
+    	doc.recievedMssgLog[index] = body;
 
-    	messages.save(plate, {
-    		plate: plate,
-    		phone: phone,
-    		senderLog: senderLog,
-    		recievedMssgLog: recievedMssgLog,
-    		sentToLog: sentToLog,
-    		sentMssgLog: sentMssgLog
-    	});
+    	messages.save(plate, doc);
     	console.log('message-sent');
 			}
 		});
+		
     };
 exports.logSend = function(senderPlate, plateTo, body){
-	messages.view('messages/byPlate', {key: senderPlate}, function (e, o) {
+			messages.view('messages/byPlate', {key: senderPlate}, function (e, o) {
 		if (e) {
 	      console.log('Connection failed to be established')
 	      return;
@@ -77,28 +66,55 @@ exports.logSend = function(senderPlate, plateTo, body){
 	    else{
 	    	var doc = o[0].value;
 	    	var plate = doc.plate;
-	    	var phone = doc.phone;
-	    	var senderLog = doc.senderLog;
-	    	var recievedMssgLog = doc.recievedMssgLog;
-	    	var sentToLog = doc.sentToLog;
-	    	var sentMssgLog = doc.sentMssgLog;
-	    	var index = sentMssgLog.length;
-	    	sentToLog[index] = plateTo;
-	    	sentMssgLog[index] = body;
+	    	var index = doc.sentMssgLog.length;
+	    	doc.sentToLog[index] = plateTo;
+	    	doc.sentMssgLog[index] = body;
 
-	    	messages.save(plate, {
-	    		plate: plate,
-	    		phone: phone,
-	    		senderLog: senderLog,
-	    		recievedMssgLog: recievedMssgLog,
-	    		sentToLog: sentToLog,
-	    		sentMssgLog: sentMssgLog
-	    	});
+	    	messages.save(plate, doc);
 	    	console.log('sent-message-saved');
 				}
 			});
 	    };
 
+exports.blockUser= function(blockedPlate, user){
+	messages.view('messages/byPlate', {key: user}, function (e, o) {
+		if (e) {
+	      console.log('Connection failed to be established')
+	      return;
+	    }
+	    if (o.length < 1) {
+	      console.log('user-not-found');
+	    }
+	    else{
+	    	var doc = o[0].value;
+	    	var i = doc.blocked.length;
+	    	doc.blocked[i] = blockedPlate
+	    }
+
+	})
+}
+
+checkBlock = function(plate, userNum, callback){
+
+	messages.view('messages/byPhone', {key: userNum}, function (e, o) {
+		if (e) {
+	      console.log('Connection failed to be established')
+	      return;
+	    }
+	    if (o.length < 1) {
+	      console.log('user-not-found');
+	    }
+	    else{
+	    	var doc = o[0].value;
+	    	var check = doc.blocked.indexOf(plate);
+	    	if (check == -1)
+	    		callback('plate-is-good')
+	    	else
+	    		callback('plate blocked')
+	    	
+	    }
+	})
+}
 
 
 
