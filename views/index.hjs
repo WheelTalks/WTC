@@ -134,7 +134,7 @@
         <img src="/img/iphone_wt.png" id="communityImage">
         <div class='small-6 columns right' id="community">
           <h3>Community</h3>
-          <p>The WheelTalks community is devoted to making the driving community a friendlier and safer place by committing to thinking about the person behind the wheel. We are currently bringing our services to universities and apartment complexes across the country. If you would like WheelTalks at your school, let us know at support@wheeltalks.com.</p>
+          <p>The WheelTalks community is devoted to making the driving community a friendlier and safer place by committing to thinking about the person behind the wheel. We are currently bringing our services to universities and apartment complexes across the country. If you would like WheelTalks at your school or community, let us know at support@wheeltalks.com.</p>
         </div>
     </div>
   </div>
@@ -203,7 +203,7 @@
     <div class='subWrapper'>
       <div class='row'>
         <div class='large-12 columns' id='footer'>
-          <ul>
+          <!--<ul>
               <li>
                 <a href='#'>Help & FAQs</a>
               </li>
@@ -218,7 +218,7 @@
               </li>
               <li>
                 <a href="#">Connect</a></li>
-          </ul>
+          </ul>-->
           <p class='copyright'>© 2013 WheelTalks LLC. All rights reserved. Patents pending.</p>  
         </div>
       </div>
