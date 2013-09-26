@@ -62,9 +62,9 @@
         <li class="navLink aboutLink">
           <a>About</a>
         </li>
-        <li class='navLink featuresLink'>
+        <!--<li class='navLink featuresLink'>
           <a>Features</a>
-        </li>
+        </li>-->
         <li class='navLink faqsLink'>
           <a>FAQs</a>
         </li>
@@ -84,9 +84,9 @@
         <li class="sideBarLink aboutLink">
           <a>About</a>
         </li>
-        <li class='sideBarLink featuresLink'>
+        <!--<li class='sideBarLink featuresLink'>
           <a>Features</a>
-        </li>
+        </li>-->
         <li class='sideBarLink faqsLink'>
           <a>FAQs</a>
         </li>
@@ -134,14 +134,13 @@
         <img src="/img/iphone_wt.png" id="communityImage">
         <div class='small-6 columns right' id="community">
           <h3>Community</h3>
-          <p>The WheelTalks community is devoted to making the driving community a friendlier and safer place by committing to thinking about the person behind the wheel. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+          <p>The WheelTalks community is devoted to making the driving community a friendlier and safer place by committing to thinking about the person behind the wheel. We are currently bringing our services to universities and apartment complexes across the country. If you would like WheelTalks at your school, let us know at support@wheeltalks.com.</p>
         </div>
     </div>
   </div>
 
 <!--FEATURES-->    
-  <div class='wrapper' id='wrapperTwo'>
+  <!--<div class='wrapper' id='wrapperTwo'>
     <div class='subWrapper'>
       <div class='row'>
         <div class='large-11 columns small-centered' id='features'>
@@ -160,7 +159,7 @@
         </div>
       </div>  
     </div>
-  </div>
+  </div>-->
     
 <!--FAQs-->
   <div class='wrapper'>

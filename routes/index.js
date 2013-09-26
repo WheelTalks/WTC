@@ -262,7 +262,7 @@ switch(command){
 			});
 		       doc.last = sender;
 		       accounts.save(doc._id, doc);
-		      response.send('<Response><Sms>Your message has been sent. Thank you for using wheel talks!</Sms></Response>');
+		      response.send('<Response><Sms>Your message has been sent. Thank you for using WheelTalks!</Sms></Response>');
 	  			}
 	  		}
 		});//close view
