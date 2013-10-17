@@ -358,6 +358,7 @@ title h1:hover, title h1:focus {
 #messageImage {
     margin-top:-3em;
     margin-left:10em;
+    height:420px;
 }
 
 #community {
@@ -367,6 +368,7 @@ title h1:hover, title h1:focus {
 #communityImage {
     margin-bottom:4em;
     margin-left:10em;
+    height:420px;
 }
 
 

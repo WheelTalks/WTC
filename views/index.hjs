@@ -128,10 +128,10 @@
           <h3>Send a message on any phone</h3>
           <p>Instantly send a message to any car. Simply send a text to the WheelTalks phone number. Include the state and license plate number of your desired recipient followed by your message and we’ll take care of the rest. Also, you can send messages using our web app that is available on desktop and mobile.</p>
         </div>
-        <img src="/img/iphone_wt.png" class="messageImage" id="messageImage">
+        <img src="/img/Question.png" class="messageImage" id="messageImage">
       </div>
       <div class="row">
-        <img src="/img/iphone_wt.png" id="communityImage">
+        <img src="/img/Ferris.png" id="communityImage">
         <div class='small-6 columns right' id="community">
           <h3>Community</h3>
           <p>The WheelTalks community is devoted to making the driving community a friendlier and safer place by committing to thinking about the person behind the wheel. We are currently bringing our services to universities and apartment complexes across the country. If you would like WheelTalks at your school or community, let us know at support@wheeltalks.com.</p>
